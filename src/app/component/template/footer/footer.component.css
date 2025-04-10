@@ -9,6 +9,8 @@
 }
 
 .footer > span{
-    font-size: 1.1rem;
+    font-size: 30px;
     font-weight: 300;
+    color: rgb(255, 255, 255);
+    font-family: 'Lucida fax', Arial, sans-serif;
 }

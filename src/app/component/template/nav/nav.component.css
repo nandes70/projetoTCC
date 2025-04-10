@@ -1,15 +1,21 @@
 .sidenav{
-    background-color: #3F51B5;
-    width: 200px;
+    background-color: #ff0101;
+    width: auto;
 }
 .sidenav a{
-    color: #fff;
+    color: #ffffff;
 }
 .sidenav i{
-    padding-right: 10px;
+    padding-right: 1px;
 }
 
 .content{
     padding: 16px;
-    background-color: #fff;
+    background-color: #2c2c29;
+}
+
+span
+{
+    font-weight: bold;
+    font-family: 'Lucida fax', Arial, sans-serif;
 }
