@@ -1,6 +1,6 @@
 .home{
 
-    background-color: #2c2c29;
+    background-color: #ffffff;
 
 }
 
@@ -14,10 +14,10 @@
 
 .home .subtitle{
     font-size: 1.1rem;
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     font-weight: bold;
 }
 span
 {
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
 }
