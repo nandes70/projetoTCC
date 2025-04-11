@@ -20,6 +20,8 @@ import { ProductReadComponent } from './component/product/product-read/product-r
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { FornecedorCrudComponent } from './views/fornecedor-crud/fornecedor-crud.component';
 import { FornecedorReadComponent } from './component/fornecedor/fornecedor-read/fornecedor-read.component';
+import { FormaPagamentoCrudComponent } from './views/forma-pagamento-crud/forma-pagamento-crud.component';
+import { FormaPagamentoReadComponent } from './component/formaPagamento/forma-pagamento-read/forma-pagamento-read.component';
 
 
 @NgModule({
@@ -32,7 +34,9 @@ import { FornecedorReadComponent } from './component/fornecedor/fornecedor-read/
     ProductCrudComponent,
     ProductReadComponent,
     FornecedorCrudComponent,
-    FornecedorReadComponent
+    FornecedorReadComponent,
+    FormaPagamentoCrudComponent,
+    FormaPagamentoReadComponent
   ],
   imports: [
     BrowserModule,
