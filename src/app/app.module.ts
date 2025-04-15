@@ -22,7 +22,20 @@ import { FornecedorCrudComponent } from './views/fornecedor-crud/fornecedor-crud
 import { FornecedorReadComponent } from './component/fornecedor/fornecedor-read/fornecedor-read.component';
 import { FormaPagamentoCrudComponent } from './views/forma-pagamento-crud/forma-pagamento-crud.component';
 import { FormaPagamentoReadComponent } from './component/formaPagamento/forma-pagamento-read/forma-pagamento-read.component';
+import { ProductCreateComponent } from './component/product/product-create/product-create.component';
+import { ClienteCrudComponent } from './views/cliente-crud/cliente-crud.component';
+import { ClienteReadComponent } from './component/cliente/cliente-read/cliente-read.component';
+import { ContatoCrudComponent } from './views/contato-crud/contato-crud.component';
+import { ContatoReadComponent } from './component/contato/contato-read/contato-read.component';
+import { EnderecoCrudComponent } from './views/endereco-crud/endereco-crud.component';
+import { EnderecoReadComponent } from './component/endereco/endereco-read/endereco-read.component';
 
+
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { ClienteCreateComponent } from './component/cliente/cliente-create/cliente-create.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +49,15 @@ import { FormaPagamentoReadComponent } from './component/formaPagamento/forma-pa
     FornecedorCrudComponent,
     FornecedorReadComponent,
     FormaPagamentoCrudComponent,
-    FormaPagamentoReadComponent
+    FormaPagamentoReadComponent,
+    ProductCreateComponent,
+    ClienteCrudComponent,
+    ClienteReadComponent,
+    ContatoCrudComponent,
+    ContatoReadComponent,
+    EnderecoCrudComponent,
+    EnderecoReadComponent,
+    ClienteCreateComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +67,11 @@ import { FormaPagamentoReadComponent } from './component/formaPagamento/forma-pa
     MatSidenavModule,
     MatListModule,
     MatCardModule,
-    MatSnackBarModule 
+    MatSnackBarModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FormsModule,
+    HttpClientModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

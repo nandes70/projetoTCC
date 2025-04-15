@@ -1,0 +1,12 @@
+form
+{
+    display: flex;
+    flex-direction: column;
+}
+button
+{
+    margin: 20px 15px 0px 0px;
+    background-color: rgb(190, 223, 245);
+    color: rgb(0, 0, 0);
+    font-family: 'Lucida fax', Arial, sans-serif;
+}
