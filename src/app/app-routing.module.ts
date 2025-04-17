@@ -7,6 +7,8 @@ import { FornecedorCrudComponent } from './views/fornecedor-crud/fornecedor-crud
 import { ProductCreateComponent } from './component/product/product-create/product-create.component';
 import { ClienteCrudComponent } from './views/cliente-crud/cliente-crud.component';
 import { ClienteCreateComponent } from './component/cliente/cliente-create/cliente-create.component';
+import { FormaPagamentoCreateComponent } from './component/formaPagamento/forma-pagamento-create/forma-pagamento-create.component';
+import { FornecedorCreateComponent } from './component/fornecedor/fornecedor-create/fornecedor-create.component';
 
 const routes: Routes = [
 {
@@ -29,10 +31,10 @@ const routes: Routes = [
   path: "formaPagamento",
   component: FormaPagamentoCrudComponent
 },
-/*{
+{
   path: "formaPagamento/create",
   component: FormaPagamentoCreateComponent
-},*/
+},
 ///////////////////////////formaPagamento FIM
 
 ///////////////////////////fornecedores
@@ -40,15 +42,15 @@ const routes: Routes = [
   path: "fornecedores",
   component: FornecedorCrudComponent
 },
-/*{
-  path: "fornecedores/create",
+{
+  path: "fornecedor/create",
   component: FornecedorCreateComponent
-},*/
+},
 ///////////////////////////fornecedores FIM
 
 ///////////////////////////Cliente
 {
-  path: "cliente",
+  path: "clientes",
   component: ClienteCrudComponent
 },
 {

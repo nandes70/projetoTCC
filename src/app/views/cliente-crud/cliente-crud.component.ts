@@ -6,14 +6,14 @@ import { Router } from '@angular/router';
   templateUrl: './cliente-crud.component.html',
   styleUrls: ['./cliente-crud.component.css']
 })
-export class ClienteCrudComponent implements OnInit
-{
-  constructor(private router: Router){}
+export class ClienteCrudComponent implements OnInit {
+
+  constructor(private router: Router) { }
   ngOnInit(): void {
-      
+
   }
-  navigateToClienteCreate(): void
-  {
+
+  navigateToClineteCreate(): void {
     this.router.navigate(['/cliente/create'])
   }
 }

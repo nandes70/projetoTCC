@@ -1,4 +1,16 @@
-p
+table{
+    width: 100%;
+}
+
+.edit > i{
+    color: #d9cd26;
+}
+
+.delete > i{
+    color: #e35e6b;
+}
+th
 {
-    color: rgb(79, 87, 8);
+    font-family: 'Rockwell', Arial, sans-serif;
+    font-size: 20px;
 }

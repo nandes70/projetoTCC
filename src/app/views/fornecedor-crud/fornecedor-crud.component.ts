@@ -6,14 +6,12 @@ import { Router } from '@angular/router';
   templateUrl: './fornecedor-crud.component.html',
   styleUrls: ['./fornecedor-crud.component.css']
 })
-export class FornecedorCrudComponent implements OnInit 
-{
-  constructor(private router: Router){}
+export class FornecedorCrudComponent implements OnInit {
+  constructor(private router: Router) { }
   ngOnInit(): void {
-      
+
   }
-  navigateToFornecedorCreate(): void
-  {
+  navigateToFornecedorCreate(): void {
     this.router.navigate(['/fornecedor/create'])
   }
 }

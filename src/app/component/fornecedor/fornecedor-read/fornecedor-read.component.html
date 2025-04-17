@@ -1,1 +1,48 @@
-<p>fornecedor-read</p>
+<div class="mat-elevation-z4">
+  <table mat-table [dataSource]="fornecedor">
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>Id</th>
+      <td mat-cell *matCellDef="let row">{{row.id}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="nameFanatasia">
+      <th mat-header-cell *matHeaderCellDef>Nome Fanatasia</th>
+      <td mat-cell *matCellDef="let row">{{row.nameFanatasia}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="razao_Social">
+      <th mat-header-cell *matHeaderCellDef>Razão Social</th>
+      <td mat-cell *matCellDef="let row">{{row.razao_Social | currency: 'BRL'}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="cpfCnpj">
+      <th mat-header-cell *matHeaderCellDef>CPF / CNPJ</th>
+      <td mat-cell *matCellDef="let row">{{row.cpfCnpj | currency: 'BRL'}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef>Status</th>
+      <td mat-cell *matCellDef="let row">{{row.status| currency: 'BRL'}}</td>
+    </ng-container>
+
+    <!-- Action Column -->
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef>Ações</th>                    
+      <td mat-cell *matCellDef="let row">
+          <a routerLink="/fornecedor/update/{{ row.id }}" class="edit">
+              <i class="material-icons">
+                  edit
+              </i>
+          </a>
+          <a routerLink="/fornecedor/delete/{{ row.id }}" class="delete">
+              <i class="material-icons">
+                  delete
+              </i>
+          </a>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>

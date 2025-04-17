@@ -36,6 +36,10 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ClienteCreateComponent } from './component/cliente/cliente-create/cliente-create.component';
+import { FornecedorCreateComponent } from './component/fornecedor/fornecedor-create/fornecedor-create.component';
+import { FormaPagamentoCreateComponent } from './component/formaPagamento/forma-pagamento-create/forma-pagamento-create.component';
+
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -57,7 +61,9 @@ import { ClienteCreateComponent } from './component/cliente/cliente-create/clien
     ContatoReadComponent,
     EnderecoCrudComponent,
     EnderecoReadComponent,
-    ClienteCreateComponent
+    ClienteCreateComponent,
+    FornecedorCreateComponent,
+    FormaPagamentoCreateComponent
   ],
   imports: [
     BrowserModule,
@@ -71,7 +77,8 @@ import { ClienteCreateComponent } from './component/cliente/cliente-create/clien
     MatFormFieldModule,
     MatInputModule,
     FormsModule,
-    HttpClientModule 
+    HttpClientModule,
+    MatTableModule 
   ],
   providers: [],
   bootstrap: [AppComponent]
