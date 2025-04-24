@@ -20,8 +20,6 @@ import { ProductReadComponent } from './component/product/product-read/product-r
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { FornecedorCrudComponent } from './views/fornecedor-crud/fornecedor-crud.component';
 import { FornecedorReadComponent } from './component/fornecedor/fornecedor-read/fornecedor-read.component';
-import { FormaPagamentoCrudComponent } from './views/forma-pagamento-crud/forma-pagamento-crud.component';
-import { FormaPagamentoReadComponent } from './component/formaPagamento/forma-pagamento-read/forma-pagamento-read.component';
 import { ProductCreateComponent } from './component/product/product-create/product-create.component';
 import { ClienteCrudComponent } from './views/cliente-crud/cliente-crud.component';
 import { ClienteReadComponent } from './component/cliente/cliente-read/cliente-read.component';
@@ -37,8 +35,6 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ClienteCreateComponent } from './component/cliente/cliente-create/cliente-create.component';
 import { FornecedorCreateComponent } from './component/fornecedor/fornecedor-create/fornecedor-create.component';
-import { FormaPagamentoCreateComponent } from './component/formaPagamento/forma-pagamento-create/forma-pagamento-create.component';
-
 import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
@@ -52,8 +48,6 @@ import { MatTableModule } from '@angular/material/table';
     ProductReadComponent,
     FornecedorCrudComponent,
     FornecedorReadComponent,
-    FormaPagamentoCrudComponent,
-    FormaPagamentoReadComponent,
     ProductCreateComponent,
     ClienteCrudComponent,
     ClienteReadComponent,
@@ -62,8 +56,7 @@ import { MatTableModule } from '@angular/material/table';
     EnderecoCrudComponent,
     EnderecoReadComponent,
     ClienteCreateComponent,
-    FornecedorCreateComponent,
-    FormaPagamentoCreateComponent
+    FornecedorCreateComponent
   ],
   imports: [
     BrowserModule,
