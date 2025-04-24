@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ProductService 
 {
-  baseUrl = "http://localhost:3001/products"
+  baseUrl = "http://localhost:8080/products"
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) {}
 
@@ -30,19 +30,19 @@ export class ProductService
   {
     return this.http.get<Product[]>(this.baseUrl)
   }
-  readById(id: string): Observable<Product>
+  readById(proId: string): Observable<Product>
   {
-    const url = `${this.baseUrl}/${id}`
+    const url = `${this.baseUrl}/${proId}`
     return this.http.get<Product>(url)
   }
   update(product: Product): Observable<Product>
   {
-    const url = `${this.baseUrl}/${product.id}`
+    const url = `${this.baseUrl}/${product.proId}`
     return this.http.put<Product>(url, product)
   }
-  delete(id: number): Observable<Product>
+  delete(proId: number): Observable<Product>
   {
-    const url = `${this.baseUrl}/${id}`
+    const url = `${this.baseUrl}/${proId}`
     return this.http.delete<Product>(url)
   }
 }

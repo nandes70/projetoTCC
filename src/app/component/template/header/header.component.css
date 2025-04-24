@@ -3,6 +3,7 @@
     align-items: center;
     background-color: rgb(0, 0, 0);
     padding-left: 2px;
+    background-image: url('https://super.abril.com.br/wp-content/uploads/2016/09/super_imgmelhores-games_25.jpg?crop=1&resize=1212,909');
 }
 
 .header a {
@@ -17,7 +18,10 @@
 
 .header .title-group{
     padding-left: 5px;
-    color: rgb(255, 255, 255);
+    color: rgb(255, 0, 0);
+    font-family: 'Rockwell', Arial, sans-serif;
+    font-size: 35px;
+    background-color: rgb(20, 20, 20);
 }
 
 .header .title-group i {
@@ -27,9 +31,4 @@
 }
 p{
     color: rgb(250, 0, 42);
-}
-span
-{
-    font-family: 'Rockwell', Arial, sans-serif;
-    font-size: 25px;
 }

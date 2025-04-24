@@ -1,6 +1,7 @@
 export interface Product
 {
-    id?: number
-    name: string
-    price: number
+    proId?: number
+    proNome: string
+    proPrecoCusto: number
+    proPrecoVenda: number
 }

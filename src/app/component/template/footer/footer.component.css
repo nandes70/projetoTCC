@@ -6,11 +6,13 @@
     display: flex;
     /*coloca no final da linha. sendo no lado direiro parte inferior*/
     justify-content: flex-end;
+    background-image: url('https://super.abril.com.br/wp-content/uploads/2016/09/super_imgmelhores-games_25.jpg?crop=1&resize=1212,909');
 }
 
 .footer > span{
     font-size: 30px;
     font-weight: 300;
-    color: rgb(255, 255, 255);
-    font-family: 'Lucida fax', Arial, sans-serif;
+    color: rgb(255, 0, 0);
+    font-family: 'Rockwell', Arial, sans-serif;
+    background-color: rgb(20, 20, 20);
 }
