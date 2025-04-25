@@ -1,48 +1,63 @@
-import { Injectable } from '@angular/core';
-import { Product } from './product.model';
-import { Observable } from 'rxjs';
-import { MatSnackBar } from '@angular/material/snack-bar';
-import { HttpClient } from '@angular/common/http';
+// Importa os módulos necessários para o serviço
+import { Injectable } from '@angular/core';  /*Permite usar a injeção de dependência*/
+import { Product } from './product.model'; /*Importa o modelo de produto (interface)*/
+import { Observable } from 'rxjs'; /*Importa o tipo Observable do RxJS, usado para lidar com dados assíncronos*/
+import { MatSnackBar } from '@angular/material/snack-bar'; /*Importa a MatSnackBar do Angular Material, usada para mostrar mensagens*/
+import { HttpClient } from '@angular/common/http'; /*Importa o HttpClient para fazer requisições HTTP*/
 
+/*Decorador que marca essa classe como um serviço Angular*/
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root'  /*Tornando o serviço disponível em toda a aplicação (injeção global)*/
 })
-export class ProductService 
-{
+export class ProductService {
+  /*URL base da API para comunicação com o backend*/
   baseUrl = "http://localhost:8080/produtos"
 
+  /*Construtor que injeta o MatSnackBar (para mensagens) e HttpClient (para requisições HTTP)*/
   constructor(private snackBar: MatSnackBar, private http: HttpClient) {}
 
-  showMessage(msg: string): void
-  {
-    this.snackBar.open(msg, 'X',
-      {
-        duration: 3000,
-        horizontalPosition: "right",
-        verticalPosition: "top"
-      })
+  /*Método para mostrar uma mensagem com um SnackBar (tipo um pop-up)*/
+  showMessage(msg: string): void {
+    this.snackBar.open(msg, 'X', {
+      duration: 3000, /*Tempo em que a mensagem fica visível*/
+      horizontalPosition: "right", /*Posição horizontal do SnackBar*/
+      verticalPosition: "top" /*Posição vertical do SnackBar*/
+    })
   }
-  create(product: Product): Observable<Product>
-  {
+
+  /*/Método para criar um produto no backend*/
+  create(product: Product): Observable<Product> {
+    /*Faz uma requisição POST para a API para criar um novo produto*/
     return this.http.post<Product>(this.baseUrl, product)
   }
-  read(): Observable<Product[]>
-  {
+
+  /*Método para ler todos os produtos*/
+  read(): Observable<Product[]> {
+    /*Faz uma requisição GET para pegar todos os produtos*/
     return this.http.get<Product[]>(this.baseUrl)
   }
-  readById(proId: string): Observable<Product>
-  {
+
+  /*Método para ler um produto específico pelo seu ID*/
+  readById(proId: string): Observable<Product> {
+    /*ria a URL de requisição com o ID do produto*/
     const url = `${this.baseUrl}/${proId}`
+    /*Faz uma requisição GET para pegar um único produto*/
     return this.http.get<Product>(url)
   }
-  update(product: Product): Observable<Product>
-  {
+
+  /*Método para atualizar um produto existente*/
+  update(product: Product): Observable<Product> {
+    /*Cria a URL de requisição com o ID do produto*/
     const url = `${this.baseUrl}/${product.proId}`
+    /*Faz uma requisição PUT para atualizar o produto no backend*/
     return this.http.put<Product>(url, product)
   }
-  delete(proId: number): Observable<Product>
-  {
+
+  /*Método para excluir um produto*/
+  delete(proId: number): Observable<Product> {
+    /*Cria a URL de requisição com o ID do produto*/
     const url = `${this.baseUrl}/${proId}`
+    /*Faz uma requisição DELETE para excluir o produto*/
     return this.http.delete<Product>(url)
   }
 }

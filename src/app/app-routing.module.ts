@@ -7,6 +7,7 @@ import { ProductCreateComponent } from './component/product/product-create/produ
 import { ClienteCrudComponent } from './views/cliente-crud/cliente-crud.component';
 import { ClienteCreateComponent } from './component/cliente/cliente-create/cliente-create.component';
 import { FornecedorCreateComponent } from './component/fornecedor/fornecedor-create/fornecedor-create.component';
+import { ProductUpdateComponent } from './component/product/product-update/product-update.component';
 
 const routes: Routes = [
 {
@@ -21,6 +22,11 @@ const routes: Routes = [
 {
   path: "products/create",
   component: ProductCreateComponent
+},
+/*-----*/
+{
+  path: "products/update/:id",
+  component: ProductUpdateComponent
 },
 ///////////////////////////products FIM
 

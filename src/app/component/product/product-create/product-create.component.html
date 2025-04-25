@@ -1,22 +1,38 @@
+<!-- Cria um card estilizado com Angular Material -->
 <mat-card>
+
+    <!-- Título do card: aparece no topo com estilo -->
     <mat-card-title>Novo Produto</mat-card-title>
+
+    <!-- Início do formulário de cadastro -->
     <form>
+
+        <!-- Campo de formulário com estilização do Angular Material -->
         <mat-form-field>
+            <!-- Campo de input para o nome do produto -->
             <input matInput placeholder="Nome" [(ngModel)]="product.proNome" name="proNome">
         </mat-form-field>
+
         <mat-form-field>
-            <input matInput placeholder="Preco de Custo" [(ngModel)]="product.proPrecoCusto" name="proPrecoCusto">
+            <!-- Campo de input para o preço de custo -->
+            <input matInput placeholder="Preco de Custo (R$)" [(ngModel)]="product.proPrecoCusto" name="proPrecoCusto">
         </mat-form-field>
+
         <mat-form-field>
-            <input matInput placeholder="Preco de Venda" [(ngModel)]="product.proPrecoVenda" name="proPrecoVenda">
+            <!-- Campo de input para o preço de venda -->
+            <input matInput placeholder="Preco de Venda (R$)" [(ngModel)]="product.proPrecoVenda" name="proPrecoVenda">
         </mat-form-field>
+
     </form>
 
+    <!-- Botão para salvar os dados do produto, chama a função createProduct() -->
     <button mat-raised-button (click)="createProduct()" color="primary">
         Salvar
     </button>
-   
+
+    <!-- Botão para cancelar, chama a função cancel() -->
     <button mat-raised-button (click)="cancel()">
         Cancelar
     </button>
+
 </mat-card>
