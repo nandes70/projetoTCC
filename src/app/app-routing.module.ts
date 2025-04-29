@@ -8,6 +8,7 @@ import { ClienteCrudComponent } from './views/cliente-crud/cliente-crud.componen
 import { ClienteCreateComponent } from './component/cliente/cliente-create/cliente-create.component';
 import { FornecedorCreateComponent } from './component/fornecedor/fornecedor-create/fornecedor-create.component';
 import { ProductUpdateComponent } from './component/product/product-update/product-update.component';
+import { ProductDeleteComponent } from './component/product/product-delete/product-delete.component';
 
 const routes: Routes = [
 {
@@ -27,6 +28,11 @@ const routes: Routes = [
 {
   path: "products/update/:id",
   component: ProductUpdateComponent
+},
+/*-----*/
+{
+  path: "products/delete/:id",
+  component: ProductDeleteComponent
 },
 ///////////////////////////products FIM
 

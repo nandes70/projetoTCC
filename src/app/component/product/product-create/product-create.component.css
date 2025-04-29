@@ -6,8 +6,8 @@ form
 button
 {
     margin: 20px 15px 0px 0px; /*Isso define o espaçamento externo (fora do botão)*/
-    background-color: rgb(190, 223, 245); /* aqui tá escolhendo a cor de fundo do botão com código*/
-    color: rgb(0, 0, 0); /*a cor do texto do botão*/
+    background-color: rgb(25, 45, 82); /* aqui tá escolhendo a cor de fundo do botão com código*/
+    color: rgb(255, 255, 255); /*a cor do texto do botão*/
     font-family: 'Rockwell', Arial, sans-serif; /*tá escolhendo a fonte do texto*/
-    font-size: 20px; /*Isso deixa o texto do botão com 20 pixels de tamanho*/
+    font-size: 26px; /*Isso deixa o texto do botão com 20 pixels de tamanho*/
 }
