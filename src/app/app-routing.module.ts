@@ -9,6 +9,8 @@ import { ClienteCreateComponent } from './component/cliente/cliente-create/clien
 import { FornecedorCreateComponent } from './component/fornecedor/fornecedor-create/fornecedor-create.component';
 import { ProductUpdateComponent } from './component/product/product-update/product-update.component';
 import { ProductDeleteComponent } from './component/product/product-delete/product-delete.component';
+import { FormaPagamentoCrudComponent } from './views/forma-pagamento-crud/forma-pagamento-crud.component';
+import { FormaPagamentoCreateComponent } from './component/formaPagamento/forma-pagamento-create/forma-pagamento-create.component';
 
 const routes: Routes = [
 {
@@ -37,14 +39,14 @@ const routes: Routes = [
 ///////////////////////////products FIM
 
 ///////////////////////////formaPagamento
-/*{
-  path: "formaPagamento",
+{
+  path: "formapagamentos",
   component: FormaPagamentoCrudComponent
 },
 {
   path: "formaPagamento/create",
   component: FormaPagamentoCreateComponent
-},*/
+},
 ///////////////////////////formaPagamento FIM
 
 ///////////////////////////fornecedores

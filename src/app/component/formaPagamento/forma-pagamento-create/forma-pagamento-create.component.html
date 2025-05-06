@@ -1,0 +1,35 @@
+<!-- Cria um card estilizado com Angular Material -->
+<mat-card>
+
+    <!-- Título do card: aparece no topo com estilo -->
+    <mat-card-title>Nova Forma de Pagamento</mat-card-title>
+
+    <!-- Início do formulário de cadastro -->
+    <form>
+
+        <!-- Campo de formulário com estilização do Angular Material -->
+        <mat-form-field>
+            <!-- Campo de input para o nome do produto -->
+            <input matInput placeholder="Descrição" [(ngModel)]="formaPagamento.fpgDescricao" name="fpgDescricao">
+        </mat-form-field>
+
+        <mat-form-field>
+            <!-- Campo de input para o preço de custo -->
+            <input matInput placeholder="Status" [(ngModel)]="formaPagamento.fpgStatus" name="fpgStatus">
+        </mat-form-field>
+
+    
+
+    </form>
+
+    <!-- Botão para salvar os dados do produto, chama a função createProduct() -->
+    <button mat-raised-button (click)="createFormaPagamento()" color="primary">
+        Salvar
+    </button>
+
+    <!-- Botão para cancelar, chama a função cancel() -->
+    <button mat-raised-button (click)="cancel()">
+        Cancelar
+    </button>
+
+</mat-card>

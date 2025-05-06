@@ -39,6 +39,7 @@ import { MatTableModule } from '@angular/material/table';
 import { ProductUpdateComponent } from './component/product/product-update/product-update.component';
 import { ProductDeleteComponent } from './component/product/product-delete/product-delete.component';
 import { FormaPagamentoCrudComponent } from './views/forma-pagamento-crud/forma-pagamento-crud.component';
+import { FormaPagamentoCreateComponent } from './component/formaPagamento/forma-pagamento-create/forma-pagamento-create.component';
 import { FormaPagamentoReadComponent } from './component/formaPagamento/forma-pagamento-read/forma-pagamento-read.component';
 
 @NgModule({
@@ -64,6 +65,7 @@ import { FormaPagamentoReadComponent } from './component/formaPagamento/forma-pa
     ProductUpdateComponent,
     ProductDeleteComponent,
     FormaPagamentoCrudComponent,
+    FormaPagamentoCreateComponent,
     FormaPagamentoReadComponent
   ],
   imports: [

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormaPagamento } from '../forma-pagamento.model';
+import { FormaPagamento } from '../formaPagamento.model';
 import { FormaPagamentoService } from '../forma-pagamento.service';
 
 @Component({
@@ -8,15 +8,26 @@ import { FormaPagamentoService } from '../forma-pagamento.service';
   styleUrls: ['./forma-pagamento-read.component.css']
 })
 export class FormaPagamentoReadComponent {
-  formaPagamentos!: FormaPagamento[];
-  displayedColumns = ['fpgId', 'fpgDescricao', 'fpgStatus', 'action'];
 
-  constructor(private formaPagamentoService: FormaPagamentoService) {}
+  // Declara um array de produtos, que vai ser preenchido depois
+  formaPagamentos!: FormaPagamento[]
 
+  // Define as colunas visíveis da tabela (em ordem)
+  displayedColumns = ['fpgId', 'fpgDescricao', 'fpgStatus', 'action']
+
+  // Injeta o ProductService pra poder acessar os métodos dele
+  constructor(private formaPagamentoService: FormaPagamentoService) { }
+
+  // Método chamado quando o componente é iniciado
   ngOnInit(): void {
+    // Chama o método 'read' do service, que busca os produtos
     this.formaPagamentoService.read().subscribe(formaPagamentos => {
-      this.formaPagamentos = formaPagamentos;
-      console.log(formaPagamentos);
-    });
+      // Quando os produtos forem recebidos, salva eles na variável
+      this.formaPagamentos = formaPagamentos
+
+      // Mostra os dados no console (pra debug)
+      console.log(formaPagamentos)
+    })
   }
+
 }
