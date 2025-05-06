@@ -41,6 +41,8 @@ import { ProductDeleteComponent } from './component/product/product-delete/produ
 import { FormaPagamentoCrudComponent } from './views/forma-pagamento-crud/forma-pagamento-crud.component';
 import { FormaPagamentoCreateComponent } from './component/formaPagamento/forma-pagamento-create/forma-pagamento-create.component';
 import { FormaPagamentoReadComponent } from './component/formaPagamento/forma-pagamento-read/forma-pagamento-read.component';
+import { FormaPagamentoUpdateComponent } from './component/formaPagamento/forma-pagamento-update/forma-pagamento-update.component';
+import { FormaPagamentoDeleteComponent } from './component/formaPagamento/forma-pagamento-delete/forma-pagamento-delete.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +68,9 @@ import { FormaPagamentoReadComponent } from './component/formaPagamento/forma-pa
     ProductDeleteComponent,
     FormaPagamentoCrudComponent,
     FormaPagamentoCreateComponent,
-    FormaPagamentoReadComponent
+    FormaPagamentoReadComponent,
+    FormaPagamentoUpdateComponent,
+    FormaPagamentoDeleteComponent
   ],
   imports: [
     BrowserModule,

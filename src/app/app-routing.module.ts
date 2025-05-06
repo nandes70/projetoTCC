@@ -11,6 +11,7 @@ import { ProductUpdateComponent } from './component/product/product-update/produ
 import { ProductDeleteComponent } from './component/product/product-delete/product-delete.component';
 import { FormaPagamentoCrudComponent } from './views/forma-pagamento-crud/forma-pagamento-crud.component';
 import { FormaPagamentoCreateComponent } from './component/formaPagamento/forma-pagamento-create/forma-pagamento-create.component';
+import { FormaPagamentoDeleteComponent } from './component/formaPagamento/forma-pagamento-delete/forma-pagamento-delete.component';
 
 const routes: Routes = [
 {
@@ -22,6 +23,7 @@ const routes: Routes = [
   path: "products",
   component: ProductCrudComponent
 },
+/*-----*/
 {
   path: "products/create",
   component: ProductCreateComponent
@@ -40,12 +42,16 @@ const routes: Routes = [
 
 ///////////////////////////formaPagamento
 {
-  path: "formapagamentos",
+  path: "formaPagamento",
   component: FormaPagamentoCrudComponent
 },
 {
   path: "formaPagamento/create",
   component: FormaPagamentoCreateComponent
+},
+{
+  path: "formaPagamento/delete/:id",
+  component: FormaPagamentoDeleteComponent
 },
 ///////////////////////////formaPagamento FIM
 

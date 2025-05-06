@@ -1,16 +1,16 @@
-table{
-    width: 100%; /*A tabela vai ocupar toda a largura disponível do container. Esticadona, poderosa, dominando tudo.*/
+table {
+    width: 100%;
 }
 
-.edit > i{
-    color: #d9cd26; /*a cor do texto*/
+.edit > i {
+    color: #d9cd26;
 }
 
-.delete > i{
-    color: #e35e6b; /*a cor do texto*/
+.delete > i {
+    color: #e35e6b;
 }
-th
-{
-    font-family: 'Rockwell', Arial, sans-serif; /*tá escolhendo a fonte do texto*/
-    font-size: 30px; /*Isso deixa o texto do botão com 20 pixels de tamanho*/
+
+th {
+    font-family: 'Rockwell', Arial, sans-serif;
+    font-size: 30px;
 }
