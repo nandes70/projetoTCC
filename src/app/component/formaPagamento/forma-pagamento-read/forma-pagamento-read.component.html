@@ -27,14 +27,14 @@
         <!-- Célula com os ícones de editar e deletar -->                    
         <td mat-cell *matCellDef="let row">
             <!-- Link que leva pra página de edição do produto com o ID correspondente -->
-            <a routerLink="/products/update/{{ row.fpgId }}" class="edit">
+            <a routerLink="/formaPagamento/update/{{ row.fpgId }}" class="edit">
                 <i class="material-icons">
                     edit
                 </i>
             </a>
             <!-- Link que leva pra página de exclusão do produto com o ID correspondente -->
 
-            <a routerLink="/products/delete/{{ row.fpgId }}" class="delete">
+            <a routerLink="/formaPagamento/delete/{{ row.fpgId }}" class="delete">
                 <i class="material-icons">
                     delete
                 </i>
