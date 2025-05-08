@@ -1,1 +1,19 @@
-<p>forma-pagamento-update works!</p>
+<mat-card>
+    <mat-card-title>Editar a Forma de Pagamento</mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Descrição" [(ngModel)]="formaPagamento.fpgDescricao" name="fpgDescricao">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Status" [(ngModel)]="formaPagamento.fpgStatus" name="fpgStatus">
+        </mat-form-field>
+    </form>
+
+    <button mat-raised-button (click)="updateFormaPagamento()" color="primary">
+        Atualizar
+    </button>
+   
+    <button mat-raised-button (click)="cancel()">
+        Cancelar
+    </button>
+</mat-card>
