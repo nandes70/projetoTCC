@@ -1,13 +1,15 @@
-form
-{
-    display: flex; /* Vira um container flexível */
-    flex-direction: column; /* Os elementos filhos vão ficar empilhados verticalmente */
+.fundo1{
+    background: linear-gradient(to bottom, rgb(0, 0, 0), #000000);
 }
-button
-{
-    margin: 20px 15px 0px 0px; /*Isso define o espaçamento externo (fora do botão)*/
-    background-color: rgb(25, 45, 82); /* aqui tá escolhendo a cor de fundo do botão com código*/
-    color: rgb(255, 255, 255); /*a cor do texto do botão*/
-    font-family: 'Rockwell', Arial, sans-serif; /*tá escolhendo a fonte do texto*/
-    font-size: 26px; /*Isso deixa o texto do botão com 20 pixels de tamanho*/
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+button{
+    margin: 20px 15px 0px 0px;
+    color: rgb(255, 255, 255);
+    font-family: 'Rockwell', Arial, sans-serif;
+    font-size: 26px;
+    background: linear-gradient(to bottom, rgb(117, 4, 4), #eb0a0a);
 }

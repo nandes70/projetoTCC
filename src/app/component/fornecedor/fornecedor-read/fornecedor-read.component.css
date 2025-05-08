@@ -1,5 +1,6 @@
 table{
     width: 100%;
+    background: linear-gradient(to bottom, rgb(117, 4, 4), #eb0a0a);
 }
 
 .edit > i{

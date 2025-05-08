@@ -1,12 +1,15 @@
-form {
+.fundo1{
+    background: linear-gradient(to bottom, rgb(0, 0, 0), #000000);
+}
+form{
     display: flex;
     flex-direction: column;
 }
 
-button {
+button{
     margin: 20px 15px 0px 0px;
-    background-color: rgb(25, 45, 82);
     color: rgb(255, 255, 255);
     font-family: 'Rockwell', Arial, sans-serif;
     font-size: 26px;
+    background: linear-gradient(to bottom, rgb(117, 4, 4), #eb0a0a);
 }
