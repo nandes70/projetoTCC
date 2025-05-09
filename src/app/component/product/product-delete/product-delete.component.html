@@ -1,15 +1,17 @@
 <mat-card class="fundo1">
     <mat-card-title>Excluir Produto</mat-card-title>
     <form>
-        <mat-form-field>
+        <div class="form-grid"> 
+        <mat-form-field appearance="fill">
             <input matInput placeholder="Nome" [value]="product.proNome" name="proNome" disabled>
         </mat-form-field>
-        <mat-form-field>
+        <mat-form-field appearance="fill">
             <input matInput placeholder="Preço de custo(R$)" [value]="product.proPrecoCusto" name="proPrecoCusto" disabled>
         </mat-form-field>
-        <mat-form-field>
+        <mat-form-field appearance="fill">
             <input matInput placeholder="Preço de venda (R$)" [value]="product.proPrecoVenda" name="proPrecoVenda" disabled>
         </mat-form-field>
+        </div>
     </form>
 
     <button mat-raised-button (click)="deleteProduct()" color="warn">

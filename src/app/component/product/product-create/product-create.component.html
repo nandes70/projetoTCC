@@ -7,22 +7,47 @@
     <!-- Início do formulário de cadastro -->
     <form>
 
-        <!-- Campo de formulário com estilização do Angular Material -->
-        <mat-form-field>
+      <div class="form-grid"> 
+      <!-- Campo de formulário com estilização do Angular Material -->
+        <mat-form-field appearance="fill">
             <!-- Campo de input para o nome do produto -->
             <input matInput placeholder="Nome" [(ngModel)]="product.proNome" name="proNome">
         </mat-form-field>
 
-        <mat-form-field>
+        <mat-form-field appearance="fill">
             <!-- Campo de input para o preço de custo -->
             <input matInput placeholder="Preco de Custo (R$)" [(ngModel)]="product.proPrecoCusto" name="proPrecoCusto">
         </mat-form-field>
 
-        <mat-form-field>
+        <mat-form-field appearance="fill">
             <!-- Campo de input para o preço de venda -->
             <input matInput placeholder="Preco de Venda (R$)" [(ngModel)]="product.proPrecoVenda" name="proPrecoVenda">
         </mat-form-field>
 
+        <mat-form-field appearance="fill">
+          <input matInput placeholder="Marca" [(ngModel)]="product.proMarca" name="proMarca">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <input matInput placeholder="Modelo" [(ngModel)]="product.proModelo" name="proModelo">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <input matInput placeholder="Estoque" [(ngModel)]="product.proEstoque" name="proEstoque">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <input matInput placeholder="Cor" [(ngModel)]="product.proCor" name="proCor">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <input matInput placeholder="Material" [(ngModel)]="product.proMaterial" name="proMaterial">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <input matInput placeholder="Fabricante" [(ngModel)]="product.proFabricante" name="proFabricante">
+        </mat-form-field>
+      </div> 
     </form>
 
     <!-- Botão para salvar os dados do produto, chama a função createProduct() -->

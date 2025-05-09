@@ -4,6 +4,7 @@
 form{
     display: flex;
     flex-direction: column;
+    padding: 10px;
 }
 
 button{
@@ -12,4 +13,18 @@ button{
     font-family: 'Rockwell', Arial, sans-serif;
     font-size: 26px;
     background: linear-gradient(to bottom, rgb(117, 4, 4), #eb0a0a);
+}
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 16px;
+
+@media (max-width: 768px) {
+  .form-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+}
+mat-form-field{
+    width: 95%;
 }
