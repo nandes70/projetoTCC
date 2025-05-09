@@ -1,6 +1,6 @@
 table{
     width: 100%; /*A tabela vai ocupar toda a largura disponível do container. Esticadona, poderosa, dominando tudo.*/
-    background: linear-gradient(to bottom, rgb(117, 4, 4), #eb0a0a); /* Vermelho Escuro escuro para Vermelho vibrante */
+   /* background: linear-gradient(to bottom, rgb(117, 4, 4), #eb0a0a);*/ /* Vermelho Escuro escuro para Vermelho vibrante */
 }
 
 .edit > i{
