@@ -14,19 +14,19 @@ export class ProductCreateComponent implements OnInit {
   // Declara um objeto do tipo Product com valores iniciais
   product: Product = {
     proNome: '',
-    proPrecoCusto: 0,
-    proPrecoVenda: 0,
+    proPrecoCusto: null,
+    proPrecoVenda: null,
     proMarca: '',
     proModelo: '',
-    proEstoque: 0,
+    proEstoque: null,
     proCor: '',
     proMaterial: '',
     proFabricante: '',
     proDescricao: '',
     proCategoria: '',
     proCodigoBarras: '',
-    proDataCadastro: new Date().toISOString(),
-    proDataAtualizacao: new Date().toISOString(),
+    proDataCadastro: null,
+    proDataAtualizacao: null,
     proAtivo: true
   }
 

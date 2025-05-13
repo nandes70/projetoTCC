@@ -16,12 +16,13 @@
 
         <mat-form-field appearance="fill">
             <!-- Campo de input para o preço de custo -->
-            <input matInput placeholder="Preco de Custo (R$)" [(ngModel)]="product.proPrecoCusto" name="proPrecoCusto">
+            <input matInput type="number" placeholder="Preco de Custo (R$)" [(ngModel)]="product.proPrecoCusto" name="proPrecoCusto">
+           
         </mat-form-field>
 
         <mat-form-field appearance="fill">
             <!-- Campo de input para o preço de venda -->
-            <input matInput placeholder="Preco de Venda (R$)" [(ngModel)]="product.proPrecoVenda" name="proPrecoVenda">
+            <input matInput type="number" placeholder="Preco de Venda (R$)" [(ngModel)]="product.proPrecoVenda" name="proPrecoVenda">
         </mat-form-field>
 
         <mat-form-field appearance="fill">
@@ -37,7 +38,7 @@
         </mat-form-field>
 
         <mat-form-field appearance="fill">
-          <input matInput placeholder="Estoque" [(ngModel)]="product.proEstoque" name="proEstoque">
+          <input matInput type="number" placeholder="Estoque" [(ngModel)]="product.proEstoque" name="proEstoque">
         </mat-form-field>
 
         <mat-form-field appearance="fill">
@@ -59,19 +60,19 @@
         <mat-form-field>
           <mat-label>Produto Ativo?</mat-label>
           <mat-select [(ngModel)]="product.proAtivo" name="ativo">
-            <mat-option [value]="true">Sim</mat-option>
-            <mat-option [value]="false">Não</mat-option>
+            <mat-option [value]="true">Ativo</mat-option>
+            <mat-option [value]="false">Desativo</mat-option>
           </mat-select>
         </mat-form-field>
 
         <mat-form-field>
-          <input matInput [matDatepicker]="picker1" placeholder="Data de Cadastro" [(ngModel)]="product.proDataCadastro" name="proDataCadastro">
+          <input matInput type="string" [matDatepicker]="picker1" placeholder="Data de Cadastro" [(ngModel)]="product.proDataCadastro" name="proDataCadastro">
           <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
           <mat-datepicker #picker1></mat-datepicker>
         </mat-form-field>
 
         <mat-form-field>
-          <input matInput [matDatepicker]="picker2" placeholder="Data de Atualização" [(ngModel)]="product.proDataAtualizacao" name="proDataAtualizacao">
+          <input matInput type="string" [matDatepicker]="picker2" placeholder="Data de Atualização" [(ngModel)]="product.proDataAtualizacao" name="proDataAtualizacao">
           <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
           <mat-datepicker #picker2></mat-datepicker>
         </mat-form-field>

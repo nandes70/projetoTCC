@@ -2,18 +2,18 @@ export interface Product
 {
     proId?: number
     proNome: string
-    proPrecoCusto: number
-    proPrecoVenda: number
+    proPrecoCusto: number | null
+    proPrecoVenda: number | null
     proMarca: string
     proModelo: string
-    proEstoque: number
+    proEstoque: number | null
     proCor: string
     proMaterial: string
     proFabricante: string
     proDescricao: string
     proCategoria: string
     proCodigoBarras: string
-    proDataCadastro: string
-    proDataAtualizacao: string
+    proDataCadastro: string | null
+    proDataAtualizacao: string | null
     proAtivo: boolean
 }
