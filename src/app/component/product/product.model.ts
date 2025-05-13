@@ -10,4 +10,10 @@ export interface Product
     proCor: string
     proMaterial: string
     proFabricante: string
+    proDescricao: string
+    proCategoria: string
+    proCodigoBarras: string
+    proDataCadastro: string
+    proDataAtualizacao: string
+    proAtivo: boolean
 }

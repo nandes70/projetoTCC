@@ -44,6 +44,11 @@ import { FormaPagamentoReadComponent } from './component/formaPagamento/forma-pa
 import { FormaPagamentoUpdateComponent } from './component/formaPagamento/forma-pagamento-update/forma-pagamento-update.component';
 import { FormaPagamentoDeleteComponent } from './component/formaPagamento/forma-pagamento-delete/forma-pagamento-delete.component';
 
+// Importações necessárias para corrigir os erros:
+import { MatSelectModule } from '@angular/material/select';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -85,7 +90,10 @@ import { FormaPagamentoDeleteComponent } from './component/formaPagamento/forma-
     MatInputModule,
     FormsModule,
     HttpClientModule,
-    MatTableModule 
+    MatTableModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule  
   ],
   providers: [],
   bootstrap: [AppComponent]

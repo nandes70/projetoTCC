@@ -17,7 +17,7 @@ export class ProductReadComponent {
   products!: Product[]
 
   // Define as colunas visíveis da tabela (em ordem)
-  displayedColumns = ['proId', 'proNome', 'proPrecoCusto', 'proPrecoVenda', 'proMarca', 'proModelo', 'proEstoque', 'proCor', 'proMaterial', 'proFabricante', 'action']
+  displayedColumns = ['proId', 'proNome', 'proPrecoCusto', 'proPrecoVenda', 'proMarca', 'proAtivo', 'action']
 
   // Injeta o ProductService pra poder acessar os métodos dele
   constructor(private productService: ProductService) { }

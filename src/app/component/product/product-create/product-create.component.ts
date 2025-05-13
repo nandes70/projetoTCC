@@ -21,7 +21,13 @@ export class ProductCreateComponent implements OnInit {
     proEstoque: 0,
     proCor: '',
     proMaterial: '',
-    proFabricante: ''
+    proFabricante: '',
+    proDescricao: '',
+    proCategoria: '',
+    proCodigoBarras: '',
+    proDataCadastro: new Date().toISOString(),
+    proDataAtualizacao: new Date().toISOString(),
+    proAtivo: true
   }
 
   // Injeta o ProductService e o Router no construtor
