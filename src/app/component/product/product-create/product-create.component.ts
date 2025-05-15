@@ -14,9 +14,18 @@ export class ProductCreateComponent implements OnInit {
   // Declara um objeto do tipo Product com valores iniciais
   product: Product = {
     proNome: '',
-    proPrecoCusto: 0,
-    proPrecoVenda: 0
-  }
+    proPrecoCusto: null,
+    proPrecoVenda: null,
+    proDescricao: '',
+    proEstoque: null,
+    proCategoria: '',
+    proCodigoBarra: '',
+    proMarca: '',
+    proStatus: null, // true = ativo, false = desativado
+    proFabricante: '',
+    proAplicacao: '',
+    dataCadastro: new Date().toISOString()
+  };
 
   // Injeta o ProductService e o Router no construtor
   constructor(private productService: ProductService,
