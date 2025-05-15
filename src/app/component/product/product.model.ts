@@ -15,5 +15,5 @@ export interface Product
     proCodigoBarras: string
     proDataCadastro: string | null
     proDataAtualizacao: string | null
-    proAtivo: boolean
+    proAtivo: string
 }

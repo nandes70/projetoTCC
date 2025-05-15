@@ -60,21 +60,15 @@
         <mat-form-field>
           <mat-label>Produto Ativo?</mat-label>
           <mat-select [(ngModel)]="product.proAtivo" name="ativo">
-            <mat-option [value]="true">Ativo</mat-option>
-            <mat-option [value]="false">Desativo</mat-option>
+              <mat-option value="Ativo">Ativo</mat-option>
+              <mat-option value="Desativo">Desativo</mat-option>
           </mat-select>
-        </mat-form-field>
+      </mat-form-field>
 
         <mat-form-field>
           <input matInput type="string" [matDatepicker]="picker1" placeholder="Data de Cadastro" [(ngModel)]="product.proDataCadastro" name="proDataCadastro">
           <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
           <mat-datepicker #picker1></mat-datepicker>
-        </mat-form-field>
-
-        <mat-form-field>
-          <input matInput type="string" [matDatepicker]="picker2" placeholder="Data de Atualização" [(ngModel)]="product.proDataAtualizacao" name="proDataAtualizacao">
-          <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
-          <mat-datepicker #picker2></mat-datepicker>
         </mat-form-field>
 
         <mat-form-field appearance="fill">
