@@ -6,9 +6,24 @@
       <td mat-cell *matCellDef="let row">{{row.fpgId}}</td>
     </ng-container>
 
+    <ng-container matColumnDef="fpgTipo">
+      <th mat-header-cell *matHeaderCellDef>"Tipo (A Vista ou A Prazo)"</th>
+      <td mat-cell *matCellDef="let row">{{row.fpgTipo}}</td>
+    </ng-container>
+
     <ng-container matColumnDef="fpgDescricao">
       <th mat-header-cell *matHeaderCellDef>Descrição</th>
       <td mat-cell *matCellDef="let row">{{row.fpgDescricao}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="fpgPermiteParcelamento">
+      <th mat-header-cell *matHeaderCellDef>Permite Parcelamento</th>
+      <td mat-cell *matCellDef="let row">{{row.fpgPermiteParcelamento}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="fpgQtdParcela">
+      <th mat-header-cell *matHeaderCellDef>Quantidade de Parcelas</th>
+      <td mat-cell *matCellDef="let row">{{row.fpgQtdParcela}}</td>
     </ng-container>
 
     <ng-container matColumnDef="fpgStatus">

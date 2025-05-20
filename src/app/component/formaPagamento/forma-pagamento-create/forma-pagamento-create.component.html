@@ -4,6 +4,10 @@
     <form>
       <div class="form-grid">
       <mat-form-field appearance="fill">
+          <input matInput placeholder="Tipo (A Vista ou A Prazo)" [(ngModel)]="formaPagamento.fpgTipo" name="fpgTipo">
+      </mat-form-field>
+      
+      <mat-form-field appearance="fill">
         <input matInput placeholder="Descrição" [(ngModel)]="formaPagamento.fpgDescricao" name="fpgDescricao">
       </mat-form-field>
   
@@ -29,10 +33,6 @@
 
       <mat-form-field appearance="fill">
         <input matInput type="number" placeholder="Quantidade de Parcela" [(ngModel)]="formaPagamento.fpgQtdParcela" name="fpgQtdParcela">
-      </mat-form-field>
-
-      <mat-form-field appearance="fill">
-        <input matInput placeholder="Tipo (A Vista ou A Prazo)" [(ngModel)]="formaPagamento.fpgTipo" name="fpgTipo">
       </mat-form-field>
 
       <mat-form-field appearance="fill">

@@ -1,14 +1,47 @@
 <mat-card class="fundo1">
     <mat-card-title>Excluir Forma de Pagamento</mat-card-title>
-    <form>
-        <mat-form-field>
-            <input matInput placeholder="Descrição" [value]="formaPagamento.fpgDescricao" name="fpgDescricao" disabled>
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="Status" [value]="formaPagamento.fpgStatus" name="fpgStatus" disabled>
-        </mat-form-field>
-    </form>
 
+    <form>
+        <div class="form-grid">
+          <mat-form-field appearance="fill" disabled>
+            <input matInput placeholder="Tipo (A Vista ou A Prazo)" [value]="formaPagamento.fpgTipo" name="fpgTipo" disabled>
+          </mat-form-field>
+      
+          <mat-form-field appearance="fill" disabled>
+            <input matInput placeholder="Descrição" [value]="formaPagamento.fpgDescricao" name="fpgDescricao" disabled>
+          </mat-form-field>
+      
+          <mat-form-field appearance="fill" disabled>
+            <mat-label>Forma de Pagamento Ativo?</mat-label>
+            <mat-select [value]="formaPagamento.fpgStatus" name="ativo" disabled>
+              <mat-option value="Ativo">Ativo</mat-option>
+              <mat-option value="Desativo">Desativo</mat-option>
+            </mat-select>
+          </mat-form-field>
+      
+          <mat-form-field appearance="fill" disabled>
+            <mat-label>Permite Parcelamento</mat-label>
+            <mat-select [value]="formaPagamento.fpgPermiteParcelamento" name="Permite de Parcelamento" disabled>
+              <mat-option value="Sim">Sim</mat-option>
+              <mat-option value="Não">Não</mat-option>
+            </mat-select>
+          </mat-form-field>
+      
+          <mat-form-field appearance="fill" disabled>
+            <input matInput type="number" placeholder="Número Máximo de Parcelas" [value]="formaPagamento.fpgNumeroMaximoParcelas" name="fpgNumeroMaximoParcelas" disabled>
+          </mat-form-field>
+      
+          <mat-form-field appearance="fill" disabled>
+            <input matInput type="number" placeholder="Quantidade de Parcelas" [value]="formaPagamento.fpgQtdParcela" name="fpgQtdParcela" disabled>
+          </mat-form-field>
+      
+          <mat-form-field appearance="fill" disabled>
+            <input matInput type="number" placeholder="Taxa Adicional" [value]="formaPagamento.fpgTaxaAdiciona" name="fpgTaxaAdiciona" disabled>
+          </mat-form-field>
+        </div>
+      
+        </form>
+      
     <button mat-raised-button (click)="deleteFormaPagamento()" color="warn">
         Excluir
     </button>
