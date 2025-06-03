@@ -12,5 +12,5 @@ export interface Product
     proStatus: boolean | null
     proFabricante: string
     proAplicacao: string
-    dataCadastro: string
+    proDataCadastro: string
 }

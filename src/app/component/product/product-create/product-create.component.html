@@ -19,18 +19,25 @@
         </mat-form-field>
 
         <mat-form-field appearance="fill">
-            <!-- Campo de input para o nome da Estoque -->
-            <input matInput type="number" placeholder="Estoque" [(ngModel)]="product.proEstoque" name="proEstoque">
-        </mat-form-field>
-
-        <mat-form-field appearance="fill">
             <!-- Campo de input para o nome da Categoria -->
             <input matInput placeholder="Categoria" [(ngModel)]="product.proCategoria" name="proCategoria">
         </mat-form-field>
 
         <mat-form-field appearance="fill">
+            <!-- Campo de input para o nome da Estoque -->
+            <input matInput type="number" placeholder="Estoque" [(ngModel)]="product.proEstoque" name="proEstoque">
+        </mat-form-field>
+
+       
+
+        <mat-form-field appearance="fill">
             <!-- Campo de input para o nome da Codigo de Barras -->
             <input matInput placeholder="Codigo de Barra" [(ngModel)]="product.proCodigoBarra" name="proCodigoBarra">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <!-- Campo de input para o nome da Aplicação -->
+            <input matInput placeholder="Aplicação" [(ngModel)]="product.proAplicacao" name="proAplicacao">
         </mat-form-field>
 
         <mat-form-field appearance="fill">
@@ -62,7 +69,7 @@
         </mat-form-field>
 
         <mat-form-field>
-            <input matInput [matDatepicker]="picker1" placeholder="Data de Cadastro" [(ngModel)]="product.dataCadastro" name="dataCadastro">
+            <input matInput [matDatepicker]="picker1" placeholder="Data de Cadastro" [(ngModel)]="product.proDataCadastro" name="proDataCadastro">
             <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
             <mat-datepicker #picker1></mat-datepicker>
           </mat-form-field>
