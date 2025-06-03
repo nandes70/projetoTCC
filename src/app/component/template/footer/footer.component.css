@@ -6,13 +6,12 @@
     display: flex;
     /*coloca no final da linha. sendo no lado direiro parte inferior*/
     justify-content: flex-end;
-    background-image: url('https://super.abril.com.br/wp-content/uploads/2016/09/super_imgmelhores-games_25.jpg?crop=1&resize=1212,909');
+    background-image: url('https://media.gettyimages.com/id/1227598160/pt/vetorial/seamless-retro-abstract-shapes-background.jpg?s=612x612&w=gi&k=20&c=O2g60CUJW062mQhF30Z9KHG26gX-Re7yA2Mr5h1KCTc=');
 }
 
 .footer > span{
     font-size: 30px;
     font-weight: 300;
-    color: rgb(255, 0, 0);
+    color: rgb(255, 255, 255);
     font-family: 'Rockwell', Arial, sans-serif;
-    background-color: rgb(20, 20, 20);
 }
