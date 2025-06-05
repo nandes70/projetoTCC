@@ -35,7 +35,15 @@
         <mat-form-field appearance="fill">
             <input matInput placeholder="Fabricante" [value]="product.proFabricante" name="proFabricante" disabled>
         </mat-form-field>
-        
+        <mat-form-field appearance="fill">
+            <input matInput placeholder="Status" [value]="product.proAtivo" name="proAtivo" disabled>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <input matInput placeholder="Data de Cadastro" [value]="product.proDataCadastro" name="proDataCadastro" disabled>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <input matInput placeholder="Data de Atualização" [value]="product.proDataAtualizacao" name="proDataAtualizacao" disabled>
+        </mat-form-field>
         <mat-form-field appearance="fill">
             <input matInput placeholder="Descrição" [value]="product.proDescricao" name="proDescricao" disabled>
         </mat-form-field>

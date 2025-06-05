@@ -5,36 +5,46 @@
             <mat-form-field appearance="fill">
                 <input matInput placeholder="Nome" [(ngModel)]="product.proNome" name="proNome">
             </mat-form-field>
+            
             <mat-form-field appearance="fill">
                 <input matInput placeholder="Preço de Custo (R$)" [(ngModel)]="product.proPrecoCusto"
                     name="proPrecoCusto">
             </mat-form-field>
+            
             <mat-form-field appearance="fill">
                 <input matInput placeholder="Preço de Venda (R$)" [(ngModel)]="product.proPrecoVenda"
                     name="proPrecoVenda">
             </mat-form-field>
+            
             <mat-form-field appearance="fill">
                 <input matInput placeholder="Marca" [(ngModel)]="product.proMarca" name="proMarca">
             </mat-form-field>
+            
             <mat-form-field appearance="fill">
                 <input matInput placeholder="Modelo" [(ngModel)]="product.proModelo" name="proModelo">
             </mat-form-field>
+            
             <mat-form-field appearance="fill">
                 <input matInput placeholder="Categoria" [(ngModel)]="product.proCategoria" name="proCategoria">
             </mat-form-field>
+            
             <mat-form-field appearance="fill">
                 <input matInput placeholder="Estoque" [(ngModel)]="product.proEstoque" name="proEstoque">
             </mat-form-field>
+            
             <mat-form-field appearance="fill">
                 <input matInput placeholder="Codigo de Barras" [(ngModel)]="product.proCodigoBarras"
                     name="proCodigoBarras">
             </mat-form-field>
+            
             <mat-form-field appearance="fill">
                 <input matInput placeholder="Cor" [(ngModel)]="product.proCor" name="proCor">
             </mat-form-field>
+            
             <mat-form-field appearance="fill">
                 <input matInput placeholder="Material" [(ngModel)]="product.proMaterial" name="proMaterial">
             </mat-form-field>
+            
             <mat-form-field appearance="fill">
                 <input matInput placeholder="Fabricante" [(ngModel)]="product.proFabricante" name="proFabricante">
             </mat-form-field>
@@ -53,12 +63,14 @@
                 <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
                 <mat-datepicker #picker1></mat-datepicker>
             </mat-form-field>
+            
             <mat-form-field>
                 <input matInput [matDatepicker]="picker2" placeholder="Data de Atualização"
                     [(ngModel)]="product.proDataAtualizacao" name="proDataAtualizacao">
                 <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
                 <mat-datepicker #picker2></mat-datepicker>
             </mat-form-field>
+            
             <mat-form-field appearance="fill">
                 <input matInput placeholder="Descrição" [(ngModel)]="product.proDescricao" name="proDescricao">
             </mat-form-field>
