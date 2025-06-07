@@ -15,17 +15,22 @@
 
         <mat-form-field appearance="fill">
             
-            <input matInput type="number" placeholder="Estoque" [value]="product.proEstoque" name="proEstoque" disabled>
+            <input matInput placeholder="Categoria" [value]="product.proCategoria" name="proCategoria" disabled>
         </mat-form-field>
 
         <mat-form-field appearance="fill">
             
-            <input matInput placeholder="Categoria" [value]="product.proCategoria" name="proCategoria" disabled>
+            <input matInput type="number" placeholder="Estoque" [value]="product.proEstoque" name="proEstoque" disabled>
         </mat-form-field>
 
         <mat-form-field appearance="fill">
            
             <input matInput placeholder="Codigo de Barra" [value]="product.proCodigoBarra" name="proCodigoBarra" disabled>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+         
+            <input matInput placeholder="Aplicação" [(ngModel)]="product.proAplicacao" name="proAplicacao" disabled>
         </mat-form-field>
 
         <mat-form-field appearance="fill">

@@ -1,24 +1,57 @@
-.sidenav{
-    background-color: #727272;
-    width: auto;
- /*   background-image: url('https://recupera.games/wp-content/uploads/2022/04/ps_logo.jpg');*/
-}
-.sidenav a{
-    color: #ffffff;
-}
-.sidenav i{
-    padding-right: 1px;
-    margin-right: 1px;
-}
-
-.content{
-    padding: 16px;
-    background-color: #ffffff;
+.sidenav {
+    position: fixed; /* Fixa a barra lateral na tela */
+    right: 0; /* Alinha à direita */
+    top: 0; /* Começa do topo da página */
+    height: 100vh; /* Ocupa 100% da altura da tela */
+    width: 220px; /* Largura da barra lateral */
+    background-color: #727272; /* Cor de fundo cinza */
+    display: flex; /* Usa flexbox para alinhar os itens */
+    flex-direction: column; /* Itens um abaixo do outro */
+    align-items: center; /* Centraliza horizontalmente os itens */
+    padding: 10px; /* Espaçamento interno */
+    z-index: 1000; /* Garante que fique acima de outros elementos */
+    transition: transform 0.3s ease-in-out; /* Animação suave ao mostrar/ocultar */
 }
 
-span
-{
-    font-weight: bold;
-    font-family: 'Rockwell', Arial, sans-serif;
-    color: black;
+.sidenav a {
+    display: flex; /* Alinha ícone e texto na horizontal */
+    align-items: center; /* Alinha verticalmente */
+    gap: 8px; /* Espaço entre ícone e texto */
+    margin: 10px 0; /* Espaço acima e abaixo dos links */
+    padding: 10px; /* Espaço interno nos links */
+    width: 100%; /* Ocupa toda a largura da barra */
+    color: white; /* Cor do texto branca */
+    text-decoration: none; /* Remove sublinhado */
+    background-color: #464545; /* Cor de fundo dos botões */
+    border-radius: 4px; /* Cantos arredondados */
+    transition: background-color 0.2s; /* Transição suave ao passar o mouse */
+}
+
+.sidenav a:hover {
+    background-color: #444; /* Cor mais escura ao passar o mouse */
+}
+
+.sidenav i {
+    font-size: 18px; /* Tamanho dos ícones */
+}
+
+.content {
+    padding: 16px; /* Espaço interno do conteúdo */
+    margin-right: 240px; /* Deixa espaço pro menu lateral */
+    background-color: #ffffff; /* Fundo branco do conteúdo */
+    transition: margin 0.3s ease-in-out; /* Transição suave ao mudar o layout */
+}
+
+@media (max-width: 768px) {
+    .sidenav {
+        transform: translateX(100%); /* Esconde a barra pra fora da tela */
+    }
+
+    .sidenav.open {
+        transform: translateX(0); /* Mostra a barra quando aberta */
+    }
+
+    .content {
+        margin-right: 0; /* Remove o espaço lateral no celular */
+    }
 }

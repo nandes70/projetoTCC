@@ -1,5 +1,9 @@
-<button mat-raised-button (click)="navigateToProductCreate()" color="primary">
-    Novo Produto
-</button>
+<div style="overflow: hidden;">
+    <!-- Botão "Novo Produto" -->
+    <button mat-raised-button (click)="navigateToProductCreate()" color="primary" style="float: right;">
+      Novo Produto
+    </button>
+  </div>
 
-<app-product-read></app-product-read>
+   <!-- Componente com a tabela -->
+  <app-product-read></app-product-read>

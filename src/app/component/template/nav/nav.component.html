@@ -1,58 +1,49 @@
 <mat-sidenav-container class="container">
-    <mat-sidenav class="sidenav" mode="side" opened fixedInViewport="true" fixedTopGap="64">
-        <mat-nav-list class="nav-list">
-            <a mat-list-item routerLink="/">
-                <span>
-                <i class="material-icons">
-                    home
-                </i>
-                
-                Início
-            </span>
-            </a>
-            <a mat-list-item routerLink="/products">
-                <span>
-                <i class="material-icons">
-                    commute
-                </i>
-                Produtos
-            </span>
-            </a>
-            <a mat-list-item routerLink="/clientes">
-                <span>
-                <i class="material-icons">
-                    account_circle
-                </i>
-                Clientes
-            </span>
-            </a>
-            <a mat-list-item routerLink="/fornecedores">
-                <span>
-                <i class="material-icons">
-                    group
-                </i>
-                Fornecedores
-            </span>
-            </a>
-            <a mat-list-item routerLink="/formaPagamento">
-                <span>
-                <i class="material-icons icon-spacing">
-                    credit_card
-                </i>
-                Forma de Pagamento
-            </span>
-            </a>
-
-            <style>
-                .icon-spacing {
-                    margin-right: 1px; /* Ajuste o valor conforme necessário */
-                }
-            </style>
-            
-        </mat-nav-list>
+    <!-- Barra lateral movida para a direita -->
+    <mat-sidenav class="sidenav" mode="side" position="end" opened fixedInViewport="true" fixedTopGap="64">
+      <mat-nav-list class="nav-list">
+        <a mat-list-item routerLink="/">
+          <span>
+            <i class="material-icons">home</i>
+            Início
+          </span>
+        </a>
+        <a mat-list-item routerLink="/products">
+          <span>
+            <i class="material-icons">commute</i>
+            Produtos
+          </span>
+        </a>
+        <a mat-list-item routerLink="/clientes">
+          <span>
+            <i class="material-icons">account_circle</i>
+            Clientes
+          </span>
+        </a>
+        <a mat-list-item routerLink="/fornecedores">
+          <span>
+            <i class="material-icons">group</i>
+            Fornecedores
+          </span>
+        </a>
+        <a mat-list-item routerLink="/formaPagamento">
+          <span>
+            <i class="material-icons icon-spacing">credit_card</i>
+            Forma de Pagamento
+          </span>
+        </a>
+      </mat-nav-list>
     </mat-sidenav>
+  
     <mat-sidenav-content class="content">
-        <!-- usamos para começar a trabalhar com a navegação a partir do clique... -->
-        <router-outlet></router-outlet>
+      <!-- onde os componentes vão ser renderizados -->
+      <router-outlet></router-outlet>
     </mat-sidenav-content>
-</mat-sidenav-container>
+  </mat-sidenav-container>
+  
+  <style>
+    .icon-spacing {
+      margin-right: 1px; /* Ajuste conforme necessário */
+    }
+  </style>
+  

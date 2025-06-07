@@ -1,8 +1,9 @@
 .header{
     display: flex;
+    justify-content: flex-end; /* 👈 Alinha tudo para a direita */
     align-items: center;
     background-color: rgb(0, 0, 0);
-    padding-left: 2px;
+    padding: 0 20px; /* Padding lateral melhor controlado */
     background-image: url('https://www.shutterstock.com/image-illustration/dark-industrial-wallpaper-3d-render-600nw-2152018905.jpg');
 }
 
@@ -14,6 +15,10 @@
 
 .header .logo {
     max-height: 50px;
+    display: block; /* 👈 Remove espaçamento fantasma */
+    margin: 0;
+    padding: 0;
+    vertical-align: middle; /* 👈 Garante alinhamento */
 }
 
 .header .title-group{

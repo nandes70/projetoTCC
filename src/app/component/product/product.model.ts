@@ -13,4 +13,5 @@ export interface Product
     proFabricante: string
     proAplicacao: string
     proDataCadastro: string
+    proDataAtualizacao: string
 }
