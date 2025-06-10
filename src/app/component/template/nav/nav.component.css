@@ -1,10 +1,23 @@
 .sidenav{
-    background-color: #920202;
+    background-color: #580469a4;
     width: auto;
     /*background-image: url('https://as2.ftcdn.net/jpg/05/99/53/57/1000_F_599535752_CGGPDQTtMed1T8drUDOdBYSwB3xwaFug.jpg');*/
 }
 .sidenav a{
-    color: #ffffff;
+    display: flex; /* Alinha ícone e texto na horizontal */
+    align-items: center; /* Alinha verticalmente */
+    gap: 8px; /* Espaço entre ícone e texto */
+    margin: 10px 0; /* Espaço acima e abaixo dos links */
+    padding: 10px; /* Espaço interno nos links */
+    width: 100%; /* Ocupa toda a largura da barra */
+    color: white; /* Cor do texto branca */
+    text-decoration: none; /* Remove sublinhado */
+    background-color: #360141; /* Cor de fundo dos botões */
+    border-radius: 4px; /* Cantos arredondados */
+    transition: background-color 0.5s; /* Transição suave ao passar o mouse*/
+}
+.sidenav a:hover {
+    background-color: #580469; /* Cor mais escura ao passar o mouse */
 }
 .sidenav i{
     padding-right: 1px;
@@ -13,7 +26,7 @@
 
 .content{
     padding: 16px;
-    background-color: #ffffff;
+    background-color: #360141;
 }
 
 span

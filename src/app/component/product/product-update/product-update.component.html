@@ -7,13 +7,11 @@
             </mat-form-field>
             
             <mat-form-field appearance="fill">
-                <input matInput placeholder="Preço de Custo (R$)" [(ngModel)]="product.proPrecoCusto"
-                    name="proPrecoCusto">
+                <input matInput placeholder="Preço de Custo (R$)" [(ngModel)]="product.proPrecoCusto" name="proPrecoCusto" min="0">
             </mat-form-field>
             
             <mat-form-field appearance="fill">
-                <input matInput placeholder="Preço de Venda (R$)" [(ngModel)]="product.proPrecoVenda"
-                    name="proPrecoVenda">
+                <input matInput placeholder="Preço de Venda (R$)" [(ngModel)]="product.proPrecoVenda" name="proPrecoVenda" min="0">
             </mat-form-field>
             
             <mat-form-field appearance="fill">
@@ -29,7 +27,7 @@
             </mat-form-field>
             
             <mat-form-field appearance="fill">
-                <input matInput placeholder="Estoque" [(ngModel)]="product.proEstoque" name="proEstoque">
+                <input matInput placeholder="Estoque" [(ngModel)]="product.proEstoque" name="proEstoque" min="0">
             </mat-form-field>
             
             <mat-form-field appearance="fill">

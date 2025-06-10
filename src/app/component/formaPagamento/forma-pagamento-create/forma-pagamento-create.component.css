@@ -1,5 +1,14 @@
 .fundo1{
+    width: 100%;
     background: linear-gradient(to bottom, rgb(0, 0, 0), #000000);
+    border-radius: 20px;
+    border: 2px solid #420ed1;
+    box-shadow: 0 0 2px #420ed1, 0 0 4px #420ed1 inset; /* LED mais sutil */
+    transition: box-shadow 0.3s ease;
+    border-collapse: separate;
+    border-spacing: 0;
+    position: relative;
+    overflow: hidden
 }
 form{
     display: flex;

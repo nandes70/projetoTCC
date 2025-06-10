@@ -13,12 +13,13 @@
 }
 
 .header .logo {
-    max-height: 75px;
+    max-height: 120px;
 }
 
 .header .title-group{
     padding-left: 5px;
     color: rgb(255, 255, 255);
+    background-color: rgb(60, 2, 68);
     font-family: 'Rockwell', Arial, sans-serif;
     font-size: 35px;
     
