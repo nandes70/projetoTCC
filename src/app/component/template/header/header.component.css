@@ -14,11 +14,12 @@
 }
 
 .header .logo {
-    max-height: 50px;
+    max-height: 65px;
     display: block; /* 👈 Remove espaçamento fantasma */
     margin: 0;
     padding: 0;
     vertical-align: middle; /* 👈 Garante alinhamento */
+    background-color: black;
 }
 
 .header .title-group{

@@ -48,6 +48,7 @@ import { FormaPagamentoDeleteComponent } from './component/formaPagamento/forma-
 import { MatSelectModule } from '@angular/material/select'; // Adicionado
 import { MatDatepickerModule } from '@angular/material/datepicker'; // Adicionado
 import { MatNativeDateModule } from '@angular/material/core'; // Adicionado
+
 @NgModule({
   declarations: [
     AppComponent,

@@ -12,7 +12,12 @@ export class FormaPagamentoCreateComponent {
   
   formaPagamento: FormaPagamento = {
     fpgDescricao: '',
-    fpgStatus: ''
+    fpgStatus: '',
+    fpgPermiteParcelamento: '',
+    fpgTaxaAdicional: null,
+    fpgNumeroMaxParcela: null,
+    
+
   }
 
   constructor(private formaPagamentoService: FormaPagamentoService,
