@@ -1,5 +1,5 @@
 .sidenav{
-    background-color: #580469a4;
+    background-color: #00000096;
     width: auto;
     /*background-image: url('https://as2.ftcdn.net/jpg/05/99/53/57/1000_F_599535752_CGGPDQTtMed1T8drUDOdBYSwB3xwaFug.jpg');*/
 }
@@ -12,12 +12,12 @@
     width: 100%; /* Ocupa toda a largura da barra */
     color: white; /* Cor do texto branca */
     text-decoration: none; /* Remove sublinhado */
-    background-color: #360141; /* Cor de fundo dos botões */
+    background-color: black;
     border-radius: 4px; /* Cantos arredondados */
     transition: background-color 0.5s; /* Transição suave ao passar o mouse*/
 }
 .sidenav a:hover {
-    background-color: #580469; /* Cor mais escura ao passar o mouse */
+    background-color: #202020; /* Cor mais escura ao passar o mouse */
 }
 .sidenav i{
     padding-right: 1px;
@@ -26,7 +26,7 @@
 
 .content{
     padding: 16px;
-    background-color: #360141;
+    background-image: url('https://static.vecteezy.com/ti/vetor-gratis/p1/8143760-padrao-perfeito-com-icones-de-jogos-vetor.jpg');
 }
 
 span

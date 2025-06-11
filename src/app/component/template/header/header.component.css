@@ -1,9 +1,8 @@
 .header{
     display: flex;
     align-items: center;
-    background-color: rgb(3, 10, 80);
+    background-image: url('https://static.vecteezy.com/ti/vetor-gratis/p1/8143760-padrao-perfeito-com-icones-de-jogos-vetor.jpg');
     padding-left: 2px;
-    background-image: url('https://media.gettyimages.com/id/1227598160/pt/vetorial/seamless-retro-abstract-shapes-background.jpg?s=612x612&w=gi&k=20&c=O2g60CUJW062mQhF30Z9KHG26gX-Re7yA2Mr5h1KCTc=');
 }
 
 .header a {
@@ -19,7 +18,7 @@
 .header .title-group{
     padding-left: 5px;
     color: rgb(255, 255, 255);
-    background-color: rgb(60, 2, 68);
+    background-color: black;
     font-family: 'Rockwell', Arial, sans-serif;
     font-size: 35px;
     
