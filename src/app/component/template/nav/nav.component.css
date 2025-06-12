@@ -26,6 +26,22 @@
     border-radius: 4px; /* Cantos arredondados */
     transition: background-color 0.2s; /* Transição suave ao passar o mouse */
 }
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    background-color: black;
+    width: 100%;
+  }
+  
+  .logo {
+    width: 100%;
+    max-width: none; /* <- remova a limitação */
+    display: block;
+    height: auto;
+  }
 
 .sidenav a:hover {
     background-color: #444; /* Cor mais escura ao passar o mouse */
