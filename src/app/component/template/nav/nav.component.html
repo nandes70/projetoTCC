@@ -1,13 +1,21 @@
 <mat-sidenav-container class="container">
-    <mat-sidenav #sidenav class="sidenav" mode="side" [opened]="menuAberto" fixedInViewport="true" fixedTopGap="64">
+    <mat-sidenav #sidenav 
+    mode="side"
+    [opened]="true"
+    class="sidenav"
+    [class.expandido]="expandido" 
+    fixedInViewport="true" 
+    fixedTopGap="64"
+    disableClose>
         <mat-nav-list class="nav-list">
             <a mat-list-item routerLink="/">
                 <span>
                 <i class="material-icons">
                     home
                 </i>
-                
+                <span class="anima">
                 Início
+                </span>
             </span>
             </a>
             <a mat-list-item routerLink="/products">
@@ -15,7 +23,9 @@
                 <i class="material-icons">
                     folder_special
                 </i>
+                <span class="anima">
                 Produtos
+                </span>
             </span>
             </a>
             <a mat-list-item routerLink="/clientes">
@@ -23,7 +33,9 @@
                 <i class="material-icons">
                     perm_identity
                 </i>
+                <span class="anima">
                 Cliente
+                </span>
             </span>
             </a>
             <a mat-list-item routerLink="/fornecedores">
@@ -31,7 +43,9 @@
                 <i class="material-icons">
                     group
                 </i>
+                <span class="anima">
                 Fornecedores
+                </span>
             </span>
             </a>
             <a mat-list-item routerLink="/formaPagamento">
@@ -39,15 +53,11 @@
                 <i class="material-icons icon-spacing">
                     credit_card
                 </i>
+                <span class="anima">
                 Forma de Pagamento
+                </span>
             </span>
             </a>
-
-            <style>
-                .icon-spacing {
-                    margin-right: 1px; /* Ajuste o valor conforme necessário */
-                }
-            </style>
             
         </mat-nav-list>
     </mat-sidenav>

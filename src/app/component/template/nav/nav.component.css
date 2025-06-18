@@ -1,53 +1,46 @@
 .container {
-    height: 100vh;
-  }
-.sidenav{
-    background-color: #000000a2;
-    width: 240px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    /*background-image: url('https://as2.ftcdn.net/jpg/05/99/53/57/1000_F_599535752_CGGPDQTtMed1T8drUDOdBYSwB3xwaFug.jpg');*/
-}
-.sidenav a{
-    display: flex; /* Alinha ícone e texto na horizontal */
-    align-items: center; /* Alinha verticalmente */
-    gap: 8px; /* Espaço entre ícone e texto */
-    margin: 10px 0; /* Espaço acima e abaixo dos links */
-    padding: 10px; /* Espaço interno nos links */
-    width: 100%; /* Ocupa toda a largura da barra */
-    color: white; /* Cor do texto branca */
-    text-decoration: none; /* Remove sublinhado */
-    background-color: black;
-    border-radius: 4px; /* Cantos arredondados */
-    transition: background-color 0.5s; /* Transição suave ao passar o mouse*/
-}
-.sidenav a:hover {
-    background-color: #202020; /* Cor mais escura ao passar o mouse */
-}
-.sidenav i{
-    padding-right: 1px;
-    margin-right: 1px;
+  height: 100vh;
 }
 
-.nav-list a {
-    color: #fff;
-    display: flex;
-    align-items: center;
-    padding: 10px 16px;
-    text-decoration: none;
+.sidenav {
+  width: 60px;
+  overflow-x: hidden;
+  background-color: #000000;
+  box-shadow: 2px 0 5px rgba(233, 227, 227, 0.1);
+  align-items: center;
 }
-.nav-list a:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+
+.sidenav.expandido {
+  width: 281px;
 }
+
+mat-nav-list {
+  padding: 0;
+}
+
+mat-list-item {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  color: #740202;
+}
+
+.material-icons {
+  margin-right: 16px;
+  font-size: 24px;
+  width: 24px;
+  text-align: center;
+}
+
 .anima {
-    color: white;
-    transition: color 0.2s ease;
-}
-  
-  .anima:hover {
-    color: black;
+  white-space: nowrap;
+  overflow: hidden;
+  opacity: 0;
+  width: 0;
+  transition: all 0.3s ease;
+  font-family: 'Rockwell', Arial, sans-serif;
+  font-size: 20px;
+  color: #ffffff;
 }
 
 .content{
@@ -55,7 +48,15 @@
     background-image: url('https://static.vecteezy.com/ti/vetor-gratis/p1/8143760-padrao-perfeito-com-icones-de-jogos-vetor.jpg');
 }
 
-span{
-    font-weight: bold;
-    font-family: 'Rockwell', Arial, sans-serif;
+/* Quando o menu está expandido, mostrar texto */
+.sidenav.expandido .anima {
+  opacity: 1;
+  width: auto;
+}
+.sidenav a:hover {
+    background-color: #cc0000; /* Cor de fundo ao passar o mouse (azul claro estilo Google) */
+    transform: scale(1.02); /* Leve crescimento para dar destaque */
+}
+.sidenav a:hover i {
+    color: #000000; /* Azul escuro nos ícones no hover */
 }

@@ -1,5 +1,4 @@
-import { Component, ViewChild, HostListener } from '@angular/core';
-import { MatSidenav } from '@angular/material/sidenav';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-nav',
@@ -7,20 +6,15 @@ import { MatSidenav } from '@angular/material/sidenav';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent {
-  @ViewChild('sidenav') sidenav!: MatSidenav;
-  menuAberto: boolean = true;
+  expandido = false;
 
-  // Detecta movimento do mouse
   @HostListener('document:mousemove', ['$event'])
   onMouseMove(event: MouseEvent) {
-    // Se o mouse estiver muito próximo da borda esquerda, abre o menu
+    // Expande ao aproximar da borda esquerda
     if (event.clientX < 20) {
-      this.menuAberto = true;
-    }
-
-    // Se o mouse estiver longe do menu, fecha
-    if (event.clientX > 250 && this.menuAberto) {
-      this.menuAberto = false;
+      this.expandido = true;
+    } else if (event.clientX > 250) {
+      this.expandido = false;
     }
   }
 }
