@@ -24,8 +24,9 @@
     text-decoration: none; /* Remove sublinhado */
     background-color: #464545; /* Cor de fundo dos botões */
     border-radius: 4px; /* Cantos arredondados */
-    transition: background-color 0.2s; /* Transição suave ao passar o mouse */
+    transition: background-color 0.3s, transform 0.2s, color 0.2s; /* Transição suave ao passar o mouse */
 }
+
 .logo-container {
     display: flex;
     justify-content: center;
@@ -34,21 +35,29 @@
     margin: 0;
     background-color: black;
     width: 100%;
-  }
-  
-  .logo {
+}
+
+.logo {
     width: 100%;
     max-width: none; /* <- remova a limitação */
     display: block;
     height: auto;
-  }
+}
 
 .sidenav a:hover {
-    background-color: #444; /* Cor mais escura ao passar o mouse */
+    background-color: #000000; /* Cor de fundo ao passar o mouse (azul claro estilo Google) */
+    color: #000; /* Texto mais escuro para contraste */
+    transform: scale(1.02); /* Leve crescimento para dar destaque */
 }
 
 .sidenav i {
     font-size: 18px; /* Tamanho dos ícones */
+    transition: color 0.2s; /* Suaviza a troca de cor */
+    padding: 45;
+}
+
+.sidenav a:hover i {
+    color: #bd0404; /* Azul escuro nos ícones no hover */
 }
 
 .content {
@@ -71,3 +80,42 @@
         margin-right: 0; /* Remove o espaço lateral no celular */
     }
 }
+
+/* Estilo da barra lateral recolhida */
+.sidenav {
+    width: 60px; /* Largura só com ícones */
+    transition: width 0.3s ease;
+    overflow-x: hidden;
+  }
+  
+  /* Quando o mouse passa por cima, ela expande */
+  .sidenav:hover {
+    width: 220px; /* Largura expandida */
+  }
+  
+  /* Links dentro da barra lateral */
+  .nav-list a span {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  /* Mostra os textos ao expandir a sidebar */
+  .sidenav:hover .nav-list a span {
+    opacity: 1;
+  }
+
+  .sidenav {
+    width: 60px;
+    transition: width 0.3s ease;
+    overflow-x: hidden;
+    background-color: #000000;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  }
+
+  
+  
+ 
