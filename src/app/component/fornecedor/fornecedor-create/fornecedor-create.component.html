@@ -13,6 +13,9 @@
         <mat-form-field>
             <input matInput placeholder="Status" [(ngModel)]="fornecedor.status" name="status">
         </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Contato" [(ngModel)]="fornecedor.conCelular" name="conCelular">
+        </mat-form-field>
     </form>
 
     <button mat-raised-button (click)="createFornecedor()" color="primary">
