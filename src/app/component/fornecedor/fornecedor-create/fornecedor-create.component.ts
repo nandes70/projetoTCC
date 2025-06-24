@@ -13,7 +13,19 @@ fornecedor: Fornecedor = {
   nameFanatasia: '',
   razao_Social: '',
   cpfCnpj: '',
-  status: ''
+  status: '',
+
+  conCelular: '',
+  conTelefoneComercial: '',
+  conEmail: '',
+
+  endRua: '',
+  endNumero: '',
+  endCidade: '',
+  endBairro: '',
+  endCep: '',
+  endEstado: '',
+  endPais: ''
 }
 constructor(private fornecedorService: FornecedorService,
   private router: Router) { }

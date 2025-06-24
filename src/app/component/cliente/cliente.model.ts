@@ -6,4 +6,16 @@ export interface Cliente
     dataNascimento: string
     formaPagamento: string
     status: string
+
+    conCelular: string
+    conTelefoneComercial: string
+    conEmail: string
+
+    endRua: string
+    endNumero: string
+    endCidade: string
+    endBairro: string
+    endCep: string
+    endEstado: string
+    endPais: string
 }

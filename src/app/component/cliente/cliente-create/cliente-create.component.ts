@@ -14,7 +14,19 @@ cliente: Cliente = {
   cpfCnpj: '',
   dataNascimento: '',
   formaPagamento: '',
-  status: ''
+  status: '',
+
+  conCelular: '',
+  conTelefoneComercial: '',
+  conEmail: '',
+
+  endRua: '',
+  endNumero: '',
+  endCidade: '',
+  endBairro: '',
+  endCep: '',
+  endEstado: '',
+  endPais: ''
 }
 constructor(private clienteService: ClienteService,
   private router: Router) { }
