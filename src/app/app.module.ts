@@ -49,6 +49,10 @@ import { MatSelectModule } from '@angular/material/select'; // Adicionado
 import { MatDatepickerModule } from '@angular/material/datepicker'; // Adicionado
 import { MatNativeDateModule } from '@angular/material/core'; // Adicionado
 
+ 
+import { RouterModule } from '@angular/router';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -93,8 +97,15 @@ import { MatNativeDateModule } from '@angular/material/core'; // Adicionado
     MatTableModule,
     MatSelectModule,               // Adicionado
     MatDatepickerModule,           // Adicionado
-    MatNativeDateModule        // Adicionado
+    MatNativeDateModule,     // Adicionado     
+    MatNativeDateModule,
+     RouterModule.forRoot([
+      { path: '', component: HomeComponent },
+      { path: 'produtos', component: ProductReadComponent },
+    ])
   ],
+
+  
   providers: [],
   bootstrap: [AppComponent]
 })

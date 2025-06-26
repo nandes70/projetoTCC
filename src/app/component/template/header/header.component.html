@@ -1,15 +1,15 @@
-<mat-toolbar class="header" met-elevation-z4>
-    <span class="title-group">
-        <a>
-            <i class="material-icons">
-                store
-            </i>
-            Loja de Auto Peças
-        </a>
+<mat-toolbar class="header">
+    <!-- Título centralizado -->
+    <span class="center">
+      <a>Loja de Auto Peças</a>
     </span>
-    <span>
-        <a routerLink="/">
-
-        </a>
+  
+    <!-- Título dinâmico (ex: Produtos, Clientes...) no canto direito -->
+    <span class="right">
+      <a>
+        <i class="material-icons">{{ pageIcon }}</i>
+        {{ pageTitle }}
+      </a>
     </span>
-</mat-toolbar>
+  </mat-toolbar>
+  
