@@ -14,6 +14,8 @@ fornecedor: Fornecedor = {
   razao_Social: '',
   cpfCnpj: '',
   status: '',
+  proDataCadastro: null,
+  forResponsavel: '',
 
   conCelular: '',
   conTelefoneComercial: '',
@@ -25,7 +27,9 @@ fornecedor: Fornecedor = {
   endBairro: '',
   endCep: '',
   endEstado: '',
-  endPais: ''
+  endPais: '',
+  endComplemento: '',
+  endTipoResidencia: ''
 }
 constructor(private fornecedorService: FornecedorService,
   private router: Router) { }

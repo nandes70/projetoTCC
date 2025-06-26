@@ -18,4 +18,6 @@ export interface Cliente
     endCep: string
     endEstado: string
     endPais: string
+    endComplemento: string
+    endTipoResidencia: string
 }

@@ -5,6 +5,8 @@ export interface Fornecedor
     razao_Social: string
     cpfCnpj: string
     status: string
+    proDataCadastro: string | null
+    forResponsavel: string
 
     conCelular: string
     conTelefoneComercial: string
@@ -17,4 +19,6 @@ export interface Fornecedor
     endCep: string
     endEstado: string
     endPais: string
+    endComplemento: string
+    endTipoResidencia: string
 }

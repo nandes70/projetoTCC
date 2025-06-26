@@ -1,11 +1,13 @@
 export interface Endereco
 {
-    id?: number
-    rua: string
-    numero: string
-    complemento: string
-    bairro: string
-    cidade: string
-    estado: string
-    cep: string
+    endId?: number
+    endRua: string
+    endNumero: string
+    endCidade: string
+    endBairro: string
+    endCep: string
+    endEstado: string
+    endPais: string
+    endComplemento: string
+    endTipoResidencia: string
 }

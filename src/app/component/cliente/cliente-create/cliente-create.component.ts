@@ -26,7 +26,9 @@ cliente: Cliente = {
   endBairro: '',
   endCep: '',
   endEstado: '',
-  endPais: ''
+  endPais: '',
+  endComplemento: '',
+  endTipoResidencia: ''
 }
 constructor(private clienteService: ClienteService,
   private router: Router) { }
