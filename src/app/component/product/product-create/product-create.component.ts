@@ -24,9 +24,12 @@ export class ProductCreateComponent implements OnInit {
     proMarca: '',
     proStatus: null, // true = ativo, false = desativado
     proFabricante: '',
-    proAplicacao: '',
+    proAnoAplicacao: '',
     proDataCadastro: new Date().toISOString(),    // Data atual em formato ISO (ex: 2025-06-14T12:00:00Z)
-    proDataAtualizacao: new Date().toISOString()  // Mesmo para a data de atualização
+    proDataAtualizacao: new Date().toISOString(),
+    proObservacao: '',
+    proCodigoInterno: ''
+     // Mesmo para a data de atualização
   };
 
   // Injeta o ProductService para chamadas ao backend e Router para navegação

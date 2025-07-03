@@ -15,35 +15,35 @@
       <mat-form-field appearance="fill">
         <input matInput placeholder="Descrição" [(ngModel)]="product.proDescricao" name="proDescricao" required>
       </mat-form-field>
-  
-      <mat-form-field appearance="fill">
-        <input matInput placeholder="Categoria" [(ngModel)]="product.proCategoria" name="proCategoria" required>
-      </mat-form-field>
-  
-      <mat-form-field appearance="fill">
-        <input matInput type="number" placeholder="Estoque" [(ngModel)]="product.proEstoque" name="proEstoque" min="0" required>
-      </mat-form-field>
-  
+
       <mat-form-field appearance="fill">
         <input matInput placeholder="Código de Barra" [(ngModel)]="product.proCodigoBarra" name="proCodigoBarra" required>
       </mat-form-field>
-  
-      <mat-form-field appearance="fill">
-        <input matInput placeholder="Aplicação" [(ngModel)]="product.proAplicacao" name="proAplicacao" required>
+
+       <!-- mudei o ano de aplicacao-->
+       <mat-form-field appearance="fill">
+        <input matInput placeholder="Codigo Interno" [(ngModel)]="product.proCodigoInterno" name="proCodigoInterno" required>
       </mat-form-field>
-  
+
+      <mat-form-field appearance="fill">
+        <input matInput placeholder="Fabricante" [(ngModel)]="product.proFabricante" name="proFabricante" required>
+      </mat-form-field>
+
       <mat-form-field appearance="fill">
         <input matInput placeholder="Marca" [(ngModel)]="product.proMarca" name="proMarca" required>
       </mat-form-field>
-  
-      <mat-form-field>
-        <mat-label>Produto Ativo?</mat-label>
-        <mat-select [(ngModel)]="product.proStatus" name="proStatus" required>
-            <mat-option [value]="true">Ativo</mat-option>
-            <mat-option [value]="false">Inativo</mat-option>
-        </mat-select>
+
+      <mat-form-field appearance="fill">
+        <input matInput placeholder="Categoria" [(ngModel)]="product.proCategoria" name="proCategoria" required>
       </mat-form-field>
-  
+
+      <!-- mudei o ano de aplicacao-->
+      <mat-form-field appearance="fill">
+        <input matInput placeholder="Ano de Aplicação" [(ngModel)]="product.proAnoAplicacao" name="proAnoAplicacao" required>
+      </mat-form-field>
+
+    
+
       <mat-form-field appearance="fill">
         <input matInput type="number" placeholder="Preço de Custo (R$)" [(ngModel)]="product.proPrecoCusto" name="proPrecoCusto" min="0" required>
       </mat-form-field>
@@ -53,9 +53,23 @@
       </mat-form-field>
   
       <mat-form-field appearance="fill">
-        <input matInput placeholder="Fabricante" [(ngModel)]="product.proFabricante" name="proFabricante" required>
+        <input matInput type="number" placeholder="Estoque" [(ngModel)]="product.proEstoque" name="proEstoque" min="0" required>
       </mat-form-field>
   
+      <mat-form-field>
+        <mat-label>Produto Ativo?</mat-label>
+        <mat-select [(ngModel)]="product.proStatus" name="proStatus" required>
+            <mat-option [value]="true">Ativo</mat-option>
+            <mat-option [value]="false">Inativo</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <input matInput placeholder="Observação" [(ngModel)]="product.proObservacao" name="proObservacao" required>
+      </mat-form-field>
+  
+ 
+     
       <mat-form-field>
         <input matInput [matDatepicker]="picker1" placeholder="Data de Cadastro" [(ngModel)]="product.proDataCadastro" name="proDataCadastro" >
         <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>

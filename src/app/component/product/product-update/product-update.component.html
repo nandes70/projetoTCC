@@ -6,40 +6,53 @@
 
        
         <mat-form-field appearance="fill">
-            
             <input matInput placeholder="Nome" [(ngModel)]="product.proNome" name="proNome">
         </mat-form-field>
 
         <mat-form-field appearance="fill">
-          
             <input matInput placeholder="Descrição" [(ngModel)]="product.proDescricao" name="proDescricao">
         </mat-form-field>
 
         <mat-form-field appearance="fill">
-            
-            <input matInput placeholder="Categoria" [(ngModel)]="product.proCategoria" name="proCategoria">
-        </mat-form-field>
-
-
-        <mat-form-field appearance="fill">
-            
-            <input matInput type="number" placeholder="Estoque" [(ngModel)]="product.proEstoque" name="proEstoque">
-        </mat-form-field>
-
-        <mat-form-field appearance="fill">
-           
             <input matInput placeholder="Codigo de Barra" [(ngModel)]="product.proCodigoBarra" name="proCodigoBarra">
         </mat-form-field>
 
-        <mat-form-field appearance="fill">
-           
-            <input matInput placeholder="Aplicação" [(ngModel)]="product.proAplicacao" name="proAplicacao">
-        </mat-form-field>
+         <!-- mudei o ano de aplicacao-->
+       <mat-form-field appearance="fill">
+        <input matInput placeholder="Codigo Interno" [(ngModel)]="product.proCodigoInterno" name="proCodigoInterno" >
+      </mat-form-field>
 
-        <mat-form-field appearance="fill">
-           
-            <input matInput placeholder="Marca" [(ngModel)]="product.proMarca" name="proMarca">
-        </mat-form-field>
+          <mat-form-field appearance="fill">
+             <input matInput placeholder="Fabricante" [(ngModel)]="product.proFabricante" name="proFabricante">
+          </mat-form-field>
+
+   
+          <mat-form-field appearance="fill">
+             <input matInput placeholder="Marca" [(ngModel)]="product.proMarca" name="proMarca">
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+             <input matInput placeholder="Categoria" [(ngModel)]="product.proCategoria" name="proCategoria">
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+             <input matInput placeholder="Ano de Aplicação" [(ngModel)]="product.proAnoAplicacao" name="proAnoAplicacao">
+          </mat-form-field>
+
+        
+
+          <mat-form-field appearance="fill">
+             <input matInput type="number" placeholder="Preco de Custo (R$)" [(ngModel)]="product.proPrecoCusto" name="proPrecoCusto">
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+             <input matInput type="number" placeholder="Preco de Venda (R$)" [(ngModel)]="product.proPrecoVenda" name="proPrecoVenda">
+          </mat-form-field>
+
+
+          <mat-form-field appearance="fill">
+            <input matInput type="number" placeholder="Estoque" [(ngModel)]="product.proEstoque" name="proEstoque">
+         </mat-form-field>
 
         <mat-form-field>
             <mat-label>Produto Ativo?</mat-label>
@@ -49,20 +62,10 @@
             </mat-select>
           </mat-form-field>
 
-        <mat-form-field appearance="fill">
-           
-            <input matInput type="number" placeholder="Preco de Custo (R$)" [(ngModel)]="product.proPrecoCusto" name="proPrecoCusto">
-        </mat-form-field>
-
-        <mat-form-field appearance="fill">
-            
-            <input matInput type="number" placeholder="Preco de Venda (R$)" [(ngModel)]="product.proPrecoVenda" name="proPrecoVenda">
-        </mat-form-field>
-
-        <mat-form-field appearance="fill">
-          
-            <input matInput placeholder="Fabricante" [(ngModel)]="product.proFabricante" name="proFabricante">
-        </mat-form-field>
+          <mat-form-field appearance="fill">
+            <input matInput placeholder="Observação" [(ngModel)]="product.proObservacao" name="proObservacao" >
+          </mat-form-field>
+      
 
         <mat-form-field>
             <input matInput [matDatepicker]="picker1" placeholder="Data de Atualização" [(ngModel)]="product.proDataCadastro" name="proDataCadastro">
@@ -73,11 +76,12 @@
 
     </form>
 
-    <button mat-raised-button (click)="updateProduct()" color="primary">
-        Atualizar
-    </button>
-   
-    <button mat-raised-button (click)="cancel()">
-        Cancelar
-    </button>
+    <div style="display: flex; justify-content: flex-end; gap: 10px;">
+        <button mat-raised-button class="btn-cancelar1" (click)="cancel()">
+          Cancelar
+        </button>
+        <button mat-raised-button class="btn-Atualizar" (click)="updateProduct()">
+          Atualizar
+        </button>
+      </div>
 </mat-card>

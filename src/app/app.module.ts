@@ -51,6 +51,7 @@ import { MatNativeDateModule } from '@angular/material/core'; // Adicionado
 
  
 import { RouterModule } from '@angular/router';
+import { ProductVisionComponent } from './component/product/product-vision/product-vision.component';
 
 
 @NgModule({
@@ -79,7 +80,8 @@ import { RouterModule } from '@angular/router';
     FormaPagamentoCreateComponent,
     FormaPagamentoReadComponent,
     FormaPagamentoUpdateComponent,
-    FormaPagamentoDeleteComponent
+    FormaPagamentoDeleteComponent,
+    ProductVisionComponent
   ],
   imports: [
     BrowserModule,

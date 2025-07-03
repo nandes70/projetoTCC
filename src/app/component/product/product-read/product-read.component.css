@@ -10,6 +10,9 @@ table{
 .delete > i{
     color: #e35e6b; /*a cor do texto*/
 }
+.vision > i{
+    color: rgb(150, 170, 190);
+}
 th
 {
     font-family: 'Rockwell', Arial, sans-serif; /*tá escolhendo a fonte do texto*/

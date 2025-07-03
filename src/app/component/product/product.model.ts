@@ -10,7 +10,9 @@ export interface Product {
     proMarca: string;
     proStatus: boolean | null;
     proFabricante: string;
-    proAplicacao: string;
+    proAnoAplicacao: string;
     proDataCadastro: string;
     proDataAtualizacao: string;
+    proCodigoInterno: string;
+    proObservacao: string;
   }

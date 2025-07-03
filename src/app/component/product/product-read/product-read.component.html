@@ -16,8 +16,8 @@
 
       <!-- Coluna de Nome da aplicação -->
       <ng-container matColumnDef="proAplicacao">
-        <th mat-header-cell *matHeaderCellDef>Aplicação</th>
-        <td mat-cell *matCellDef="let row">{{row.proAplicacao}}</td>
+        <th mat-header-cell *matHeaderCellDef>Ano de Aplicação</th>
+        <td mat-cell *matCellDef="let row">{{row.proAnoAplicacao}}</td>
       </ng-container>
  
       <!-- Coluna de Preço de Custo -->
@@ -59,6 +59,12 @@
                     delete
                 </i>
             </a>
+
+            <a routerLink="/products/vision/{{ row.proId }}" class="vision">
+              <i class="material-icons">
+                assignment
+              </i>
+          </a>
         </td>
       </ng-container>
  
