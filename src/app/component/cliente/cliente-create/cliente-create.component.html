@@ -1,80 +1,25 @@
+<!-- Cria um card estilizado com Angular Material -->
 <mat-card class="fundo1">
-    <div class="cor-normal">
-    <mat-card-title>Novo Cliente</mat-card-title>
-    </div>
-    <div class="com-cor-diferente">
-        <mat-card-title>Informações Pessoais</mat-card-title>
+    <!-- Título do card -->
+    <div style="display: flex; justify-content: center; margin-bottom: 16px;">
+      <mat-card-title style="font-size: 24px; color: rgb(255, 255, 255);">Novo Cliente</mat-card-title>
     </div>
     <form>
-        <div class="form-grid">
-        <mat-form-field appearance="fill">
+        <mat-form-field>
             <input matInput placeholder="Nome" [(ngModel)]="cliente.nome" name="nome">
         </mat-form-field>
-        <mat-form-field appearance="fill">
+        <mat-form-field>
             <input matInput placeholder="CPF / CNPJ" [(ngModel)]="cliente.cpfCnpj" name="cpfCnpj">
         </mat-form-field>
-        <mat-form-field appearance="fill">
+        <mat-form-field>
             <input matInput placeholder="Data Nascimento" [(ngModel)]="cliente.dataNascimento" name="dataNascimento">
         </mat-form-field>
-        <mat-form-field appearance="fill">
+        <mat-form-field>
             <input matInput placeholder="Forma de Pagamento" [(ngModel)]="cliente.formaPagamento" name="formaPagamento">
         </mat-form-field>
-        <mat-form-field appearance="fill">
+        <mat-form-field>
             <input matInput placeholder="Status" [(ngModel)]="cliente.status" name="status">
         </mat-form-field>
-        </div>
-    </form>
-
-    <div class="com-cor-diferente">
-    <mat-card-title>Contato</mat-card-title>
-    </div>
-    <form>
-        <div class="form-grid">
-        <mat-form-field appearance="fill">
-            <input matInput placeholder="Celular" [(ngModel)]="cliente.conCelular" name="conCelular">
-        </mat-form-field>
-        <mat-form-field appearance="fill">
-            <input matInput placeholder="Telefone Comercial" [(ngModel)]="cliente.conTelefoneComercial" name="conTelefoneComercial">
-        </mat-form-field>
-        <mat-form-field appearance="fill">
-            <input matInput placeholder="E-mail" [(ngModel)]="cliente.conEmail" name="conEmail">
-        </mat-form-field>
-        </div>
-    </form>
-    
-    <div class="com-cor-diferente">
-    <mat-card-title>Endereco</mat-card-title>
-    </div>
-    <form>
-        <div class="form-grid">
-        <mat-form-field appearance="fill">
-            <input matInput placeholder="Rua" [(ngModel)]="cliente.endRua" name="endRua">
-        </mat-form-field>
-        <mat-form-field appearance="fill">
-            <input matInput placeholder="Número" [(ngModel)]="cliente.endNumero" name="endNumero">
-        </mat-form-field>
-        <mat-form-field appearance="fill">
-            <input matInput placeholder="Cidade" [(ngModel)]="cliente.endCidade" name="endCidade">
-        </mat-form-field>
-        <mat-form-field appearance="fill">
-            <input matInput placeholder="Bairro" [(ngModel)]="cliente.endBairro" name="endBairro">
-        </mat-form-field>
-        <mat-form-field appearance="fill">
-            <input matInput placeholder="Complemento" [(ngModel)]="cliente.endComplemento" name="endComplemento">
-        </mat-form-field>
-        <mat-form-field appearance="fill">
-            <input matInput placeholder="Tipo de Residencia" [(ngModel)]="cliente.endTipoResidencia" name="endTipoResidencia">
-        </mat-form-field>
-        <mat-form-field appearance="fill">
-            <input matInput placeholder="CEP" [(ngModel)]="cliente.endCep" name="endCep">
-        </mat-form-field>
-        <mat-form-field appearance="fill">
-            <input matInput placeholder="Estado" [(ngModel)]="cliente.endEstado" name="endEstado">
-        </mat-form-field>
-        <mat-form-field appearance="fill">
-            <input matInput placeholder="País" [(ngModel)]="cliente.endPais" name="endPais">
-        </mat-form-field>
-        </div>
     </form>
 
     <button mat-raised-button (click)="createCliente()" color="primary">

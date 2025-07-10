@@ -44,20 +44,19 @@ export class ProductService {
     /*Faz uma requisição GET para pegar um único produto*/
     return this.http.get<Product>(url)
   }
+ /*Método para atualizar um produto existente*/
+update(product: Product): Observable<Product> {
+  /*Cria a URL de requisição com o ID do produto*/
+  const url = `${this.baseUrl}/${product.proId}`
+  /*Faz uma requisição PUT para atualizar o produto no backend*/
+  return this.http.put<Product>(url, product)
+}
 
-  /*Método para atualizar um produto existente*/
-  update(product: Product): Observable<Product> {
-    /*Cria a URL de requisição com o ID do produto*/
-    const url = `${this.baseUrl}/${product.proId}`
-    /*Faz uma requisição PUT para atualizar o produto no backend*/
-    return this.http.put<Product>(url, product)
-  }
-
-  /*Método para excluir um produto*/
-  delete(proId: number): Observable<Product> {
-    /*Cria a URL de requisição com o ID do produto*/
-    const url = `${this.baseUrl}/${proId}`
-    /*Faz uma requisição DELETE para excluir o produto*/
-    return this.http.delete<Product>(url)
-  }
+/*Método para excluir um produto*/
+delete(proId: number): Observable<Product> {
+  /*Cria a URL de requisição com o ID do produto*/
+  const url = `${this.baseUrl}/${proId}`
+  /*Faz uma requisição DELETE para excluir o produto*/
+  return this.http.delete<Product>(url)
+}
 }

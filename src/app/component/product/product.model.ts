@@ -1,19 +1,18 @@
-export interface Product
-{
-    proId?: number
-    proNome: string
-    proPrecoCusto: number | null
-    proPrecoVenda: number | null
-    proMarca: string
-    proModelo: string
-    proEstoque: number | null
-    proCor: string
-    proMaterial: string
-    proFabricante: string
-    proDescricao: string
-    proCategoria: string
-    proCodigoBarras: string
-    proDataCadastro: string | null
-    proDataAtualizacao: string | null
-    proAtivo: string
-}
+export interface Product {
+    proId?: number;                 // Opcional para diferenciar criação (sem id) e atualização (com id)
+    proNome: string;
+    proPrecoCusto: number | null;
+    proPrecoVenda: number | null;
+    proDescricao: string;
+    proEstoque: number | null;
+    proCategoria: string;
+    proCodigoBarra: string;
+    proMarca: string;
+    proStatus: boolean | null;
+    proFabricante: string;
+    proAnoAplicacao: string;
+    proDataCadastro: string;
+    proDataAtualizacao: string;
+    proCodigoInterno: string;
+    proObservacao: string;
+  }

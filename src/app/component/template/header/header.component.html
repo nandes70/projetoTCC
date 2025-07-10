@@ -1,16 +1,15 @@
-
-<mat-toolbar class="header" met-elevation-z4>
-    <span>
-        <a routerLink="/">
-            <img class="logo" src="assets/img/Next Level Games_Log0.png" alt="Logo">
-        </a>
+<mat-toolbar class="header">
+    <!-- Título centralizado -->
+    <span class="center">
+      <a>Loja de Auto Peças</a>
     </span>
-    <span class="title-group">
-        <a>
-            <i class="material-icons">
-                store
-            </i>
-            Zero Mega X
-        </a>
+  
+    <!-- Título dinâmico (ex: Produtos, Clientes...) no canto direito -->
+    <span class="right">
+      <a>
+        <i class="material-icons">{{ pageIcon }}</i>
+        {{ pageTitle }}
+      </a>
     </span>
-</mat-toolbar>
+  </mat-toolbar>
+  

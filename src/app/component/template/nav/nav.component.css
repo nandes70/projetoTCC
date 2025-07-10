@@ -1,62 +1,121 @@
-.container {
-  height: 100vh;
-}
-
 .sidenav {
-  width: 60px;
-  overflow-x: hidden;
-  background-color: #000000;
-  box-shadow: 2px 0 5px rgba(233, 227, 227, 0.1);
-  align-items: center;
+    position: fixed; /* Fixa a barra lateral na tela */
+    right: 0; /* Alinha à direita */
+    top: 0; /* Começa do topo da página */
+    height: 100vh; /* Ocupa 100% da altura da tela */
+    width: 220px; /* Largura da barra lateral */
+    background-color: #727272; /* Cor de fundo cinza */
+    display: flex; /* Usa flexbox para alinhar os itens */
+    flex-direction: column; /* Itens um abaixo do outro */
+    align-items: center; /* Centraliza horizontalmente os itens */
+    padding: 10px; /* Espaçamento interno */
+    z-index: 1000; /* Garante que fique acima de outros elementos */
+    transition: transform 0.3s ease-in-out; /* Animação suave ao mostrar/ocultar */
 }
 
-.sidenav.expandido {
-  width: 281px;
+.sidenav a {
+    display: flex; /* Alinha ícone e texto na horizontal */
+    align-items: center; /* Alinha verticalmente */
+    gap: 8px; /* Espaço entre ícone e texto */
+    margin: 10px 0; /* Espaço acima e abaixo dos links */
+    padding: 10px; /* Espaço interno nos links */
+    width: 100%; /* Ocupa toda a largura da barra */
+    color: white; /* Cor do texto branca */
+    text-decoration: none; /* Remove sublinhado */
+    background-color: #464545; /* Cor de fundo dos botões */
+    border-radius: 4px; /* Cantos arredondados */
+    transition: background-color 0.3s, transform 0.2s, color 0.2s; /* Transição suave ao passar o mouse */
 }
 
-mat-nav-list {
-  padding: 0;
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    background-color: black;
+    width: 100%;
 }
 
-mat-list-item {
-  display: flex;
-  align-items: center;
-  padding: 12px;
-  color: #740202;
+.logo {
+    width: 100%;
+    max-width: none; /* <- remova a limitação */
+    display: block;
+    height: auto;
 }
 
-.material-icons {
-  margin-right: 16px;
-  font-size: 24px;
-  width: 24px;
-  text-align: center;
-}
-
-.anima {
-  white-space: nowrap;
-  overflow: hidden;
-  opacity: 0;
-  width: 0;
-  transition: all 0.3s ease;
-  font-family: 'Rockwell', Arial, sans-serif;
-  font-size: 20px;
-  color: #ffffff;
-}
-
-.content{
-    padding: 16px;
-    background-image: url('https://static.vecteezy.com/ti/vetor-gratis/p1/8143760-padrao-perfeito-com-icones-de-jogos-vetor.jpg');
-}
-
-/* Quando o menu está expandido, mostrar texto */
-.sidenav.expandido .anima {
-  opacity: 1;
-  width: auto;
-}
 .sidenav a:hover {
-    background-color: #cc0000; /* Cor de fundo ao passar o mouse (azul claro estilo Google) */
+    background-color: #000000; /* Cor de fundo ao passar o mouse (azul claro estilo Google) */
+    color: #000; /* Texto mais escuro para contraste */
     transform: scale(1.02); /* Leve crescimento para dar destaque */
 }
-.sidenav a:hover i {
-    color: #000000; /* Azul escuro nos ícones no hover */
+
+.sidenav i {
+    font-size: 18px; /* Tamanho dos ícones */
+    transition: color 0.2s; /* Suaviza a troca de cor */
+    padding: 45;
 }
+
+.sidenav a:hover i {
+    color: #bd0404; /* Azul escuro nos ícones no hover */
+}
+
+.content {
+    padding: 16px; /* Espaço interno do conteúdo */
+    margin-right: 240px; /* Deixa espaço pro menu lateral */
+    background-color: #ffffff; /* Fundo branco do conteúdo */
+    transition: margin 0.3s ease-in-out; /* Transição suave ao mudar o layout */
+}
+
+@media (max-width: 768px) {
+    .sidenav {
+        transform: translateX(100%); /* Esconde a barra pra fora da tela */
+    }
+
+    .sidenav.open {
+        transform: translateX(0); /* Mostra a barra quando aberta */
+    }
+
+    .content {
+        margin-right: 0; /* Remove o espaço lateral no celular */
+    }
+}
+
+/* Estilo da barra lateral recolhida */
+.sidenav {
+    width: 60px; /* Largura só com ícones */
+    transition: width 0.3s ease;
+    overflow-x: hidden;
+  }
+  
+  /* Quando o mouse passa por cima, ela expande */
+  .sidenav:hover {
+    width: 220px; /* Largura expandida */
+  }
+  
+  /* Links dentro da barra lateral */
+  .nav-list a span {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  /* Mostra os textos ao expandir a sidebar */
+  .sidenav:hover .nav-list a span {
+    opacity: 1;
+  }
+
+  .sidenav {
+    width: 60px;
+    transition: width 0.3s ease;
+    overflow-x: hidden;
+    background-color: #000000;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  }
+
+  
+  
+ 

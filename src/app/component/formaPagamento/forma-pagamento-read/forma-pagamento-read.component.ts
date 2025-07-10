@@ -11,7 +11,7 @@ export class FormaPagamentoReadComponent {
 
   formaPagamentos!: FormaPagamento[];
 
-  displayedColumns = ['fpgId', 'fpgTipo', 'fpgDescricao', 'fpgPermiteParcelamento', 'fpgQtdParcela', 'fpgStatus', 'action'];
+  displayedColumns = ['fpgId', 'fpgDescricao', 'fpgStatus', 'action'];
 
   constructor(private formaPagamentoService: FormaPagamentoService) { }
 

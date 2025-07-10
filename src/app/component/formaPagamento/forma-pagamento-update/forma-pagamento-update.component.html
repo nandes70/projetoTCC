@@ -1,46 +1,13 @@
 <mat-card class="fundo1">
     <mat-card-title>Editar a Forma de Pagamento</mat-card-title>
-    
-    <form #form="ngForm">
-        <div class="form-grid">
-          <mat-form-field appearance="fill">
-            <input matInput placeholder="Tipo (A Vista ou A Prazo)" [(ngModel)]="formaPagamento.fpgTipo" name="fpgTipo" required>
-          </mat-form-field>
-      
-          <mat-form-field appearance="fill">
-            <input matInput placeholder="Descrição" [(ngModel)]="formaPagamento.fpgDescricao" name="fpgDescricao" required>
-          </mat-form-field>
-      
-          <mat-form-field appearance="fill">
-            <mat-label>Forma de Pagamento Ativo?</mat-label>
-            <mat-select [(ngModel)]="formaPagamento.fpgStatus" name="fpgStatus" required>
-              <mat-option value="Ativo">Ativo</mat-option>
-              <mat-option value="Desativo">Desativo</mat-option>
-            </mat-select>
-          </mat-form-field>
-      
-          <mat-form-field appearance="fill">
-            <mat-label>Permite Parcelamento</mat-label>
-            <mat-select [(ngModel)]="formaPagamento.fpgPermiteParcelamento" name="fpgPermiteParcelamento" required>
-              <mat-option value="Sim">Sim</mat-option>
-              <mat-option value="Não">Não</mat-option>
-            </mat-select>
-          </mat-form-field>
-      
-          <mat-form-field appearance="fill">
-            <input matInput type="number" placeholder="Número Máximo de Parcelas" [(ngModel)]="formaPagamento.fpgNumeroMaximoParcelas" name="fpgNumeroMaximoParcelas">
-          </mat-form-field>
-      
-          <mat-form-field appearance="fill">
-            <input matInput type="number" placeholder="Quantidade de Parcelas" [(ngModel)]="formaPagamento.fpgQtdParcela" name="fpgQtdParcela">
-          </mat-form-field>
-      
-          <mat-form-field appearance="fill">
-            <input matInput type="number" placeholder="Taxa Adicional" [(ngModel)]="formaPagamento.fpgTaxaAdiciona" name="fpgTaxaAdiciona">
-          </mat-form-field>
-        </div>
-      
-        </form>      
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Descrição" [(ngModel)]="formaPagamento.fpgDescricao" name="fpgDescricao">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Status" [(ngModel)]="formaPagamento.fpgStatus" name="fpgStatus">
+        </mat-form-field>
+    </form>
 
     <button mat-raised-button (click)="updateFormaPagamento()" color="primary">
         Atualizar

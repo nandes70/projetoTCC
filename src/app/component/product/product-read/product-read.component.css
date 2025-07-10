@@ -1,6 +1,6 @@
 table{
     width: 100%; /*A tabela vai ocupar toda a largura disponível do container. Esticadona, poderosa, dominando tudo.*/
-    background: linear-gradient(to bottom, rgb(117, 4, 4), #eb0a0a); /* Vermelho Escuro escuro para Vermelho vibrante */
+   /* background: linear-gradient(to bottom, rgb(117, 4, 4), #eb0a0a);*/ /* Vermelho Escuro escuro para Vermelho vibrante */
 }
 
 .edit > i{
@@ -10,8 +10,11 @@ table{
 .delete > i{
     color: #e35e6b; /*a cor do texto*/
 }
+.vision > i{
+    color: rgb(150, 170, 190);
+}
 th
 {
     font-family: 'Rockwell', Arial, sans-serif; /*tá escolhendo a fonte do texto*/
-    font-size: 20px; /*Isso deixa o texto do botão com 20 pixels de tamanho*/
+    font-size: 25px; /*Isso deixa o texto do botão com 20 pixels de tamanho*/
 }

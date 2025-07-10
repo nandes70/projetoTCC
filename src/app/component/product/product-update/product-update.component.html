@@ -1,85 +1,87 @@
 <mat-card class="fundo1">
-    <mat-card-title>Editar o Produto</mat-card-title>
+    <mat-card-title>Atualiza Produto</mat-card-title>
+
+
     <form>
-        <div class="form-grid">
-            <mat-form-field appearance="fill">
-                <input matInput placeholder="Nome" [(ngModel)]="product.proNome" name="proNome">
-            </mat-form-field>
-            
-            <mat-form-field appearance="fill">
-                <input matInput placeholder="Preço de Custo (R$)" [(ngModel)]="product.proPrecoCusto" name="proPrecoCusto" min="0">
-            </mat-form-field>
-            
-            <mat-form-field appearance="fill">
-                <input matInput placeholder="Preço de Venda (R$)" [(ngModel)]="product.proPrecoVenda" name="proPrecoVenda" min="0">
-            </mat-form-field>
-            
-            <mat-form-field appearance="fill">
-                <input matInput placeholder="Marca" [(ngModel)]="product.proMarca" name="proMarca">
-            </mat-form-field>
-            
-            <mat-form-field appearance="fill">
-                <input matInput placeholder="Modelo" [(ngModel)]="product.proModelo" name="proModelo">
-            </mat-form-field>
-            
-            <mat-form-field appearance="fill">
-                <input matInput placeholder="Categoria" [(ngModel)]="product.proCategoria" name="proCategoria">
-            </mat-form-field>
-            
-            <mat-form-field appearance="fill">
-                <input matInput placeholder="Estoque" [(ngModel)]="product.proEstoque" name="proEstoque" min="0">
-            </mat-form-field>
-            
-            <mat-form-field appearance="fill">
-                <input matInput placeholder="Codigo de Barras" [(ngModel)]="product.proCodigoBarras"
-                    name="proCodigoBarras">
-            </mat-form-field>
-            
-            <mat-form-field appearance="fill">
-                <input matInput placeholder="Cor" [(ngModel)]="product.proCor" name="proCor">
-            </mat-form-field>
-            
-            <mat-form-field appearance="fill">
-                <input matInput placeholder="Material" [(ngModel)]="product.proMaterial" name="proMaterial">
-            </mat-form-field>
-            
-            <mat-form-field appearance="fill">
-                <input matInput placeholder="Fabricante" [(ngModel)]="product.proFabricante" name="proFabricante">
-            </mat-form-field>
 
-            <mat-form-field>
-                <mat-label>Produto Ativo?</mat-label>
-                <mat-select [(ngModel)]="product.proAtivo" name="ativo">
-                    <mat-option value="Ativo">Ativo</mat-option>
-                    <mat-option value="Inativo">Inativo</mat-option>
-                </mat-select>
-            </mat-form-field>
+       
+        <mat-form-field appearance="fill">
+            <input matInput placeholder="Nome" [(ngModel)]="product.proNome" name="proNome">
+        </mat-form-field>
 
-            <mat-form-field>
-                <input matInput [matDatepicker]="picker1" placeholder="Data de Cadastro"
-                    [(ngModel)]="product.proDataCadastro" name="proDataCadastro">
-                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
-                <mat-datepicker #picker1></mat-datepicker>
-            </mat-form-field>
-            
-            <mat-form-field>
-                <input matInput [matDatepicker]="picker2" placeholder="Data de Atualização"
-                    [(ngModel)]="product.proDataAtualizacao" name="proDataAtualizacao">
-                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
-                <mat-datepicker #picker2></mat-datepicker>
-            </mat-form-field>
-            
-            <mat-form-field appearance="fill">
-                <input matInput placeholder="Descrição" [(ngModel)]="product.proDescricao" name="proDescricao">
-            </mat-form-field>
-        </div>
+        <mat-form-field appearance="fill">
+            <input matInput placeholder="Descrição" [(ngModel)]="product.proDescricao" name="proDescricao">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <input matInput placeholder="Codigo de Barra" [(ngModel)]="product.proCodigoBarra" name="proCodigoBarra">
+        </mat-form-field>
+
+         <!-- mudei o ano de aplicacao-->
+       <mat-form-field appearance="fill">
+        <input matInput placeholder="Codigo Interno" [(ngModel)]="product.proCodigoInterno" name="proCodigoInterno" >
+      </mat-form-field>
+
+          <mat-form-field appearance="fill">
+             <input matInput placeholder="Fabricante" [(ngModel)]="product.proFabricante" name="proFabricante">
+          </mat-form-field>
+
+   
+          <mat-form-field appearance="fill">
+             <input matInput placeholder="Marca" [(ngModel)]="product.proMarca" name="proMarca">
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+             <input matInput placeholder="Categoria" [(ngModel)]="product.proCategoria" name="proCategoria">
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+             <input matInput placeholder="Ano de Aplicação" [(ngModel)]="product.proAnoAplicacao" name="proAnoAplicacao">
+          </mat-form-field>
+
+        
+
+          <mat-form-field appearance="fill">
+             <input matInput type="number" placeholder="Preco de Custo (R$)" [(ngModel)]="product.proPrecoCusto" name="proPrecoCusto">
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+             <input matInput type="number" placeholder="Preco de Venda (R$)" [(ngModel)]="product.proPrecoVenda" name="proPrecoVenda">
+          </mat-form-field>
+
+
+          <mat-form-field appearance="fill">
+            <input matInput type="number" placeholder="Estoque" [(ngModel)]="product.proEstoque" name="proEstoque">
+         </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Produto Ativo?</mat-label>
+            <mat-select [(ngModel)]="product.proStatus" name="ativo">
+              <mat-option [value]="true">Sim</mat-option>
+              <mat-option [value]="false">Não</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <input matInput placeholder="Observação" [(ngModel)]="product.proObservacao" name="proObservacao" >
+          </mat-form-field>
+      
+
+        <mat-form-field>
+            <input matInput [matDatepicker]="picker1" placeholder="Data de Atualização" [(ngModel)]="product.proDataCadastro" name="proDataCadastro">
+            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+          </mat-form-field>
+
+
     </form>
 
-    <button mat-raised-button (click)="updateProduct()" color="primary">
-        Atualizar
-    </button>
-
-    <button mat-raised-button (click)="cancel()">
-        Cancelar
-    </button>
+    <div style="display: flex; justify-content: flex-end; gap: 10px;">
+        <button mat-raised-button class="btn-cancelar1" (click)="cancel()">
+          Cancelar
+        </button>
+        <button mat-raised-button class="btn-Atualizar" (click)="updateProduct()">
+          Atualizar
+        </button>
+      </div>
 </mat-card>

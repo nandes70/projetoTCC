@@ -8,44 +8,42 @@ import { Fornecedor } from '../fornecedor.model';
   templateUrl: './fornecedor-create.component.html',
   styleUrls: ['./fornecedor-create.component.css']
 })
-export class FornecedorCreateComponent implements OnInit{
-fornecedor: Fornecedor = {
-  nameFanatasia: '',
-  razao_Social: '',
-  cpfCnpj: '',
-  status: '',
-  proDataCadastro: null,
-  forResponsavel: '',
+export class FornecedorCreateComponent implements OnInit {
+  
+  fornecedor: Fornecedor = {
+    nameFanatasia: '',
+    razao_Social: '',
+    cpfCnpj: '',
+    status: '',
+  
+    conCelular: '',
+    conTelefoneComercial: '',
+    conEmail: '',
+    conEmailSecundario: '',
+  
+    endRua: '',
+    endBairro: '',
+    endNumero: '',
+    endCidade: '',
+    endCep: '',
+    endEstado: ''
+  }
+  
+  constructor(
+    private fornecedorService: FornecedorService,
+    private router: Router
+  ) {}
 
-  conCelular: '',
-  conTelefoneComercial: '',
-  conEmail: '',
+  ngOnInit(): void {}
 
-  endRua: '',
-  endNumero: '',
-  endCidade: '',
-  endBairro: '',
-  endCep: '',
-  endEstado: '',
-  endPais: '',
-  endComplemento: '',
-  endTipoResidencia: ''
-}
-constructor(private fornecedorService: FornecedorService,
-  private router: Router) { }
+  createFornecedor(): void {
+    this.fornecedorService.create(this.fornecedor).subscribe(() => {
+      this.fornecedorService.showMessage('Fornecedor Criado!!!')
+      this.router.navigate(['/fornecedor'])
+    })
+  }
 
-ngOnInit(): void {
-    
-}
-createFornecedor(): void
-{
-  this.fornecedorService.create(this.fornecedor).subscribe(() => {
-    this.fornecedorService.showMessage('Fornecedor Criado!!!')
+  cancel(): void {
     this.router.navigate(['/fornecedor'])
-  })
-}
-cancel(): void
-{
-  this.router.navigate(['/fornecedor'])
-}
+  }
 }

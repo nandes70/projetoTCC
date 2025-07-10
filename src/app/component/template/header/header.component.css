@@ -1,33 +1,63 @@
-.header{
+/* Barra de navegação principal */
+.header {
+    display: flex;
+    justify-content: center;       /* Centraliza o conteúdo principal (título) */
+    align-items: center;
+    position: relative;
+    background-color: rgb(102, 0, 0); /* Fundo escuro (pode trocar por outro) */
+    height: 65px;
+    padding: 0 20px; /* Padding lateral melhor controlado */
+    background-image: url('https://www.shutterstock.com/image-illustration/dark-industrial-wallpaper-3d-render-600nw-21520189');
     display: flex;
     align-items: center;
-    background: linear-gradient(to bottom, #000000, #a70101, #000000);
-    /*background-image: url('https://static.vecteezy.com/ti/vetor-gratis/p1/8143760-padrao-perfeito-com-icones-de-jogos-vetor.jpg');*/
-    padding-left: 2px;
-}
-.header a {
+  }
+  
+  /* Link geral dentro da header */
+  .header a {
     display: flex;
     align-items: center;
     text-decoration: none;
-}
-
-.header .logo {
-    max-height: 120px;
-}
-
-.header .title-group{
-    padding-left: 5px;
     color: rgb(255, 255, 255);
+  }
+  
+  /* Ícones dentro da header */
+  .header i {
+    color: rgb(255, 255, 255);
+    margin-right: 5px;
+  }
+  
+  /* Área central com título da loja */
+  .header .center {
+    font-size: 24px;
+    font-weight: bold;
+    color: aliceblue;
+  }
+  
+  /* Agrupamento visual do título */
+  .header .title-group {
+    padding-left: 5px;
     font-family: 'Rockwell', Arial, sans-serif;
     font-size: 35px;
-    
-}
-
-.header .title-group i {
-    padding-right: 5px;
-
-    
-}
-p{
-    color: rgb(250, 0, 42);
-}
+  }
+  
+  /* Logo (caso esteja usando imagem, mantive sua regra) */
+  .header .logo {
+    max-height: 65px;
+    display: block;
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+    background-color: black;
+  }
+  
+  /* Posição do botão "início" */
+  .header .right {
+    position: absolute;
+    right: 16px;
+  }
+  
+  /* Cor do parágrafo fora da header */
+  p {
+    color: rgb(196, 0, 0);
+  }
+  

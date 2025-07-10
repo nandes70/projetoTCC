@@ -1,67 +1,66 @@
-.fundo1{
-    width: 100%;
+.fundo1 {
     background: linear-gradient(to bottom, rgb(0, 0, 0), #000000);
-    border-radius: 20px;
-    border: 2px solid #ff0000;
-    box-shadow: 0 0 2px #ff0000, 0 0 4px #a72902 inset; /* LED mais sutil */
-    transition: box-shadow 0.3s ease;
-    border-collapse: separate;
-    border-spacing: 0;
-    position: relative;
-    overflow: hidden;
-}
-form{
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
+    padding: 20px;
+    border-radius: 8px;
+    color: white;
 }
 
-button{
-    margin: 20px 15px 5px 15px;
+/* Layout em grade com 3 colunas para os campos */
+form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+
+
+/* Estilização dos botões */
+
+.btn-cancelar, .btn-salvar {
+    margin: 20px 15px 0px 0px;
+    color: white;
+    font-family: 'Rockwell', Arial, sans-serif;
+    font-size: 26px;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-cancelar {
+    background-color: #d45555;
+  }
+  
+  .btn-cancelar:hover {
+    background-color: #a33b3b;
+  }
+  
+  .btn-salvar {
+    background-color: #00cc66;
+  }
+  
+  .btn-salvar:hover {
+    background-color: #00994d;
+  }
+
+
+/* Linha de botões separada */
+.button-row {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    grid-column: span 3; /* Faz os botões ocuparem toda a largura do grid */
+}
+
+
+
+/*button {
+    margin: 20px 15px 0px 0px;
     color: rgb(255, 255, 255);
     font-family: 'Rockwell', Arial, sans-serif;
     font-size: 26px;
-    background: linear-gradient(to bottom, rgb(117, 4, 4), #eb0a0a);
-}
-.form-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  margin-bottom: 16px;
-  margin: 15px 15px 5px 40px;
+    background: linear-gradient(to bottom, rgb(151, 0, 0), #b60000);
+}*/
 
-@media (max-width: 768px) {
-  .form-grid {
-    grid-template-columns: repeat(1, 1fr);
-  }
-}
-}
-mat-form-field{
-    width: 95%;
-}
-.fundo1:hover {
-  /* Nenhum transform (sem flutuar) */
-  box-shadow: 0 0 3px #ebe3ff, 0 0 5px #d1350e inset;
-}
-.fundo1::before {
-  content: "";
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  border-radius: 15px;
-  background: linear-gradient(45deg, #420ed1, #0088ff, #420ed1);
-  z-index: -1;
-  filter: blur(3px);     /* menos blur */
-  opacity: 0.2;          /* LED ainda mais suave */
-  transition: opacity 0.3s ease, filter 0.3s ease;
-}
-.fundo1:hover::before {
-  opacity: 0.3;
-  filter: blur(4px);
-}
-div{
-  display: flex; 
-  justify-content: center; 
-  margin-bottom: 16px;
-}

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
 import { HomeComponent } from './views/home/home.component';
 import { ProductCrudComponent } from './views/product-crud/product-crud.component';
 import { FornecedorCrudComponent } from './views/fornecedor-crud/fornecedor-crud.component';
@@ -15,75 +16,30 @@ import { FormaPagamentoDeleteComponent } from './component/formaPagamento/forma-
 import { FormaPagamentoUpdateComponent } from './component/formaPagamento/forma-pagamento-update/forma-pagamento-update.component';
 
 const routes: Routes = [
-{
-  path: "",
-  component: HomeComponent 
-},
-///////////////////////////products
-{
-  path: "products",
-  component: ProductCrudComponent
-},
-/*-----*/
-{
-  path: "products/create",
-  component: ProductCreateComponent
-},
-/*-----*/
-{
-  path: "products/update/:id",
-  component: ProductUpdateComponent
-},
-/*-----*/
-{
-  path: "products/delete/:id",
-  component: ProductDeleteComponent
-},
-///////////////////////////products FIM
+  { path: "", component: HomeComponent },
 
-///////////////////////////formaPagamento
-{
-  path: "formaPagamento",
-  component: FormaPagamentoCrudComponent
-},
-/*-----*/
-{
-  path: "formaPagamento/create",
-  component: FormaPagamentoCreateComponent
-},
-/*-----*/
-{
-  path: "formaPagamento/delete/:id",
-  component: FormaPagamentoDeleteComponent
-},
-/*-----*/
-{
-  path: "formaPagamento/update/:id",
-  component: FormaPagamentoUpdateComponent
-},
-///////////////////////////formaPagamento FIM
+  // Products
+  { path: "products", component: ProductCrudComponent },
+  { path: "products/create", component: ProductCreateComponent },
+  { path: "products/update/:id", component: ProductUpdateComponent },
+  { path: "products/delete/:id", component: ProductDeleteComponent },
 
-///////////////////////////fornecedores
-{
-  path: "fornecedores",
-  component: FornecedorCrudComponent
-},
-{
-  path: "fornecedor/create",
-  component: FornecedorCreateComponent
-},
-///////////////////////////fornecedores FIM
+  // Formas de Pagamento
+  { path: "formas-pagamento", component: FormaPagamentoCrudComponent },
+  { path: "formas-pagamento/create", component: FormaPagamentoCreateComponent },
+  { path: "formas-pagamento/update/:id", component: FormaPagamentoUpdateComponent },
+  { path: "formas-pagamento/delete/:id", component: FormaPagamentoDeleteComponent },
 
-///////////////////////////Cliente
-{
-  path: "clientes",
-  component: ClienteCrudComponent
-},
-{
-  path: "cliente/create",
-  component: ClienteCreateComponent
-},
-///////////////////////////Cliente FIM
+  // Fornecedores
+  { path: "fornecedores", component: FornecedorCrudComponent },
+  { path: "fornecedores/create", component: FornecedorCreateComponent },
+
+  // Clientes
+  { path: "clientes", component: ClienteCrudComponent },
+  { path: "clientes/create", component: ClienteCreateComponent },
+
+  // Rota coringa (opcional)
+  { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 
 @NgModule({
