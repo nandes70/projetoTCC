@@ -1,19 +1,43 @@
 <mat-card class="fundo1">
-    <mat-card-title>Editar a Forma de Pagamento</mat-card-title>
+    <mat-card-title>Atualização de Forma de Pagamento</mat-card-title>
+  
     <form>
-        <mat-form-field>
-            <input matInput placeholder="Descrição" [(ngModel)]="formaPagamento.fpgDescricao" name="fpgDescricao">
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="Status" [(ngModel)]="formaPagamento.fpgStatus" name="fpgStatus">
-        </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Descrição" [(ngModel)]="formaPagamento.fpgDescricao" name="fpgDescricao">
+      </mat-form-field>
+  
+      <mat-form-field>
+        <mat-label>Forma De Pagamento ativa?</mat-label>
+        <mat-select [(ngModel)]="formaPagamento.fpgStatus" name="fpgStatus">
+          <mat-option [value]="true">Sim</mat-option>
+          <mat-option [value]="false">Não</mat-option>
+        </mat-select>
+      </mat-form-field>
+      
+      <mat-form-field>
+        <mat-label>Permite Parcelamento</mat-label>
+        <mat-select [(ngModel)]="formaPagamento.fpgPermiteParcelamento" name="fpgPermiteParcelamento">
+          <mat-option [value]="true">Sim</mat-option>
+          <mat-option [value]="false">Não</mat-option>
+        </mat-select>
+      </mat-form-field>
+      
+  
+      <mat-form-field>
+        <input matInput type="number" placeholder="Número Máximo de Parcelas" [(ngModel)]="formaPagamento.fpgNumeroMaxParcela" name="fpgNumeroMaxParcela">
+      </mat-form-field>
+  
+      <mat-form-field>
+        <input matInput type="number" step="0.01" placeholder="Taxa Adicional (%)" [(ngModel)]="formaPagamento.fpgTaxaAdicional" name="fpgTaxaAdicional">
+      </mat-form-field>
     </form>
-
-    <button mat-raised-button (click)="updateFormaPagamento()" color="primary">
-        Atualizar
-    </button>
-   
-    <button mat-raised-button (click)="cancel()">
-        Cancelar
-    </button>
-</mat-card>
+  
+    <div style="display: flex; justify-content: flex-end; gap: 10px;">
+        <button mat-raised-button class="btn-cancelar1" (click)="cancel()">
+          Cancelar
+        </button>
+        <button mat-raised-button class="btn-Atualizar" (click)="updateFormaPagamento()">
+          Atualizar
+        </button>
+      </div>
+  </mat-card>

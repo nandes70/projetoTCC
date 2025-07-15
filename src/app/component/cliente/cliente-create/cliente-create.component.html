@@ -6,19 +6,19 @@
     </div>
     <form>
         <mat-form-field>
-            <input matInput placeholder="Nome" [(ngModel)]="cliente.nome" name="nome">
+            <input matInput placeholder="Nome" [(ngModel)]="cliente.nome" name="nome" required>
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="CPF / CNPJ" [(ngModel)]="cliente.cpfCnpj" name="cpfCnpj">
+            <input matInput placeholder="CPF / CNPJ" [(ngModel)]="cliente.cpfCnpj" name="cpfCnpj" required>
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="Data Nascimento" [(ngModel)]="cliente.dataNascimento" name="dataNascimento">
+            <input matInput placeholder="Data Nascimento" [(ngModel)]="cliente.dataNascimento" name="dataNascimento" required> 
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="Forma de Pagamento" [(ngModel)]="cliente.formaPagamento" name="formaPagamento">
+            <input matInput placeholder="Forma de Pagamento" [(ngModel)]="cliente.formaPagamento" name="formaPagamento" required>
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="Status" [(ngModel)]="cliente.status" name="status">
+            <input matInput placeholder="Status" [(ngModel)]="cliente.status" name="status" required>
         </mat-form-field>
     </form>
 

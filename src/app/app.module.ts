@@ -28,7 +28,7 @@ import { ContatoReadComponent } from './component/contato/contato-read/contato-r
 import { EnderecoCrudComponent } from './views/endereco-crud/endereco-crud.component';
 import { EnderecoReadComponent } from './component/endereco/endereco-read/endereco-read.component';
 
-
+import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
@@ -78,6 +78,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     FormaPagamentoDeleteComponent
   ],
   imports: [
+    MatIconModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
