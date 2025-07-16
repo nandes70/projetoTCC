@@ -2,7 +2,7 @@
     position: fixed; /* Fixa a barra lateral na tela */
     right: 0; /* Alinha à direita */
     top: 0; /* Começa do topo da página */
-    height: 100vh; /* Ocupa 100% da altura da tela */
+    height: 150vh; /* Ocupa 100% da altura da tela */
     width: 220px; /* Largura da barra lateral */
     background-color: #727272; /* Cor de fundo cinza */
     display: flex; /* Usa flexbox para alinhar os itens */

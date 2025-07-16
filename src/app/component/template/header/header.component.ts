@@ -21,8 +21,8 @@ routeData: Record<string, { title: string, icon: string }> = {
   '/products/update': { title: 'Atualiza Produto', icon: 'add_box' + 'storefront' },
 
   //cliente
-  '/clientes': { title: 'Clientes', icon: 'account_circle' },
-  '/cliente/create': { title: 'Novo Cliente', icon: 'add_box' + 'account_circle' },
+  '/cliente': { title: 'Clientes', icon: 'account_circle' },
+  '/clientes/create': { title: 'Novo Cliente', icon: 'add_box' + 'account_circle' },
 
   //fornecedor
   '/fornecedor': { title: 'Fornecedores', icon: 'group' },

@@ -1,3 +1,4 @@
+
 export interface Contato
 {
     id?: number

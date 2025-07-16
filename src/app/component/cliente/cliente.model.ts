@@ -1,21 +1,14 @@
+import { Endereco } from '../endereco/endereco.model';
+import { Contato } from '../contato/contato.model';
+
 export interface Cliente {
-    id?: number;
-    nome: string;
-    cpfCnpj: string;
-    dataNascimento: string;
-    formaPagamento: string;
-    status: string;
-  
-    conCelular: string;
-    conTelefoneComercial: string;
-    conEmail: string;
-    conEmailSecundario: string;
-  
-    endRua: string;
-    endBairro: string;
-    endNumero: string;
-    endCidade: string;
-    endCep: string;
-    endEstado: string;
-  }
-  
+  id?: number;
+  cliNome: string;
+  cliCpf: string;
+  dataNascimento: Date | null;
+  formaPagamento: string;
+  cliStatus: string;
+
+  endereco: Endereco;
+  contato: Contato;
+}

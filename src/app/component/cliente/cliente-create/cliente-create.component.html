@@ -1,32 +1,93 @@
-<!-- Cria um card estilizado com Angular Material -->
 <mat-card class="fundo1">
-    <!-- Título do card -->
     <div style="display: flex; justify-content: center; margin-bottom: 16px;">
-      <mat-card-title style="font-size: 24px; color: rgb(255, 255, 255);">Novo Cliente</mat-card-title>
+      <mat-card-title style="font-size: 24px; color: white;">Novo Cliente</mat-card-title>
     </div>
-    <form>
-        <mat-form-field>
-            <input matInput placeholder="Nome" [(ngModel)]="cliente.nome" name="nome" required>
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="CPF / CNPJ" [(ngModel)]="cliente.cpfCnpj" name="cpfCnpj" required>
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="Data Nascimento" [(ngModel)]="cliente.dataNascimento" name="dataNascimento" required> 
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="Forma de Pagamento" [(ngModel)]="cliente.formaPagamento" name="formaPagamento" required>
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="Status" [(ngModel)]="cliente.status" name="status" required>
-        </mat-form-field>
+  
+    <!-- Etapa 1 - Dados básicos -->
+    <form *ngIf="step === 1" novalidate>
+      <mat-form-field appearance="fill" style="width: 100%;">
+        <input matInput placeholder="Nome" [(ngModel)]="cliente.cliNome" name="cliNome" required>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill" style="width: 100%;">
+        <input matInput placeholder="CPF / CNPJ" [(ngModel)]="cliente.cliCpf" name="cliCpf" required>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill" style="width: 100%;">
+        <input
+          matInput
+          [matDatepicker]="pickerNascimento"
+          placeholder="Data de Nascimento"
+          [(ngModel)]="cliente.dataNascimento"
+          name="dataNascimento"
+          required
+        >
+        <mat-datepicker-toggle matSuffix [for]="pickerNascimento"></mat-datepicker-toggle>
+        <mat-datepicker #pickerNascimento></mat-datepicker>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill" style="width: 100%;">
+        <input matInput placeholder="Forma de Pagamento" [(ngModel)]="cliente.formaPagamento" name="formaPagamento" required>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill" style="width: 100%;">
+        <input matInput placeholder="Status" [(ngModel)]="cliente.cliStatus" name="cliStatus" required>
+      </mat-form-field>
+  
+      <div style="display: flex; justify-content: flex-end; gap: 10px;">
+        <button mat-raised-button color="warn" (click)="cancel()">Cancelar</button>
+        <button mat-raised-button color="primary" type="button" (click)="nextStep()" [disabled]="!step1IsValid()">Próximo</button>
+      </div>
     </form>
-
-    <button mat-raised-button (click)="createCliente()" color="primary">
-        Salvar
-    </button>
-   
-    <button mat-raised-button (click)="cancel()">
-        Cancelar
-    </button>
-</mat-card>
+  
+    <!-- Etapa 2 - Contatos e Endereço -->
+    <form *ngIf="step === 2" novalidate>
+      <!-- Contato -->
+      <mat-form-field appearance="fill" style="width: 100%;">
+        <input matInput placeholder="Telefone" [(ngModel)]="cliente.contato.telefone" name="telefone">
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill" style="width: 100%;">
+        <input matInput placeholder="Celular" [(ngModel)]="cliente.contato.celular" name="celular">
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill" style="width: 100%;">
+        <input matInput placeholder="Email" [(ngModel)]="cliente.contato.email" name="email" type="email">
+      </mat-form-field>
+  
+      <!-- Endereço -->
+      <mat-form-field appearance="fill" style="width: 100%;">
+        <input matInput placeholder="Rua" [(ngModel)]="cliente.endereco.rua" name="rua">
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill" style="width: 100%;">
+        <input matInput placeholder="Número" [(ngModel)]="cliente.endereco.numero" name="numero" type="number">
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill" style="width: 100%;">
+        <input matInput placeholder="Complemento" [(ngModel)]="cliente.endereco.complemento" name="complemento">
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill" style="width: 100%;">
+        <input matInput placeholder="Bairro" [(ngModel)]="cliente.endereco.bairro" name="bairro">
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill" style="width: 100%;">
+        <input matInput placeholder="Cidade" [(ngModel)]="cliente.endereco.cidade" name="cidade">
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill" style="width: 100%;">
+        <input matInput placeholder="Estado" [(ngModel)]="cliente.endereco.estado" name="estado">
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill" style="width: 100%;">
+        <input matInput placeholder="CEP" [(ngModel)]="cliente.endereco.cep" name="cep">
+      </mat-form-field>
+  
+      <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 10px;">
+        <button mat-raised-button color="accent" type="button" (click)="prevStep()">Voltar</button>
+        <button mat-raised-button color="primary" type="button" (click)="createCliente()">Salvar</button>
+      </div>
+    </form>
+  </mat-card>
+  
