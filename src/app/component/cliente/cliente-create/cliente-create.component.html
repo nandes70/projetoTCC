@@ -26,13 +26,26 @@
         <mat-datepicker #pickerNascimento></mat-datepicker>
       </mat-form-field>
   
-      <mat-form-field appearance="fill" style="width: 100%;">
-        <input matInput placeholder="Forma de Pagamento" [(ngModel)]="cliente.formaPagamento" name="formaPagamento" required>
-      </mat-form-field>
+    <!-- Forma de Pagamento (Select) -->
+<mat-form-field appearance="fill" style="width: 100%;">
+  <mat-label>Forma de Pagamento</mat-label>
+  <mat-select [(ngModel)]="cliente.formaPagamento" name="formaPagamento" required>
+    <mat-option value="">Selecione...</mat-option>
+    <mat-option value="DINHEIRO">Dinheiro</mat-option>
+    <mat-option value="CREDITO">Cartão de Crédito</mat-option>
+    <mat-option value="DEBITO">Cartão de Débito</mat-option>
+    <mat-option value="PIX">Pix</mat-option>
+  </mat-select>
+</mat-form-field>
   
-      <mat-form-field appearance="fill" style="width: 100%;">
-        <input matInput placeholder="Status" [(ngModel)]="cliente.cliStatus" name="cliStatus" required>
-      </mat-form-field>
+<mat-form-field appearance="fill" style="width: 100%;">
+  <mat-label>Status</mat-label>
+  <mat-select [(ngModel)]="cliente.cliStatus" name="cliStatus" required>
+    <mat-option value="">Selecione...</mat-option>
+    <mat-option value="ATIVO">Ativo</mat-option>
+    <mat-option value="INATIVO">Inativo</mat-option>
+  </mat-select>
+</mat-form-field>
   
       <div style="display: flex; justify-content: flex-end; gap: 10px;">
         <button mat-raised-button color="warn" (click)="cancel()">Cancelar</button>
@@ -61,7 +74,7 @@
       </mat-form-field>
   
       <mat-form-field appearance="fill" style="width: 100%;">
-        <input matInput placeholder="Número" [(ngModel)]="cliente.endereco.numero" name="numero" type="number">
+        <input matInput placeholder="Número" [(ngModel)]="cliente.endereco.numero" name="numero" type="text">
       </mat-form-field>
   
       <mat-form-field appearance="fill" style="width: 100%;">

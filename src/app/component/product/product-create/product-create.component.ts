@@ -43,17 +43,26 @@ export class ProductCreateComponent implements OnInit {
     // Pode conter lógica futura, como carregar categorias, fabricantes etc.
   }
 
-  // Método chamado ao clicar no botão "Salvar"
-  createProduct(): void {
-    // Chama o serviço que faz o POST do produto na API
-    this.productService.create(this.product).subscribe(() => {
-      // Mostra mensagem de sucesso ao usuário
-      this.productService.showMessage('Produto criado com sucesso!')
-
-      // Redireciona o usuário de volta para a listagem de produtos
-      this.router.navigate(['/products'])
-    })
-  }
+ // Método responsável por criar um novo produto
+createProduct(): void {
+  // Chama o método 'create' do serviço, passando o objeto 'product' como parâmetro
+  this.productService.create(this.product).subscribe({
+    // Caso a criação seja bem-sucedida
+    next: () => {
+      // Exibe uma mensagem de sucesso para o usuário
+      this.productService.showMessage('Produto criado com sucesso!');
+      // Redireciona para a rota de listagem de produtos
+      this.router.navigate(['/product']);
+    },
+    // Caso ocorra um erro durante a criação
+    error: (err) => {
+      // Exibe uma mensagem de erro para o usuário
+      this.productService.showMessage('Erro ao criar produto.');
+      // Imprime o erro no console para depuração
+      console.error(err);
+    }
+  });
+}
 
   // Método chamado ao clicar no botão "Cancelar"
   cancel(): void {

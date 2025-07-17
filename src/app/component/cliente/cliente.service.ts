@@ -3,6 +3,7 @@ import { Cliente } from './cliente.model';
 import { Observable } from 'rxjs';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { HttpClient } from '@angular/common/http';
+import { ClienteDTO } from './dto/cliente-dto.model';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +11,7 @@ import { HttpClient } from '@angular/common/http';
 export class ClienteService 
 {
   baseUrl = "http://localhost:8080/cliente"
+  
   constructor(private snackBar: MatSnackBar, private http: HttpClient) {}
 
   showMessage(msg: string): void
@@ -21,9 +23,8 @@ export class ClienteService
         verticalPosition: "top"
       })
   }
-  create(cliente: Cliente): Observable<Cliente>
-  {
-    return this.http.post<Cliente>(this.baseUrl, cliente)
+  create(cliente: ClienteDTO): Observable<ClienteDTO> {
+    return this.http.post<ClienteDTO>(this.baseUrl, cliente);
   }
   read(): Observable<Cliente[]>
   {

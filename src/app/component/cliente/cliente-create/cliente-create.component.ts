@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ClienteService } from '../cliente.service';
 import { Router } from '@angular/router';
 import { Cliente } from '../cliente.model';
-
-
+import { ClienteDTO } from '../dto/cliente-dto.model';
 
 @Component({
   selector: 'app-cliente-create',
@@ -13,6 +12,7 @@ import { Cliente } from '../cliente.model';
 export class ClienteCreateComponent implements OnInit {
   step: number = 1;
 
+  // Objeto do tipo Cliente com estrutura de dados agrupada (UI)
   cliente: Cliente = {
     cliNome: '',
     cliCpf: '',
@@ -34,6 +34,7 @@ export class ClienteCreateComponent implements OnInit {
       cep: ''
     }
   };
+
   constructor(
     private clienteService: ClienteService,
     private router: Router
@@ -41,6 +42,7 @@ export class ClienteCreateComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  // Navegação entre etapas do formulário
   nextStep(): void {
     if (this.step1IsValid()) {
       this.step = 2;
@@ -53,6 +55,7 @@ export class ClienteCreateComponent implements OnInit {
     this.step = 1;
   }
 
+  // Validação da etapa 1
   step1IsValid(): boolean {
     return (
       this.cliente.cliNome.trim() !== '' &&
@@ -63,14 +66,52 @@ export class ClienteCreateComponent implements OnInit {
     );
   }
 
+  /**
+   * Converte Cliente (interface estruturada para UI) para ClienteDTO (modelo esperado pelo backend)
+   */
+  toDTO(cliente: Cliente): ClienteDTO {
+    const limpaTelefone = (tel: string): string =>
+      tel ? tel.replace(/\D/g, '') : '';
+
+    return {
+      cliNome: cliente.cliNome,
+      cliCpf: cliente.cliCpf,
+      cliStatus: cliente.cliStatus.toUpperCase(),
+      dataNascimento: cliente.dataNascimento
+        ? cliente.dataNascimento.toISOString().split('T')[0]
+        : null,
+      formaPagamento: cliente.formaPagamento.toUpperCase(),
+
+      // Endereço no formato esperado pelo backend (campos planos)
+      endRua: cliente.endereco.rua,
+      endNumero: cliente.endereco.numero.toString(), // backend espera string
+      endCidade: cliente.endereco.cidade,
+      endCep: cliente.endereco.cep,
+      endEstado: cliente.endereco.estado,
+      endBairro: cliente.endereco.bairro,
+
+      // Contato
+      conCelular: limpaTelefone(cliente.contato.celular),
+      conTelefoneComercial: limpaTelefone(cliente.contato.telefone),
+      conEmail: cliente.contato.email,
+      conEmailSecundario: '' // opcional, pode ajustar depois
+    };
+  }
+
+  // Envia o DTO para o backend
   createCliente(): void {
-    console.log('Cliente a enviar:', this.cliente);
-    this.clienteService.create(this.cliente).subscribe(() => {
-      this.clienteService.showMessage('Cliente Criado com sucesso!');
-      this.router.navigate(['/cliente']);
-    }, error => {
-      this.clienteService.showMessage('Erro ao criar cliente. Tente novamente.');
-      console.error(error);
+    const clienteDTO = this.toDTO(this.cliente);
+    console.log('DTO a ser enviado:', clienteDTO);
+
+    this.clienteService.create(clienteDTO).subscribe({
+      next: () => {
+        this.clienteService.showMessage('Cliente criado com sucesso!');
+        this.router.navigate(['/cliente']);
+      },
+      error: (err) => {
+        this.clienteService.showMessage('Erro ao criar cliente.');
+        console.error('Erro ao criar cliente:', err);
+      }
     });
   }
 
