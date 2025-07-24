@@ -23,6 +23,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { FornecedorCrudComponent } from './views/fornecedor-crud/fornecedor-crud.component';
 import { FornecedorReadComponent } from './component/fornecedor/fornecedor-read/fornecedor-read.component';
 import { ProductCreateComponent } from './component/product/product-create/product-create.component';
+import { ClienteCreateComponent } from './component/cliente/cliente-create/cliente-create.component';
 import { ClienteCrudComponent } from './views/cliente-crud/cliente-crud.component';
 import { ClienteReadComponent } from './component/cliente/cliente-read/cliente-read.component';
 import { ContatoCrudComponent } from './views/contato-crud/contato-crud.component';
@@ -35,7 +36,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { ClienteCreateComponent } from './component/cliente/cliente-create/cliente-create.component';
+
 import { FornecedorCreateComponent } from './component/fornecedor/fornecedor-create/fornecedor-create.component';
 import { MatTableModule } from '@angular/material/table';
 import { ProductUpdateComponent } from './component/product/product-update/product-update.component';
@@ -50,6 +51,8 @@ import { FormaPagamentoDeleteComponent } from './component/formaPagamento/forma-
 import { MatSelectModule } from '@angular/material/select';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { ClienteUpdateComponent } from './component/cliente/cliente-update/cliente-update.component';
+import { ClienteDeleteComponent } from './component/cliente/cliente-delete/cliente-delete.component';
 
 @NgModule({
   declarations: [
@@ -77,7 +80,9 @@ import { MatNativeDateModule } from '@angular/material/core';
     FormaPagamentoCreateComponent,
     FormaPagamentoReadComponent,
     FormaPagamentoUpdateComponent,
-    FormaPagamentoDeleteComponent
+    FormaPagamentoDeleteComponent,
+    ClienteUpdateComponent,
+    ClienteDeleteComponent
   ],
   imports: [
     MatIconModule,

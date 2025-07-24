@@ -4,27 +4,27 @@
     <div style="display: flex; justify-content: center; margin-bottom: 16px;">
       <mat-card-title style="font-size: 24px; color: rgb(255, 255, 255);">Novo Cliente</mat-card-title>
     </div>
-
+<form>
 <!-- Etapa 1 - Dados Básicos -->
-<form *ngIf="step === 1" #formStep1="ngForm" novalidate>
-  <mat-form-field appearance="fill" style="width: 100%;">
-    <input matInput placeholder="Nome" [(ngModel)]="cliente.cliNome" name="cliNome" required>
+ 
+  <mat-form-field appearance="fill">
+    <input matInput placeholder="Nome" [value]="cliente.cliNome" name="cliNome" disabled>
   </mat-form-field>
 
   <mat-form-field appearance="fill" style="width: 100%;">
-    <input matInput placeholder="CPF / CNPJ" [(ngModel)]="cliente.cliCpf" name="cliCpf" required>
+    <input matInput placeholder="CPF / CNPJ" [value]="cliente.cliCpf" name="cliCpf" disabled>
   </mat-form-field>
 
   <mat-form-field appearance="fill" style="width: 100%;">
     <input matInput [matDatepicker]="pickerNascimento" placeholder="Data de Nascimento"
-           [(ngModel)]="cliente.dataNascimento" name="dataNascimento" required>
+           [value]="cliente.dataNascimento" name="dataNascimento" disabled>
     <mat-datepicker-toggle matSuffix [for]="pickerNascimento"></mat-datepicker-toggle>
     <mat-datepicker #pickerNascimento></mat-datepicker>
   </mat-form-field>
 
   <mat-form-field appearance="fill" style="width: 100%;">
     <mat-label>Forma de Pagamento</mat-label>
-    <mat-select [(ngModel)]="cliente.formaPagamento" name="formaPagamento" required>
+    <mat-select [value]="cliente.formaPagamento" name="formaPagamento" disabled>
       <mat-option value="">Selecione...</mat-option>
       <mat-option value="DINHEIRO">Dinheiro</mat-option>
       <mat-option value="CREDITO">Cartão de Crédito</mat-option>
@@ -35,70 +35,65 @@
 
   <mat-form-field appearance="fill" style="width: 100%;">
     <mat-label>Status</mat-label>
-    <mat-select [(ngModel)]="cliente.cliStatus" name="cliStatus" required>
+    <mat-select [value]="cliente.cliStatus" name="cliStatus" disabled>
       <mat-option value="">Selecione...</mat-option>
       <mat-option value="ATIVO">Ativo</mat-option>
       <mat-option value="INATIVO">Inativo</mat-option>
     </mat-select>
   </mat-form-field>
 
-  <div style="display: flex;  gap: 10px;">
- 
-    <button mat-raised-button class="btn-cancelar" (click)="cancel()">Cancelar</button>
-    <button mat-raised-button color="primary" class="btn-salvar" (click)="nextStep()" [disabled]="!formStep1.form.valid">
-      Próximo
-    </button>
-  </div>
-</form>
+  
 
 <!-- Etapa 2 - Contato e Endereço -->
-<form *ngIf="step === 2" #formStep2="ngForm" novalidate>
+ 
   <!-- Contato -->
   <mat-form-field appearance="fill" style="width: 100%;">
-    <input matInput placeholder="Telefone" [(ngModel)]="cliente.contato.telefone" name="telefone" required>
+    <input matInput placeholder="Telefone" [value]="cliente.contato.telefone" name="telefone" disabled>
   </mat-form-field>
 
   <mat-form-field appearance="fill" style="width: 100%;">
-    <input matInput placeholder="Celular" [(ngModel)]="cliente.contato.celular" name="celular">
+    <input matInput placeholder="Celular" [value]="cliente.contato.celular" name="celular">
   </mat-form-field>
 
   <mat-form-field appearance="fill" style="width: 100%;">
-    <input matInput placeholder="Email" [(ngModel)]="cliente.contato.email" name="email" type="email" required>
+    <input matInput placeholder="Email" [value]="cliente.contato.email" name="email" disabled>
   </mat-form-field>
 
   <!-- Endereço -->
   <mat-form-field appearance="fill" style="width: 100%;">
-    <input matInput placeholder="Rua" [(ngModel)]="cliente.endereco.rua" name="rua">
+    <input matInput placeholder="Rua" [value]="cliente.endereco.rua" name="rua" >
   </mat-form-field>
 
   <mat-form-field appearance="fill" style="width: 100%;">
-    <input matInput placeholder="Número" [(ngModel)]="cliente.endereco.numero" name="numero">
+    <input matInput placeholder="Número" [value]="cliente.endereco.numero" name="numero">
   </mat-form-field>
 
   <mat-form-field appearance="fill" style="width: 100%;">
-    <input matInput placeholder="Complemento" [(ngModel)]="cliente.endereco.complemento" name="complemento">
+    <input matInput placeholder="Complemento" [value]="cliente.endereco.complemento" name="complemento">
   </mat-form-field>
 
   <mat-form-field appearance="fill" style="width: 100%;">
-    <input matInput placeholder="Bairro" [(ngModel)]="cliente.endereco.bairro" name="bairro">
+    <input matInput placeholder="Bairro" [value]="cliente.endereco.bairro" name="bairro">
   </mat-form-field>
 
   <mat-form-field appearance="fill" style="width: 100%;">
-    <input matInput placeholder="Cidade" [(ngModel)]="cliente.endereco.cidade" name="cidade">
+    <input matInput placeholder="Cidade" [value]="cliente.endereco.cidade" name="cidade">
   </mat-form-field>
 
   <mat-form-field appearance="fill" style="width: 100%;">
-    <input matInput placeholder="Estado" [(ngModel)]="cliente.endereco.estado" name="estado">
+    <input matInput placeholder="Estado" [value]="cliente.endereco.estado" name="estado">
   </mat-form-field>
 
   <mat-form-field appearance="fill" style="width: 100%;">
-    <input matInput placeholder="CEP" [(ngModel)]="cliente.endereco.cep" name="cep">
+    <input matInput placeholder="CEP" [value]="cliente.endereco.cep" name="cep">
   </mat-form-field>
+ </form>
+
 
   <div style="display: flex; justify-content: flex-end; gap: 10px;">
     <button mat-raised-button class="btn-cancelar" (click)="cancel()">Cancelar</button>
-    <button mat-raised-button color="primary" class="btn-salvar" (click)="createCliente()" [disabled]="!formStep2.form.valid">
-      Salvar
+    <button mat-raised-button color="primary" class="btn-salvar" (click)="deleteCliente()" [disabled]="!formStep2.form.valid">
+     Deletar cliente
     </button>
   </div>
-</form>
+

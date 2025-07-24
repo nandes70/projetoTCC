@@ -14,6 +14,8 @@ import { FormaPagamentoCrudComponent } from './views/forma-pagamento-crud/forma-
 import { FormaPagamentoCreateComponent } from './component/formaPagamento/forma-pagamento-create/forma-pagamento-create.component';
 import { FormaPagamentoDeleteComponent } from './component/formaPagamento/forma-pagamento-delete/forma-pagamento-delete.component';
 import { FormaPagamentoUpdateComponent } from './component/formaPagamento/forma-pagamento-update/forma-pagamento-update.component';
+import { ClienteUpdateComponent } from './component/cliente/cliente-update/cliente-update.component';
+import { ClienteDeleteComponent } from './component/cliente/cliente-delete/cliente-delete.component';
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
@@ -25,10 +27,10 @@ const routes: Routes = [
   { path: "products/delete/:id", component: ProductDeleteComponent },
 
   // Formas de Pagamento
-{ path: 'formaPagamento', component: FormaPagamentoCrudComponent },
-{ path: 'formaPagamento/create', component: FormaPagamentoCreateComponent },
-{ path: 'formaPagamento/update/:id', component: FormaPagamentoUpdateComponent },
-{ path: 'formaPagamento/delete/:id', component: FormaPagamentoDeleteComponent },
+{ path: "formaPagamento", component: FormaPagamentoCrudComponent },
+{ path: "formaPagamento/create", component: FormaPagamentoCreateComponent },
+{ path: "formaPagamento/update/:id", component: FormaPagamentoUpdateComponent },
+{ path: "formaPagamento/delete/:id", component: FormaPagamentoDeleteComponent },
 
   // Fornecedores
   { path: "fornecedor", component: FornecedorCrudComponent },
@@ -37,6 +39,8 @@ const routes: Routes = [
   // Clientes
   { path: "cliente", component: ClienteCrudComponent },
   { path: "cliente/create", component: ClienteCreateComponent },
+  {path: "cliente/update/id", component: ClienteUpdateComponent},
+  {path: "cliente/delete/id", component: ClienteDeleteComponent}
 
  
 ];

@@ -1,38 +1,38 @@
 <mat-sidenav-container class="container">
-    <!-- Barra lateral movida para a direita -->
-    <mat-sidenav class="sidenav" mode="side" position="end" opened fixedInViewport="true" fixedTopGap="64">
-      <div class="logo-container">
-        <img class="logo" src="assets/img/FERNANDES-logo.png" alt="Logo">
-      </div>
-      <mat-nav-list class="nav-list">
-        <a mat-list-item routerLink="/">
-          <i class="material-icons">home</i>
-          <span>Início</span>
-        </a>
-        <a mat-list-item routerLink="/products">
-          <i class="material-icons">commute</i>
-          <span>Produtos</span>
-        </a>
-        <a mat-list-item routerLink="/cliente">
-          <i class="material-icons">account_circle</i>
-          <span>Clientes</span>
-        </a>
-        <a mat-list-item routerLink="/fornecedor">
-          <i class="material-icons">group</i>
-          <span>Fornecedores</span>
-        </a>
-        <a mat-list-item routerLink="/formaPagamento">
-          <i class="material-icons">credit_card</i>
-          <span>Forma de Pagamento</span>
-        </a>
-      </mat-nav-list>
-    </mat-sidenav>
-  
-    <mat-sidenav-content class="content">
-      <!-- onde os componentes vão ser renderizados -->
-      <router-outlet></router-outlet>
-    </mat-sidenav-content>
-  </mat-sidenav-container>
+  <!-- Sidebar preta recolhível com hover -->
+  <mat-sidenav class="sidenav" mode="side" position="end" opened fixedInViewport="true">
+    <div class="logo-container">
+      <img class="logo" src="assets/img/FERNANDES-logo.png" alt="Logo">
+    </div>
+    <mat-nav-list class="nav-list">
+      <a mat-list-item routerLink="/">
+        <i class="material-icons">home</i>
+        <span>Início</span>
+      </a>
+      <a mat-list-item routerLink="/products">
+        <i class="material-icons">commute</i>
+        <span>Produtos</span>
+      </a>
+      <a mat-list-item routerLink="/cliente">
+        <i class="material-icons">account_circle</i>
+        <span>Clientes</span>
+      </a>
+      <a mat-list-item routerLink="/fornecedor">
+        <i class="material-icons">group</i>
+        <span>Fornecedores</span>
+      </a>
+      <a mat-list-item routerLink="/formaPagamento">
+        <i class="material-icons">credit_card</i>
+        <span>Forma de Pagamento</span>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="content">
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
   
   <style>
     .icon-spacing {
