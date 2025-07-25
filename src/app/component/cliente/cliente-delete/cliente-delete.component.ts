@@ -1,15 +1,17 @@
-import { Component } from '@angular/core';
-import { Cliente } from '../cliente.model'; // Ajuste o caminho conforme sua estrutura
-import { ClienteService } from '../cliente.service'; // Ajuste o caminho conforme sua estrutura
+import { Component, OnInit } from '@angular/core';
+import { Cliente } from '../cliente.model';
+import { ClienteService } from '../cliente.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-client-delete',
+  selector: 'app-cliente-delete',
   templateUrl: './cliente-delete.component.html',
   styleUrls: ['./cliente-delete.component.css']
 })
-export class ClienteDeleteComponent {
+export class ClienteDeleteComponent implements OnInit {
+
   cliente!: Cliente;
+  isLoading: boolean = true; // Adicionar controle de carregamento
 
   constructor(
     private clienteService: ClienteService,
@@ -19,19 +21,24 @@ export class ClienteDeleteComponent {
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
-    this.clienteService.readById(id!).subscribe(cliente => {
-      this.cliente = cliente;
-    });
+    if (id) {
+      this.clienteService.readById(id).subscribe((cliente) => {
+        this.cliente = cliente;
+        this.isLoading = false; // Indicar que o carregamento terminou
+      });
+    }
   }
 
   deleteCliente(): void {
-    this.clienteService.delete(this.cliente.cliId!).subscribe(() => {
-      this.clienteService.showMessage('Cliente excluído com sucesso!');
-      this.router.navigate(['/clients']); // Ajuste a rota conforme sua aplicação
-    });
+    if (this.cliente && this.cliente.cliId) {
+      this.clienteService.delete(this.cliente.cliId).subscribe(() => {
+        this.clienteService.showMessage('Cliente excluído com sucesso!');
+        this.router.navigate(['/cliente']);
+      });
+    }
   }
 
   cancel(): void {
-    this.router.navigate(['/clients']); // Ajuste a rota conforme sua aplicação
+    this.router.navigate(['/cliente']);
   }
 }

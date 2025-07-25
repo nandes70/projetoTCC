@@ -1,0 +1,47 @@
+.fundo1{
+    background: linear-gradient(to bottom, rgb(0, 0, 0), #000000);
+    padding: 20px;
+    border-radius: 8px;
+    color: white;
+
+}
+form{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 20px;
+}
+.btn-cancelar, .btn-salvar {
+    margin: 20px 15px 0px 0px;
+    color: white;
+    font-family: 'Rockwell', Arial, sans-serif;
+    font-size: 26px;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn-cancelar {
+    background-color: #d45555;
+  }
+  
+  .btn-cancelar:hover {
+    background-color: #a33b3b;
+  }
+  
+  .btn-salvar {
+    background-color: #00cc66;
+  }
+  
+  .btn-salvar:hover {
+    background-color: #00994d;
+  }
+
+  .button-row {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    grid-column: span 3; /* Faz os botões ocuparem toda a largura do grid */
+}

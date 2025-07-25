@@ -52,7 +52,7 @@ createProduct(): void {
       // Exibe uma mensagem de sucesso para o usuário
       this.productService.showMessage('Produto criado com sucesso!');
       // Redireciona para a rota de listagem de produtos
-      this.router.navigate(['/product']);
+      this.router.navigate(['/products']);
     },
     // Caso ocorra um erro durante a criação
     error: (err) => {
