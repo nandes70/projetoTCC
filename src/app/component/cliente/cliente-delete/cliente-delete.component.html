@@ -2,89 +2,90 @@
 <mat-card class="fundo1">
   <!-- Título -->
   <div style="display: flex; justify-content: center; margin-bottom: 16px;">
-    <mat-card-title style="font-size: 24px; color: white;">
-      Confirmar exclusão do cliente
+    <mat-card-title style="font-size: 24px; color: white;">Confirmar exclusão do cliente
     </mat-card-title>
   </div>
 
-  <!-- Etapa 1 - Dados Básicos -->
-  <mat-form-field appearance="fill">
-    <input matInput placeholder="Nome" [value]="cliente.cliNome" name="cliNome" disabled>
-  </mat-form-field>
+  <!-- Envolver campos em um form com layout em grid -->
+  <form >
+    <!-- Etapa 1 - Dados Básicos -->
+    <mat-form-field appearance="fill">
+      <input matInput placeholder="Nome" [value]="cliente.cliNome" name="cliNome" disabled>
+    </mat-form-field>
 
-  <mat-form-field appearance="fill" style="width: 100%;">
-    <input matInput placeholder="CPF / CNPJ" [value]="cliente.cliCpf" name="cliCpf" disabled>
-  </mat-form-field>
+    <mat-form-field appearance="fill">
+      <input matInput placeholder="CPF / CNPJ" [value]="cliente.cliCpf" name="cliCpf" disabled>
+    </mat-form-field>
 
-  <mat-form-field appearance="fill" style="width: 100%;">
-    <input matInput [matDatepicker]="pickerNascimento" placeholder="Data de Nascimento"
-           [value]="cliente.dataNascimento" name="dataNascimento" disabled>
-    <mat-datepicker-toggle matSuffix [for]="pickerNascimento"></mat-datepicker-toggle>
-    <mat-datepicker #pickerNascimento></mat-datepicker>
-  </mat-form-field>
+    <mat-form-field appearance="fill">
+      <input matInput [matDatepicker]="pickerNascimento" placeholder="Data de Nascimento"
+             [value]="cliente.dataNascimento" name="dataNascimento" disabled>
+      <mat-datepicker-toggle matSuffix [for]="pickerNascimento"></mat-datepicker-toggle>
+      <mat-datepicker #pickerNascimento></mat-datepicker>
+    </mat-form-field>
 
-  <mat-form-field appearance="fill" style="width: 100%;">
-    <mat-label>Forma de Pagamento</mat-label>
-    <mat-select [value]="cliente.formaPagamento" name="formaPagamento" disabled>
-      <mat-option value="DINHEIRO">Dinheiro</mat-option>
-      <mat-option value="CREDITO">Cartão de Crédito</mat-option>
-      <mat-option value="DEBITO">Cartão de Débito</mat-option>
-      <mat-option value="PIX">Pix</mat-option>
-    </mat-select>
-  </mat-form-field>
+    <!-- Etapa 2 -->
+    <mat-form-field appearance="fill">
+      <mat-label>Forma de Pagamento</mat-label>
+      <mat-select [value]="cliente.formaPagamento" name="formaPagamento" disabled>
+        <mat-option value="DINHEIRO">Dinheiro</mat-option>
+        <mat-option value="CREDITO">Cartão de Crédito</mat-option>
+        <mat-option value="DEBITO">Cartão de Débito</mat-option>
+        <mat-option value="PIX">Pix</mat-option>
+      </mat-select>
+    </mat-form-field>
 
-  <mat-form-field appearance="fill" style="width: 100%;">
-    <mat-label>Status</mat-label>
-    <mat-select [value]="cliente.cliStatus" name="cliStatus" disabled>
-      <mat-option value="ATIVO">Ativo</mat-option>
-      <mat-option value="INATIVO">Inativo</mat-option>
-    </mat-select>
-  </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Status</mat-label>
+      <mat-select [value]="cliente.cliStatus" name="cliStatus" disabled>
+        <mat-option value="ATIVO">Ativo</mat-option>
+        <mat-option value="INATIVO">Inativo</mat-option>
+      </mat-select>
+    </mat-form-field>
 
-  <!-- Etapa 2 - Contato -->
-  <mat-form-field appearance="fill" style="width: 100%;">
-    <input matInput placeholder="Telefone" [value]="cliente.contato.telefone" name="telefone" disabled>
-  </mat-form-field>
+    <mat-form-field appearance="fill">
+      <input matInput placeholder="Telefone" [value]="cliente.contato.telefone" name="telefone" disabled>
+    </mat-form-field>
 
-  <mat-form-field appearance="fill" style="width: 100%;">
-    <input matInput placeholder="Celular" [value]="cliente.contato.celular" name="celular" disabled>
-  </mat-form-field>
+    <mat-form-field appearance="fill">
+      <input matInput placeholder="Celular" [value]="cliente.contato.celular" name="celular" disabled>
+    </mat-form-field>
 
-  <mat-form-field appearance="fill" style="width: 100%;">
-    <input matInput placeholder="Email" [value]="cliente.contato.email" name="email" disabled>
-  </mat-form-field>
+    <mat-form-field appearance="fill">
+      <input matInput placeholder="Email" [value]="cliente.contato.email" name="email" disabled>
+    </mat-form-field>
 
-  <!-- Endereço -->
-  <mat-form-field appearance="fill" style="width: 100%;">
-    <input matInput placeholder="Rua" [value]="cliente.endereco.rua" name="rua" disabled>
-  </mat-form-field>
+    <mat-form-field appearance="fill">
+      <input matInput placeholder="Rua" [value]="cliente.endereco.rua" name="rua" disabled>
+    </mat-form-field>
 
-  <mat-form-field appearance="fill" style="width: 100%;">
-    <input matInput placeholder="Número" [value]="cliente.endereco.numero" name="numero" disabled>
-  </mat-form-field>
+    <mat-form-field appearance="fill">
+      <input matInput placeholder="Número" [value]="cliente.endereco.numero" name="numero" disabled>
+    </mat-form-field>
 
-  <mat-form-field appearance="fill" style="width: 100%;">
-    <input matInput placeholder="Complemento" [value]="cliente.endereco.complemento" name="complemento" disabled>
-  </mat-form-field>
+    <mat-form-field appearance="fill">
+      <input matInput placeholder="Complemento" [value]="cliente.endereco.complemento" name="complemento" disabled>
+    </mat-form-field>
 
-  <mat-form-field appearance="fill" style="width: 100%;">
-    <input matInput placeholder="Bairro" [value]="cliente.endereco.bairro" name="bairro" disabled>
-  </mat-form-field>
+    <mat-form-field appearance="fill">
+      <input matInput placeholder="Bairro" [value]="cliente.endereco.bairro" name="bairro" disabled>
+    </mat-form-field>
 
-  <mat-form-field appearance="fill" style="width: 100%;">
-    <input matInput placeholder="Cidade" [value]="cliente.endereco.cidade" name="cidade" disabled>
-  </mat-form-field>
+    <mat-form-field appearance="fill">
+      <input matInput placeholder="Cidade" [value]="cliente.endereco.cidade" name="cidade" disabled>
+    </mat-form-field>
 
-  <mat-form-field appearance="fill" style="width: 100%;">
-    <input matInput placeholder="Estado" [value]="cliente.endereco.estado" name="estado" disabled>
-  </mat-form-field>
+    <mat-form-field appearance="fill">
+      <input matInput placeholder="Estado" [value]="cliente.endereco.estado" name="estado" disabled>
+    </mat-form-field>
 
-  <mat-form-field appearance="fill" style="width: 100%;">
-    <input matInput placeholder="CEP" [value]="cliente.endereco.cep" name="cep" disabled>
-  </mat-form-field>
+    <mat-form-field appearance="fill">
+      <input matInput placeholder="CEP" [value]="cliente.endereco.cep" name="cep" disabled>
+    </mat-form-field>
+  </form>
 
   <!-- Botões -->
-  <div style="display: flex; justify-content: flex-end; gap: 10px;">
+  <div class="button-row">
     <button mat-raised-button class="btn-cancelar" (click)="cancel()">Cancelar</button>
     <button mat-raised-button color="warn" class="btn-salvar" (click)="deleteCliente()">
       Deletar Cliente

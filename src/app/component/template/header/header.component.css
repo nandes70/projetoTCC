@@ -1,17 +1,14 @@
 /* Barra de navegação principal */
 .header {
-    display: flex;
-    justify-content: center;       /* Centraliza o conteúdo principal (título) */
-    align-items: center;
-    position: relative;
-    background-color: rgb(102, 0, 0); /* Fundo escuro (pode trocar por outro) */
-    height: 65px;
-    padding: 0 20px; /* Padding lateral melhor controlado */
-    background-image: url('https://www.shutterstock.com/image-illustration/dark-industrial-wallpaper-3d-render-600nw-21520189');
-    display: flex;
-    align-items: center;
-  }
-  
+  display: flex;
+   
+  align-items: center;
+  background: linear-gradient(to right, #74106b, #8f0101);
+  padding: 0 50px;
+  height: 64px;
+ 
+ 
+}
   /* Link geral dentro da header */
   .header a {
     display: flex;
@@ -25,10 +22,20 @@
     color: rgb(255, 255, 255);
     margin-right: 5px;
   }
+  mat-toolbar.header {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    top: 0;
+  }
+
+  body, html {
+    margin: 0;
+    padding: 0;
+  }
   
   /* Área central com título da loja */
   .header .center {
-    font-size: 24px;
+    font-size: 40px;
     font-weight: bold;
     color: aliceblue;
   }
@@ -48,6 +55,7 @@
     padding: 0;
     vertical-align: middle;
     background-color: black;
+    object-fit: contain;
   }
   
   /* Posição do botão "início" */

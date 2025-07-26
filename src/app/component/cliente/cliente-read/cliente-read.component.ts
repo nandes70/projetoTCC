@@ -15,8 +15,20 @@ export class ClienteReadComponent implements OnInit {
   constructor(private clienteService: ClienteService) {}
 
   ngOnInit(): void {
-    this.clienteService.read().subscribe(clientes => {
+    this.clienteService.read().subscribe((clientes: Cliente[]) => {
       this.clientes = clientes;
     });
+  }
+
+  editarCliente(cliId: number): void {
+    // navegação por lógica (opcional — você pode estar usando routerLink no HTML)
+  }
+
+  excluirCliente(cliente: Cliente): void {
+    // lógica de exclusão, como confirmar exclusão e chamar clienteService.delete(...)
+  }
+
+  visualizarCliente(cliId: number): void {
+    // navegação por lógica (opcional)
   }
 }

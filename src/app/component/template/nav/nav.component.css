@@ -5,7 +5,7 @@ html, body {
 }
 
 .container {
-  height: 100vh; /* Define a altura do container como 100% da altura da viewport */
+  height: 100vh; /* Define a altura do container como 100% da altura da viewport */ /*BARRA DE ROLAGEM*/
 }
 
 /* Sidebar preta com recolhimento automático */
@@ -22,7 +22,7 @@ html, body {
 }
 
 .sidenav:hover {
-  width: 260px; /* Aumenta a largura da sidebar ao passar o mouse */
+  width: 300px; /* Aumenta a largura da sidebar ao passar o mouse */
 }
 
 /* Logo no topo */
@@ -41,14 +41,14 @@ html, body {
 .nav-list a {
   display: flex; /* Utiliza flexbox para alinhar ícones e texto */
   align-items: center; /* Alinha verticalmente os itens */
-  gap: 8px; /* Espaçamento entre ícone e texto */
+  gap: 20px; /* Espaçamento entre ícone e texto */
   margin: 10px 0; /* Margem vertical entre os links */
   padding: 10px; /* Espaçamento interno dos links */
-  width: 100%; /* Largura total do link */
+  width: 90%; /* Largura total do link */
   color: white; /* Cor do texto dos links */
   text-decoration: none; /* Remove o sublinhado dos links */
   background-color: #464545; /* Cor de fundo dos links */
-  border-radius: 4px; /* Bordas arredondadas dos links */
+  border-radius: 50px; /* Bordas arredondadas dos links */
   transition: background-color 0.3s, transform 0.2s, color 0.2s; /* Transições suaves para efeitos de hover */
 }
 
@@ -70,7 +70,7 @@ html, body {
 
 /* Ícones */
 .sidenav i {
-  font-size: 18px; /* Tamanho dos ícones */
+  font-size: 29px; /* Tamanho dos ícones */
   transition: color 0.2s; /* Transição suave para a cor dos ícones */
 }
 
@@ -80,7 +80,7 @@ html, body {
 
 /* Conteúdo principal */
 .content {
-  padding: 16px; /* Espaçamento interno do conteúdo */
+  padding: 50px; /* Espaçamento interno do conteúdo */
   margin-right: 60px; /* Margem à direita para evitar sobreposição com a sidebar */
   background-color: #ffffff; /* Cor de fundo do conteúdo */
   transition: margin 0.3s ease-in-out; /* Transição suave para a margem */

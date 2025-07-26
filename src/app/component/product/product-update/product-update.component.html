@@ -1,6 +1,9 @@
 <mat-card class="fundo1">
-    <mat-card-title>Atualiza Produto</mat-card-title>
-
+  <div style="display: flex; justify-content: center; margin-bottom: 16px;">
+    <mat-card-title style="font-size: 24px; color: white;">
+      Deseja Atualizar o Produto?
+    </mat-card-title>
+  </div>
 
     <form>
 
@@ -77,10 +80,10 @@
     </form>
 
     <div style="display: flex; justify-content: flex-end; gap: 10px;">
-        <button mat-raised-button class="btn-cancelar1" (click)="cancel()">
+        <button mat-raised-button class="btn-cancelar" (click)="cancel()">
           Cancelar
         </button>
-        <button mat-raised-button class="btn-Atualizar" (click)="updateProduct()">
+        <button mat-raised-button class="btn-salvar" (click)="updateProduct()">
           Atualizar
         </button>
       </div>
