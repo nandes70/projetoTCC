@@ -1,71 +1,119 @@
-/* Barra de navegação principal */
 .header {
   display: flex;
-   
+  justify-content: space-between;
   align-items: center;
-  background: linear-gradient(to right, #74106b, #8f0101);
-  padding: 0 50px;
+  background: linear-gradient(to right, #8f0000, #000000);
+  padding: 0 20px;
   height: 64px;
- 
- 
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
 }
-  /* Link geral dentro da header */
-  .header a {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: rgb(255, 255, 255);
-  }
-  
-  /* Ícones dentro da header */
-  .header i {
-    color: rgb(255, 255, 255);
-    margin-right: 5px;
-  }
-  mat-toolbar.header {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
-    top: 0;
-  }
 
-  body, html {
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* Área central com título da loja */
-  .header .center {
-    font-size: 40px;
-    font-weight: bold;
-    color: aliceblue;
-  }
-  
-  /* Agrupamento visual do título */
-  .header .title-group {
-    padding-left: 5px;
-    font-family: 'Rockwell', Arial, sans-serif;
-    font-size: 35px;
-  }
-  
-  /* Logo (caso esteja usando imagem, mantive sua regra) */
-  .header .logo {
-    max-height: 65px;
-    display: block;
-    margin: 0;
-    padding: 0;
-    vertical-align: middle;
-    background-color: black;
-    object-fit: contain;
-  }
-  
-  /* Posição do botão "início" */
-  .header .right {
-    position: absolute;
-    right: 16px;
-  }
-  
-  /* Cor do parágrafo fora da header */
-  p {
-    color: rgb(196, 0, 0);
-  }
-  
+/* Agrupar os dois blocos à esquerda */
+.title-group2,
+.title-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* .title-group3 permanece à direita */
+.title-group3 {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  max-height: 64px;
+  overflow: hidden;
+}
+
+.title-group3 .logo {
+  max-height: 5px;
+  height: 5px;
+  width: 800px;
+  padding-top: 23px;
+  object-fit: contain;
+}
+
+.logo.branca {
+  filter: brightness(0) invert(1);
+}
+.logo.azul-escuro {
+  filter: brightness(0) saturate(100%) invert(7%) sepia(21%) saturate(1655%) hue-rotate(198deg) brightness(95%) contrast(108%);
+}
+ 
+/* Efeito LED branco ainda mais fraco ao passar o mouse no grupo central */
+.header .title-group a:hover {
+  filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.15))
+          drop-shadow(0 0 4px rgba(255, 255, 255, 0.1));
+  transform: translateY(-1px) scale(1.01);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Efeito ao clicar */
+.header .title-group a:active {
+  transform: translateY(-2px) scale(1.02);
+  filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.2));
+  transition: transform 0.1s ease, filter 0.1s ease;
+}
+
+/* Links na barra */
+.header a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-size: 40PX;
+}
+
+/* Logo padrão */
+.header .logo {
+  max-height: 40px;
+  height: auto;
+  width: auto;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Grupo da esquerda */
+.header .title-group2 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Grupo central */
+.header .title-group {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-left: 20px;
+}
+
+/* Ícone do grupo central */
+.header .title-group i {
+  margin-right: 5px;
+}
+
+
+/* Efeito LED suave ao passar o mouse */
+.header .title-group2 .logo:hover {
+  filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.4))
+          drop-shadow(0 0 10px rgba(0, 0, 0, 0.2));
+  transform: scale(1.03);
+}
+
+/* Efeito de flutuação e brilho ao clicar */
+.header .title-group2 a:active .logo {
+  transform: translateY(-2px) scale(1.05);
+  filter: drop-shadow(0 0 12px rgba(0, 0, 0, 0.4));
+  transition: transform 0.1s ease, filter 0.1s ease;
+}
+ 
+/* Ajuste no conteúdo abaixo da header fixa */
+.content {
+  padding: 16px;
+  background-color: #0c0808;
+  margin-top: 64px; /* Compensa a altura do header fixo */
+}

@@ -1,0 +1,76 @@
+<mat-card class="fundo1">
+    <div style="display: flex; justify-content: center; margin-bottom: 16px;">
+      <mat-card-title style="font-size: 24px; color: rgb(255, 255, 255);">Visualizar Produto</mat-card-title>
+    </div>
+  
+    <form>
+      <mat-form-field appearance="fill">
+        <input matInput placeholder="Nome" [value]="product.proNome" disabled>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <input matInput placeholder="Descrição" [value]="product.proDescricao" disabled>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <input matInput placeholder="Código de Barra" [value]="product.proCodigoBarra" disabled>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <input matInput placeholder="Código Interno" [value]="product.proCodigoInterno" disabled>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <input matInput placeholder="Fabricante" [value]="product.proFabricante" disabled>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <input matInput placeholder="Marca" [value]="product.proMarca" disabled>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <input matInput placeholder="Categoria" [value]="product.proCategoria" disabled>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <input matInput placeholder="Ano de Aplicação" [value]="product.proAnoAplicacao" disabled>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <input matInput placeholder="Preço de Custo" [value]="product.proPrecoCusto | currency:'BRL'" disabled>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <input matInput placeholder="Preço de Venda" [value]="product.proPrecoVenda | currency:'BRL'" disabled>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <input matInput placeholder="Estoque" [value]="product.proEstoque" disabled>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <input matInput placeholder="Observação" [value]="product.proObservacao" disabled>
+      </mat-form-field>
+  
+      <mat-form-field>
+        <mat-label>Status</mat-label>
+        <mat-select [value]="product.proStatus" disabled>
+          <mat-option [value]="true">Ativo</mat-option>
+          <mat-option [value]="false">Inativo</mat-option>
+        </mat-select>
+      </mat-form-field>
+  
+      <mat-form-field>
+        <input matInput [value]="product.proDataCadastro | date:'dd/MM/yyyy'" placeholder="Data de Cadastro" disabled>
+      </mat-form-field>
+  
+      <mat-form-field>
+        <input matInput [value]="product.proDataAtualizacao | date:'dd/MM/yyyy'" placeholder="Data de Atualização" disabled>
+      </mat-form-field>
+    </form>
+  
+    <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 16px;">
+        <button mat-raised-button class="btn-voltar" (click)="voltar()">Voltar</button>
+    </div>
+  </mat-card>
+  

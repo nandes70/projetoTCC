@@ -10,7 +10,7 @@ html, body {
 
 /* Sidebar preta com recolhimento automático */
 .sidenav {
-  width: 60px; /* Largura inicial da sidebar */
+  width: 55px; /* Largura inicial da sidebar */
   transition: width 0.3s ease; /* Transição suave para a mudança de largura */
   overflow-x: hidden; /* Esconde o conteúdo que ultrapassa a largura da sidebar */
   background-color: #000000; /* Cor de fundo da sidebar */
@@ -19,6 +19,7 @@ html, body {
   flex-direction: column; /* Alinha os itens em coluna */
   align-items: center; /* Centraliza os itens horizontalmente */
   padding: 10px 0; /* Espaçamento interno vertical */
+  margin-top: 64px;
 }
 
 .sidenav:hover {
@@ -44,16 +45,16 @@ html, body {
   gap: 20px; /* Espaçamento entre ícone e texto */
   margin: 10px 0; /* Margem vertical entre os links */
   padding: 10px; /* Espaçamento interno dos links */
-  width: 90%; /* Largura total do link */
+  width: 95%; /* Largura total do link */
   color: white; /* Cor do texto dos links */
   text-decoration: none; /* Remove o sublinhado dos links */
   background-color: #464545; /* Cor de fundo dos links */
-  border-radius: 50px; /* Bordas arredondadas dos links */
+  border-radius: 4px; /* Bordas arredondadas dos links */
   transition: background-color 0.3s, transform 0.2s, color 0.2s; /* Transições suaves para efeitos de hover */
 }
 
 .nav-list a:hover {
-  background-color: #000000; /* Cor de fundo ao passar o mouse */
+  background-color: #2e2e2e; /* Cor de fundo ao passar o mouse */
   color: #fff; /* Cor do texto ao passar o mouse */
   transform: scale(1.02); /* Aumenta ligeiramente o tamanho do link ao passar o mouse */
 }
@@ -80,7 +81,7 @@ html, body {
 
 /* Conteúdo principal */
 .content {
-  padding: 50px; /* Espaçamento interno do conteúdo */
+  padding: 80px; /* Espaçamento interno do conteúdo */
   margin-right: 60px; /* Margem à direita para evitar sobreposição com a sidebar */
   background-color: #ffffff; /* Cor de fundo do conteúdo */
   transition: margin 0.3s ease-in-out; /* Transição suave para a margem */

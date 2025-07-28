@@ -16,6 +16,7 @@ import { FormaPagamentoDeleteComponent } from './component/formaPagamento/forma-
 import { FormaPagamentoUpdateComponent } from './component/formaPagamento/forma-pagamento-update/forma-pagamento-update.component';
 import { ClienteUpdateComponent } from './component/cliente/cliente-update/cliente-update.component';
 import { ClienteDeleteComponent } from './component/cliente/cliente-delete/cliente-delete.component';
+import { ProductVisuComponent } from './component/product/product-visu/product-visu.component';
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: "products/create", component: ProductCreateComponent },
   { path: "products/update/:id", component: ProductUpdateComponent },
   { path: "products/delete/:id", component: ProductDeleteComponent },
+  { path: 'products/visu/:id', component: ProductVisuComponent },
 
   // Formas de Pagamento
 { path: "formaPagamento", component: FormaPagamentoCrudComponent },

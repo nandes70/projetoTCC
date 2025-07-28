@@ -18,6 +18,7 @@ import { HomeComponent } from './views/home/home.component';
 import { MatCardModule } from '@angular/material/card';
 import { ProductCrudComponent } from './views/product-crud/product-crud.component';
 import { ProductReadComponent } from './component/product/product-read/product-read.component';
+ 
 
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { FornecedorCrudComponent } from './views/fornecedor-crud/fornecedor-crud.component';
@@ -53,6 +54,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { ClienteUpdateComponent } from './component/cliente/cliente-update/cliente-update.component';
 import { ClienteDeleteComponent } from './component/cliente/cliente-delete/cliente-delete.component';
+import { ProductVisuComponent } from './component/product/product-visu/product-visu.component';
 
 @NgModule({
   declarations: [
@@ -82,7 +84,8 @@ import { ClienteDeleteComponent } from './component/cliente/cliente-delete/clien
     FormaPagamentoUpdateComponent,
     FormaPagamentoDeleteComponent,
     ClienteUpdateComponent,
-    ClienteDeleteComponent
+    ClienteDeleteComponent,
+    ProductVisuComponent
   ],
   imports: [
     MatIconModule,

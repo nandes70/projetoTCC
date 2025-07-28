@@ -1,0 +1,34 @@
+/* Estilo do cartão principal de fundo da visualização do produto */
+.fundo1 {
+    background: linear-gradient(to bottom, rgb(0, 0, 0), #000000); /* Degradê de preto */
+    padding: 20px; /* Espaçamento interno para não colar nas bordas */
+    border-radius: 8px; /* Cantos arredondados */
+    color: white; /* Cor do texto em branco */
+}
+
+/* Estilo do formulário que exibe os dados do produto */
+form {
+    display: grid; /* Usa grid layout para organizar os campos */
+    grid-template-columns: repeat(3, 1fr); /* Cria 3 colunas de largura igual */
+    gap: 20px; /* Espaçamento entre os campos */
+    margin-bottom: 20px; /* Espaçamento abaixo do formulário */
+}
+
+/* Estilo do botão "Voltar" */
+.btn-voltar {
+    margin: 20px 15px 0px 0px; /* Margem externa: topo, direita, baixo, esquerda */
+    color: white; /* Cor do texto branca */
+    font-family: 'Rockwell', Arial, sans-serif; /* Fonte personalizada */
+    font-size: 26px; /* Tamanho da fonte grande */
+    border: none; /* Remove a borda padrão */
+    padding: 10px 50px; /* Espaçamento interno do botão */
+    border-radius: 5px; /* Cantos arredondados do botão */
+    cursor: pointer; /* Cursor de mão ao passar por cima */
+    transition: background-color 0.3s ease; /* Suaviza a mudança de cor ao passar o mouse */
+    background-color: #d45555; /* Cor de fundo vermelha suave */
+}
+
+/* Efeito hover do botão "Voltar" */
+.btn-voltar:hover {
+    background-color: #a33b3b; /* Cor mais escura quando o mouse passa por cima */
+}
