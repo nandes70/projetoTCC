@@ -1,0 +1,61 @@
+.fundo1 {
+    background: linear-gradient(to bottom, rgb(0, 0, 0), #000000);
+    padding: 20px;
+    border-radius: 8px;
+    color: white;
+}
+
+/* Layout em grade com 3 colunas para os campos */
+ 
+
+
+
+/* Estilização dos botões */
+
+.btn-cancelar, .btn-salvar {
+    margin: 20px 15px 0px 0px;
+    color: white;
+    font-family: 'Rockwell', Arial, sans-serif;
+    font-size: 26px;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-cancelar {
+    background-color: #d45555;
+  }
+  
+  .btn-cancelar:hover {
+    background-color: #a33b3b;
+  }
+  
+  .btn-salvar {
+    background-color: #00cc66;
+  }
+  
+  .btn-salvar:hover {
+    background-color: #00994d;
+  }
+
+
+/* Linha de botões separada */
+.button-row {
+    display: flex;
+     
+    gap: 10px;
+    grid-column: span 3; /* Faz os botões ocuparem toda a largura do grid */
+}
+
+
+
+/*button {
+    margin: 20px 15px 0px 0px;
+    color: rgb(255, 255, 255);
+    font-family: 'Rockwell', Arial, sans-serif;
+    font-size: 26px;
+    background: linear-gradient(to bottom, rgb(151, 0, 0), #b60000);
+}*/
+

@@ -10,7 +10,7 @@ import { Cliente } from '../cliente.model';
 export class ClienteReadComponent implements OnInit {
 
   clientes: Cliente[] = [];
-  displayedColumns: string[] = ['cliId', 'cliNome', 'cliCpf', 'dataNascimento', 'formaPagamento', 'cliStatus', 'action'];
+  displayedColumns: string[] = ['cliId', 'cliNome', 'cliCpf', 'conCelular', 'conEmail', 'cliStatus', 'action'];
 
   constructor(private clienteService: ClienteService) {}
 

@@ -41,14 +41,14 @@
       <mat-option value="INATIVO">Inativo</mat-option>
     </mat-select>
   </mat-form-field>
-
-  <div style="display: flex;  gap: 10px;">
- 
-    <button mat-raised-button class="btn-cancelar" (click)="cancel()">Cancelar</button>
-    <button mat-raised-button color="primary" class="btn-salvar" (click)="nextStep()" [disabled]="!formStep1.form.valid">
-      Próximo
-    </button>
-  </div>
+<div class="botoes-acoes">
+  <button class="btn-cancelar" (click)="cancel()">
+    Cancelar
+  </button>
+  <button class="btn-salvar" (click)="nextStep()" [disabled]="!step1IsValid()">
+    Próximo
+  </button>
+</div>
 </form>
 
 <!-- Etapa 2 - Contato e Endereço -->
