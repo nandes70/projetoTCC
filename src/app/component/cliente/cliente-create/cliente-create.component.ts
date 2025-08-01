@@ -19,10 +19,12 @@ export class ClienteCreateComponent implements OnInit {
     dataNascimento: null,
     formaPagamento: '',
     cliStatus: '',
+    
     contato: {
       telefone: '',
       celular: '',
-      email: ''
+      email: '',
+      emailSecundario: ''
     },
     endereco: {
       rua: '',
@@ -35,36 +37,55 @@ export class ClienteCreateComponent implements OnInit {
     }
   };
 
-  constructor(
-    private clienteService: ClienteService,
-    private router: Router
-  ) {}
+ constructor(
+  private clienteService: ClienteService,
+  private router: Router
+) {}
 
-  ngOnInit(): void {}
+ngOnInit(): void {
+  // Se precisar inicializar algo ao carregar o componente, faça aqui
+}
 
-  // Navegação entre etapas do formulário
-  nextStep(): void {
+ nextStep(): void {
+  if (this.step === 1) {
     if (this.step1IsValid()) {
       this.step = 2;
     } else {
       this.clienteService.showMessage('Preencha os campos obrigatórios da etapa 1!');
     }
+  } else if (this.step === 2) {
+    if (this.step2IsValid()) {
+      this.step = 3;
+    } else {
+      this.clienteService.showMessage('Preencha os campos obrigatórios da etapa 2!');
+    }
   }
+}
 
-  prevStep(): void {
-    this.step = 1;
-  }
 
-  // Validação da etapa 1
-  step1IsValid(): boolean {
-    return (
-      this.cliente.cliNome.trim() !== '' &&
-      this.cliente.cliCpf.trim() !== '' &&
-      this.cliente.dataNascimento != null &&
-      this.cliente.formaPagamento.trim() !== '' &&
-      this.cliente.cliStatus.trim() !== ''
-    );
+ prevStep(): void {
+  if (this.step > 1) {
+    this.step--;
   }
+}
+
+ step1IsValid(): boolean {
+  return (
+    this.cliente.cliNome.trim() !== '' &&
+    this.cliente.cliCpf.trim() !== '' &&
+    this.cliente.dataNascimento != null &&
+    this.cliente.formaPagamento.trim() !== '' &&
+    this.cliente.cliStatus.trim() !== ''
+  );
+}
+
+// Validação da etapa 2
+step2IsValid(): boolean {
+  return (
+    this.cliente.contato.telefone.trim() !== '' &&
+    this.cliente.contato.email.trim() !== ''
+  );
+}
 
   /**
    * Converte Cliente (interface estruturada para UI) para ClienteDTO (modelo esperado pelo backend)

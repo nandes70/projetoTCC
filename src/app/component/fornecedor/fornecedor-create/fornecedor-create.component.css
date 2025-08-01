@@ -1,14 +1,60 @@
-.fundo1{
+.fundo1 {
     background: linear-gradient(to bottom, rgb(0, 0, 0), #000000);
-}
-form{
-    display: flex;
-    flex-direction: column;
+    padding: 20px;
+    border-radius: 8px;
+    color: white;
 }
 
-button{
+/* Layout em grade com 3 colunas para os campos */
+ 
+
+
+
+/* Estilização dos botões */
+
+.btn-cancelar, .btn-salvar {
+    margin: 20px 15px 0px 0px;
+    color: white;
+    font-family: 'Rockwell', Arial, sans-serif;
+    font-size: 26px;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-cancelar {
+    background-color: #d45555;
+  }
+  
+  .btn-cancelar:hover {
+    background-color: #a33b3b;
+  }
+  
+  .btn-salvar {
+    background-color: #00cc66;
+  }
+  
+  .btn-salvar:hover {
+    background-color: #06914b;
+  }
+
+
+/* Linha de botões separada */
+.botoes-acoes {
+  display: flex;
+  justify-content: flex-end; /* alinha à direita */
+  margin-bottom: 20px; /* opcional, espaço abaixo */
+}
+
+
+
+/*button {
     margin: 20px 15px 0px 0px;
     color: rgb(255, 255, 255);
     font-family: 'Rockwell', Arial, sans-serif;
     font-size: 26px;
-    background: linear-gradient(to bottom, rgb(0, 0, 0), #9e9e9e);}
+    background: linear-gradient(to bottom, rgb(151, 0, 0), #b60000);
+}*/
+

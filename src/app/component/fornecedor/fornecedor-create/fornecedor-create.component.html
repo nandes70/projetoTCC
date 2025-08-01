@@ -1,28 +1,93 @@
 <mat-card class="fundo1">
-    <mat-card-title>Novo Fornecedor</mat-card-title>
-    <form>
-        <mat-form-field>
-            <input matInput placeholder="Nome Fanatasia" [(ngModel)]="fornecedor.nameFanatasia" name="nameFanatasia">
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="Razão Social" [(ngModel)]="fornecedor.razao_Social" name="razao_Social">
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="CPF / CNPJ" [(ngModel)]="fornecedor.cpfCnpj" name="cpfCnpj">
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="Status" [(ngModel)]="fornecedor.status" name="status">
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="Contato" [(ngModel)]="fornecedor.conCelular" name="conCelular">
-        </mat-form-field>
-    </form>
+  <!-- Título -->
+  <div style="display: flex; justify-content: center; margin-bottom: 16px;">
+    <mat-card-title style="font-size: 24px; color: rgb(255, 255, 255);">Novo Fornecedor</mat-card-title>
+  </div>
 
-    <button mat-raised-button (click)="createFornecedor()" color="primary">
-        Salvar
-    </button>
-   
-    <button mat-raised-button (click)="cancel()">
-        Cancelar
-    </button>
+  <!-- Etapa 1 - Informações Gerais -->
+  <form *ngIf="step === 1" #formStep1="ngForm" novalidate>
+    <mat-form-field appearance="fill" style="width: 100%;">
+      <input matInput placeholder="Nome Fantasia" [(ngModel)]="fornecedor.forNomeFantasia" name="forNomeFantasia" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" style="width: 100%;">
+      <input matInput placeholder="Razão Social" [(ngModel)]="fornecedor.forRazaoSocial" name="forRazaoSocial" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" style="width: 100%;">
+      <input matInput placeholder="CNPJ" [(ngModel)]="fornecedor.forCnpj" name="forCnpj" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" style="width: 100%;">
+      <mat-label>Status</mat-label>
+      <mat-select [(ngModel)]="fornecedor.forStatus" name="forStatus" required>
+        <mat-option value="">Selecione...</mat-option>
+        <mat-option value="ATIVO">Ativo</mat-option>
+        <mat-option value="INATIVO">Inativo</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <div class="botoes-acoes">
+      <button class="btn-cancelar" (click)="cancel()">Cancelar</button>
+      <button class="btn-salvar" (click)="nextStep()" [disabled]="!formStep1.form.valid">Próximo</button>
+    </div>
+  </form>
+
+  <!-- Etapa 2 - Contato -->
+  <form *ngIf="step === 2" #formStep2="ngForm" novalidate>
+    <mat-form-field appearance="fill" style="width: 100%;">
+      <input matInput placeholder="Celular" [(ngModel)]="fornecedor.contato.celular" name="celular" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" style="width: 100%;">
+      <input matInput placeholder="Telefone Comercial" [(ngModel)]="fornecedor.contato.telefone" name="telefone">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" style="width: 100%;">
+      <input matInput placeholder="Email" [(ngModel)]="fornecedor.contato.email" name="email" type="email" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" style="width: 100%;">
+      <input matInput placeholder="Email Secundário" [(ngModel)]="fornecedor.contato.emailSecundario" name="emailSecundario" type="email">
+    </mat-form-field>
+
+    <div class="botoes-acoes">
+      <button class="btn-cancelar" (click)="cancel()">Cancelar</button>
+      <button class="btn-cancelar" (click)="prevStep()">Voltar</button>
+      <button class="btn-salvar" (click)="nextStep()" [disabled]="!formStep2.form.valid">Próximo</button>
+    </div>
+  </form>
+
+  <!-- Etapa 3 - Endereço -->
+  <form *ngIf="step === 3" #formStep3="ngForm" novalidate>
+    <mat-form-field appearance="fill" style="width: 100%;">
+      <input matInput placeholder="Rua" [(ngModel)]="fornecedor.endereco.rua" name="rua">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" style="width: 100%;">
+      <input matInput placeholder="Número" [(ngModel)]="fornecedor.endereco.numero" name="numero">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" style="width: 100%;">
+      <input matInput placeholder="Bairro" [(ngModel)]="fornecedor.endereco.bairro" name="bairro">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" style="width: 100%;">
+      <input matInput placeholder="Cidade" [(ngModel)]="fornecedor.endereco.cidade" name="cidade">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" style="width: 100%;">
+      <input matInput placeholder="Estado" [(ngModel)]="fornecedor.endereco.estado" name="estado">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" style="width: 100%;">
+      <input matInput placeholder="CEP" [(ngModel)]="fornecedor.endereco.cep" name="cep">
+    </mat-form-field>
+
+    <div class="botoes-acoes">
+      <button class="btn-cancelar" (click)="cancel()">Cancelar</button>
+      <button class="btn-cancelar" (click)="prevStep()">Voltar</button>
+      <button class="btn-salvar" (click)="createFornecedor()" [disabled]="!formStep3.form.valid">Salvar</button>
+    </div>
+  </form>
 </mat-card>

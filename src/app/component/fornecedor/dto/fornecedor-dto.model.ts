@@ -7,7 +7,6 @@ export interface FornecedorDTO {
 
   endRua: string;
   endNumero: string;
-  endComplemento?: string;  // se quiser adicionar
   endBairro: string;
   endCidade: string;
   endEstado: string;

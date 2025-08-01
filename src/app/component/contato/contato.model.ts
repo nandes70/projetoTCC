@@ -5,4 +5,5 @@ export interface Contato
     telefone: string
     celular: string
     email: string
+    emailSecundario: string
 }

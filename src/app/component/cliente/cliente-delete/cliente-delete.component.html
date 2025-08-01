@@ -9,15 +9,15 @@
   <!-- Envolver campos em um form com layout em grid -->
   <form >
     <!-- Etapa 1 - Dados Básicos -->
-    <mat-form-field appearance="fill">
+    <mat-form-field appearance="fill"  style="width: 100%;">
       <input matInput placeholder="Nome" [value]="cliente.cliNome" name="cliNome" disabled>
     </mat-form-field>
 
-    <mat-form-field appearance="fill">
+    <mat-form-field appearance="fill"  style="width: 100%;">
       <input matInput placeholder="CPF / CNPJ" [value]="cliente.cliCpf" name="cliCpf" disabled>
     </mat-form-field>
 
-    <mat-form-field appearance="fill">
+    <mat-form-field appearance="fill"  style="width: 100%;">
       <input matInput [matDatepicker]="pickerNascimento" placeholder="Data de Nascimento"
              [value]="cliente.dataNascimento" name="dataNascimento" disabled>
       <mat-datepicker-toggle matSuffix [for]="pickerNascimento"></mat-datepicker-toggle>
@@ -25,7 +25,7 @@
     </mat-form-field>
 
     <!-- Etapa 2 -->
-    <mat-form-field appearance="fill">
+    <mat-form-field appearance="fill" style="width: 100%;">
       <mat-label>Forma de Pagamento</mat-label>
       <mat-select [value]="cliente.formaPagamento" name="formaPagamento" disabled>
         <mat-option value="DINHEIRO">Dinheiro</mat-option>
@@ -35,7 +35,7 @@
       </mat-select>
     </mat-form-field>
 
-    <mat-form-field appearance="fill">
+    <mat-form-field appearance="fill"  style="width: 100%;">
       <mat-label>Status</mat-label>
       <mat-select [value]="cliente.cliStatus" name="cliStatus" disabled>
         <mat-option value="ATIVO">Ativo</mat-option>
@@ -43,15 +43,15 @@
       </mat-select>
     </mat-form-field>
 
-    <mat-form-field appearance="fill">
+    <mat-form-field appearance="fill"  style="width: 100%;">
       <input matInput placeholder="Telefone" [value]="cliente.contato.telefone" name="telefone" disabled>
     </mat-form-field>
 
-    <mat-form-field appearance="fill">
+    <mat-form-field appearance="fill"  style="width: 100%;">
       <input matInput placeholder="Celular" [value]="cliente.contato.celular" name="celular" disabled>
     </mat-form-field>
 
-    <mat-form-field appearance="fill">
+    <mat-form-field appearance="fill" style="width: 100%;">
       <input matInput placeholder="Email" [value]="cliente.contato.email" name="email" disabled>
     </mat-form-field>
 

@@ -1,20 +1,13 @@
+import { Endereco } from '../endereco/endereco.model';
+import { Contato } from '../contato/contato.model';
+
 export interface Fornecedor {
-    id?: number;
-    nameFanatasia: string;
-    razao_Social: string;
-    cpfCnpj: string;
-    status: string;
-  
-    conCelular: string;
-    conTelefoneComercial: string;
-    conEmail: string;
-    conEmailSecundario: string;
-  
-    endRua: string;
-    endBairro: string;
-    endNumero: string;
-    endCidade: string;
-    endCep: string;
-    endEstado: string;
-  }
-  
+  forId?: number;
+  forNomeFantasia: string;
+  forRazaoSocial: string;
+  forCnpj: string;
+  forStatus: string;
+
+  endereco: Endereco;
+  contato: Contato;
+}

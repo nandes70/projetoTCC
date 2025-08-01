@@ -66,6 +66,10 @@
     <input matInput placeholder="Email" [(ngModel)]="cliente.contato.email" name="email" type="email" required>
   </mat-form-field>
 
+  <mat-form-field appearance="fill" style="width: 100%;">
+    <input matInput placeholder="Email Secundário" [(ngModel)]="cliente.contato.emailSecundario" name="emailSecundario" type="email" required>
+  </mat-form-field>
+
   <!-- Endereço -->
   <mat-form-field appearance="fill" style="width: 100%;">
     <input matInput placeholder="Rua" [(ngModel)]="cliente.endereco.rua" name="rua">
