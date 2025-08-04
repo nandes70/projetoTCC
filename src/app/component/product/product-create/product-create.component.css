@@ -1,66 +1,56 @@
 .fundo1 {
-    background: linear-gradient(to bottom, rgb(0, 0, 0), #000000);
-    padding: 20px;
-    border-radius: 8px;
-    color: white;
+  background: linear-gradient(to bottom, rgb(0, 0, 0), #000000);
+  padding: 100px;
+  border-radius: 8px;
+  color: white;
 }
 
-/* Layout em grade com 3 colunas para os campos */
+/* Layout com 2 colunas */
 form {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Mudando para 2 colunas */
+  gap: 20px;
+  margin-bottom: 20px;
 }
 
-
+/* Ajuste da classe full-width para garantir que a textarea ocupe a largura total */
+.campo.full-width {
+  grid-column: span 2; /* Faz o campo de descrição ocupar toda a linha */
+}
 
 /* Estilização dos botões */
-
 .btn-cancelar, .btn-salvar {
-    margin: 20px 15px 0px 0px;
-    color: white;
-    font-family: 'Rockwell', Arial, sans-serif;
-    font-size: 26px;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .btn-cancelar {
-    background-color: #d45555;
-  }
-  
-  .btn-cancelar:hover {
-    background-color: #a33b3b;
-  }
-  
-  .btn-salvar {
-    background-color: #00cc66;
-  }
-  
-  .btn-salvar:hover {
-    background-color: #06914b;
-  }
+  margin: 20px 15px 0px 0px;
+  color: white;
+  font-family: 'Rockwell', Arial, sans-serif;
+  font-size: 26px;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
 
+.btn-cancelar {
+  background-color: #d45555;
+}
+
+.btn-cancelar:hover {
+  background-color: #a33b3b;
+}
+
+.btn-salvar {
+  background-color: #00cc66;
+}
+
+.btn-salvar:hover {
+  background-color: #06914b;
+}
 
 /* Linha de botões separada */
 .button-row {
-    display: flex;
-    justify-content: flex-end;
-    gap: 10px;
-    grid-column: span 3; /* Faz os botões ocuparem toda a largura do grid */
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  grid-column: span 2; /* Faz os botões ocuparem toda a largura do grid */
 }
-
-
-
-/*button {
-    margin: 20px 15px 0px 0px;
-    color: rgb(255, 255, 255);
-    font-family: 'Rockwell', Arial, sans-serif;
-    font-size: 26px;
-    background: linear-gradient(to bottom, rgb(151, 0, 0), #b60000);
-}*/
-

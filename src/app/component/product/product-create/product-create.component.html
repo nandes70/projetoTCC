@@ -1,7 +1,7 @@
 <!-- Cria um card estilizado com Angular Material -->
 <mat-card class="fundo1">
     <!-- Título do card -->
-    <div style="display: flex; justify-content: center; margin-bottom: 16px;">
+    <div style="display: flex; justify-content: center; margin-top: -60px; margin-bottom: 16px;">
       <mat-card-title style="font-size: 24px; color: rgb(255, 255, 255);">Novo Produto</mat-card-title>
     </div>
   
@@ -12,10 +12,7 @@
         <input matInput placeholder="Nome" [(ngModel)]="product.proNome" name="proNome" required>
       </mat-form-field>
   
-      <mat-form-field appearance="fill">
-        <input matInput placeholder="Descrição" [(ngModel)]="product.proDescricao" name="proDescricao" required>
-      </mat-form-field>
-
+    
       <mat-form-field appearance="fill">
         <input matInput placeholder="Código de Barra" [(ngModel)]="product.proCodigoBarra" name="proCodigoBarra" required>
       </mat-form-field>
@@ -24,10 +21,13 @@
        <mat-form-field appearance="fill">
         <input matInput placeholder="Codigo Interno" [(ngModel)]="product.proCodigoInterno" name="proCodigoInterno" required>
       </mat-form-field>
-
       <mat-form-field appearance="fill">
         <input matInput placeholder="Fabricante" [(ngModel)]="product.proFabricante" name="proFabricante" required>
       </mat-form-field>
+
+      <mat-form-field appearance="fill"  class="campo full-width">
+        <textarea matInput placeholder="Descrição" [(ngModel)]="product.proDescricao" name="proDescricao" required></textarea>
+        </mat-form-field>
 
       <mat-form-field appearance="fill">
         <input matInput placeholder="Marca" [(ngModel)]="product.proMarca" name="proMarca" required>

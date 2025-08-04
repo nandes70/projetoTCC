@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { FormaPagamento } from '../forma-pagamento.model';
 import { FormaPagamentoService } from '../forma-pagamento.service';
 import { Router } from '@angular/router';
+import { FormaPagamento } from '../forma-pagamento.model';
 
 @Component({
   selector: 'app-forma-pagamento-create',
@@ -9,39 +9,36 @@ import { Router } from '@angular/router';
   styleUrls: ['./forma-pagamento-create.component.css']
 })
 export class FormaPagamentoCreateComponent {
-  
+
   formaPagamento: FormaPagamento = {
     fpgDescricao: '',
     fpgPermiteParcelamento: '',
     fpgNumeroMaxParcela: 0,
     fpgTaxaAdicional: 0,
     fpgStatus: true
-  }
-  
-  
+  };
 
-  constructor(private formaPagamentoService: FormaPagamentoService,
-  private router: Router) { }
+  constructor(private formaPagamentoService: FormaPagamentoService, private router: Router) { }
 
-  ngOnInit(): void {
-    
-  }
-
+  // Método para criar a forma de pagamento
   createFormaPagamento(): void {
     this.formaPagamentoService.create(this.formaPagamento).subscribe({
       next: () => {
-        this.formaPagamentoService.showMessage('Forma de pagamento Criada!!!');
-        this.router.navigate(['/formapagamento']);
+        // Mensagem de sucesso
+        this.formaPagamentoService.showMessage('Forma de pagamento criada com sucesso!');
+        // Redireciona para a lista de formas de pagamento
+        this.router.navigate(['/formaPagamento']);
       },
       error: (err) => {
-        this.formaPagamentoService.showMessage('Erro ao criar forma de pagamento.');
+        // Mensagem de erro
+        this.formaPagamentoService.showMessage('Erro ao criar forma de pagamento!');
         console.error(err);
       }
     });
   }
-  
 
+  // Método para cancelar e voltar à lista
   cancel(): void {
-    this.router.navigate(['/formapagamento'])
+    this.router.navigate(['/formaPagamento']);
   }
 }
