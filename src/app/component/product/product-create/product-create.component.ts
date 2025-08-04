@@ -50,7 +50,7 @@ createProduct(): void {
     // Caso a criação seja bem-sucedida
     next: () => {
       // Exibe uma mensagem de sucesso para o usuário
-      this.productService.showMessage('Produto criado com sucesso!');
+      this.productService.showMessage('Produto criado com sucesso!');                //COLOCAR ICON PARA ASSOCIAR
       // Redireciona para a rota de listagem de produtos
       this.router.navigate(['/products']);
     },

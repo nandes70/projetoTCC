@@ -1,74 +1,62 @@
-<!-- Div com sombra nível 4 (efeito de profundidade) usando Angular Material -->
-<div class="mat-elevation-z4">
-    <!-- Tabela do Angular Material, com fonte de dados sendo o array "products" -->
-    <table mat-table [dataSource]="products">
-      <!-- Coluna de ID do produto -->
-      <ng-container matColumnDef="proId">
-        <th mat-header-cell *matHeaderCellDef>ID</th>
-        <td mat-cell *matCellDef="let row">{{row.proId}}</td>
-      </ng-container>
+<!-- Campo de busca -->
  
-      <!-- Coluna de Nome do produto -->
-     <ng-container matColumnDef="proNome">
-        <th mat-header-cell *matHeaderCellDef>Nome</th>
-        <td mat-cell *matCellDef="let row">{{row.proNome}}</td>
-      </ng-container>
 
-      <!-- Coluna de Nome da aplicação -->
-      <ng-container matColumnDef="proAplicacao">
-        <th mat-header-cell *matHeaderCellDef>Ano de Aplicação</th>
-        <td mat-cell *matCellDef="let row">{{row.proAnoAplicacao}}</td>
-      </ng-container>
- 
-      <!-- Coluna de Preço de Custo -->
-      <ng-container matColumnDef="proPrecoCusto">
-        <th mat-header-cell *matHeaderCellDef>Preco de Custo (R$)</th>
-        <td mat-cell *matCellDef="let row">{{row.proPrecoCusto | currency: 'BRL'}}</td>
-      </ng-container>
-      
-      <!-- Coluna de Preço de Venda -->
-      <ng-container matColumnDef="proPrecoVenda">
-        <th mat-header-cell *matHeaderCellDef>Preco de Venda (R$)</th>
-        <td mat-cell *matCellDef="let row">{{row.proPrecoVenda | currency: 'BRL'}}</td>
-      </ng-container>
+<!-- Tabela de produtos -->
+<table mat-table [dataSource]="products" class="mat-elevation-z2" style="width: 100%;">
 
- 
-       <!-- Coluna de Nome do Status -->
-       <ng-container matColumnDef="proStatus">
-        <th mat-header-cell *matHeaderCellDef>Status</th>
-        <td mat-cell *matCellDef="let row">{{row.proStatus}}</td>
-       </ng-container>
-  
+  <!-- Coluna ID -->
+  <ng-container matColumnDef="proId">
+    <th mat-header-cell *matHeaderCellDef>ID</th>
+    <td mat-cell *matCellDef="let row">{{ row.proId }}</td>
+  </ng-container>
 
-      <!-- Coluna de Ações (editar e deletar) -->
-      <ng-container matColumnDef="action">
-        <!-- Cabeçalho da coluna de ações -->
-        <th mat-header-cell *matHeaderCellDef>Ações</th>
-        <!-- Célula com os ícones de editar e deletar -->                    
-        <td mat-cell *matCellDef="let row">
-            <!-- Link que leva pra página de edição do produto com o ID correspondente -->
-            <a routerLink="/products/update/{{ row.proId }}" class="edit">
-                <i class="material-icons">
-                    edit
-                </i>
-            </a>
-            <!-- Link que leva pra página de exclusão do produto com o ID correspondente -->
+  <!-- Coluna Nome -->
+  <ng-container matColumnDef="proNome">
+    <th mat-header-cell *matHeaderCellDef>Nome</th>
+    <td mat-cell *matCellDef="let row">{{ row.proNome }}</td>
+  </ng-container>
 
-            <a routerLink="/products/delete/{{ row.proId }}" class="delete">
-                <i class="material-icons">
-                    delete
-                </i>
-            </a>
+  <!-- Coluna Ano de Aplicação -->
+  <ng-container matColumnDef="proAnoAplicacao">
+    <th mat-header-cell *matHeaderCellDef>Ano de Aplicação</th>
+    <td mat-cell *matCellDef="let row">{{ row.proAnoAplicacao }}</td>
+  </ng-container>
 
-            <a [routerLink]="['/products/visu', row.proId]" class="vision">
-              <i class="material-icons">assignment</i>
-            </a>
-        </td>
-      </ng-container>
- 
-    <!-- Linha do cabeçalho que usa as colunas definidas em "displayedColumns" -->
+  <!-- Coluna Preço de Custo -->
+  <ng-container matColumnDef="proPrecoCusto">
+    <th mat-header-cell *matHeaderCellDef>Preço de Custo</th>
+    <td mat-cell *matCellDef="let row">{{ row.proPrecoCusto | currency: 'BRL' }}</td>
+  </ng-container>
 
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-    </table>
-  </div>
+  <!-- Coluna Preço de Venda -->
+  <ng-container matColumnDef="proPrecoVenda">
+    <th mat-header-cell *matHeaderCellDef>Preço de Venda</th>
+    <td mat-cell *matCellDef="let row">{{ row.proPrecoVenda | currency: 'BRL' }}</td>
+  </ng-container>
+
+  <!-- Coluna Status -->
+  <ng-container matColumnDef="proStatus">
+    <th mat-header-cell *matHeaderCellDef>Status</th>
+    <td mat-cell *matCellDef="let row">{{ row.proStatus }}</td>
+  </ng-container>
+
+  <!-- Coluna Ações -->
+  <ng-container matColumnDef="action">
+    <th mat-header-cell *matHeaderCellDef>Ações</th>
+    <td mat-cell *matCellDef="let row">
+      <a [routerLink]="['/products/update', row.proId]" class="edit">
+        <i class="material-icons">edit</i>
+      </a>
+      <a [routerLink]="['/products/delete', row.proId]" class="delete">
+        <i class="material-icons">delete</i>
+      </a>
+      <a [routerLink]="['/products/visu', row.proId]" class="vision">
+        <i class="material-icons">assignment</i>
+      </a>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+</table>

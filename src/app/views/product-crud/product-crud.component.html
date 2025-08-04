@@ -1,8 +1,14 @@
-<div style="overflow: hidden;">
-    <!-- Botão "Novo Produto" -->
-    <button mat-raised-button (click)="navigateToProductCreate()" color="primary">
-      Novo Produto +
-    </button>
-  </div>
-   <!-- Componente com a tabela -->
-  <app-product-read></app-product-read>
+<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+  <button mat-raised-button color="primary" (click)="navigateToProductCreate()">Novo Produto</button>
+
+  <mat-form-field appearance="fill" style="width: 250px;">
+    <input
+    matInput
+    placeholder="Pesquisar por nome ou ID"
+    (input)="onSearchChange($event)"
+  />
+  </mat-form-field>
+</div>
+
+<!-- Aqui chama o componente filho, passando os inputs -->
+<app-product-read [searchTerm]="termoPesquisa" [triggerSearch]="triggerSearch"></app-product-read>

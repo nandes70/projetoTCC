@@ -14,7 +14,9 @@ export class ProductService {
   baseUrl = "http://localhost:8080/produtos"
 
   /*Construtor que injeta o MatSnackBar (para mensagens) e HttpClient (para requisições HTTP)*/
-  constructor(private snackBar: MatSnackBar, private http: HttpClient) {}
+  constructor(private snackBar: MatSnackBar, private http: HttpClient) {
+    
+  }
 
   /*Método para mostrar uma mensagem com um SnackBar (tipo um pop-up)*/
   showMessage(msg: string): void {
@@ -23,6 +25,11 @@ export class ProductService {
       horizontalPosition: "right", /*Posição horizontal do SnackBar*/
       verticalPosition: "top" /*Posição vertical do SnackBar*/
     })
+  }
+
+
+  searchByTerm(termo: string) {
+    return this.http.get<Product[]>(`http://localhost:8080/produtos/pesquisar?termo=${termo}`);
   }
 
   /*/Método para criar um produto no backend*/

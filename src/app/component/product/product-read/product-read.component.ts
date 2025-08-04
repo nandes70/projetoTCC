@@ -1,36 +1,52 @@
-// Importa o decorator Component do Angular
-import { Component } from '@angular/core';
-
-// Importa a interface/modelo de Produto
+import { Component, Input, OnChanges, SimpleChanges, OnInit } from '@angular/core';
+import { ProductService } from '../product.service';
 import { Product } from '../product.model';
 
-// Importa o serviço que se comunica com a API de produtos
-import { ProductService } from '../product.service';
-
 @Component({
-  selector: 'app-product-read', // Nome do componente usado no HTML
-  templateUrl: './product-read.component.html', // Caminho do template HTML
-  styleUrls: ['./product-read.component.css'] // Caminho do CSS desse componente
+  selector: 'app-product-read',
+  templateUrl: './product-read.component.html',
+  styleUrls: ['./product-read.component.css']
 })
-export class ProductReadComponent {
-  // Declara um array de produtos, que vai ser preenchido depois
-  products!: Product[]
+export class ProductReadComponent implements OnInit, OnChanges {
+  @Input() searchTerm: string = '';
+  @Input() triggerSearch: number = 0;
 
-  // Define as colunas visíveis da tabela (em ordem)
-  displayedColumns = ['proId', 'proNome', 'proAplicacao', 'proPrecoCusto', 'proPrecoVenda', 'proStatus', 'action']
+  products: Product[] = [];
+  displayedColumns: string[] = ['proId', 'proNome', 'proAnoAplicacao', 'proPrecoCusto', 'proPrecoVenda', 'proStatus', 'action'];
 
-  // Injeta o ProductService pra poder acessar os métodos dele
-  constructor(private productService: ProductService) { }
+  constructor(private productService: ProductService) {}
 
-  // Método chamado quando o componente é iniciado
   ngOnInit(): void {
-    // Chama o método 'read' do service, que busca os produtos
-    this.productService.read().subscribe(products => {
-      // Quando os produtos forem recebidos, salva eles na variável
-      this.products = products
+    this.loadProducts();
+  }
 
-      // Mostra os dados no console (pra debug)
-      console.log(products)  
-    })
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['triggerSearch']) {
+      this.searchProducts();
+    }
+  }
+
+  loadProducts(): void {
+    this.productService.read().subscribe({
+      next: data => this.products = data,
+      error: err => console.error('Erro ao carregar produtos:', err)
+    });
+  }
+
+  searchProducts(): void {
+    const termo = this.searchTerm.trim();
+
+    if (!termo) {
+      this.loadProducts();
+      return;
+    }
+
+    this.productService.searchByTerm(termo).subscribe({
+      next: data => this.products = data,
+      error: err => {
+        console.error('Erro na busca:', err);
+        this.products = [];
+      }
+    });
   }
 }

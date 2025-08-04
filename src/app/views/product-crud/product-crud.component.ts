@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -6,15 +6,19 @@ import { Router } from '@angular/router';
   templateUrl: './product-crud.component.html',
   styleUrls: ['./product-crud.component.css']
 })
+export class ProductCrudComponent {
+  termoPesquisa: string = '';
+  triggerSearch: number = 0;
 
-export class ProductCrudComponent implements OnInit
-{
-  constructor(private router: Router){}
-  ngOnInit(): void {
-      
+  constructor(private router: Router) {}
+
+  navigateToProductCreate(): void {
+    this.router.navigate(['/products/create']);
   }
-  navigateToProductCreate(): void
-  {
-    this.router.navigate(['/products/create'])
+
+  onSearchChange(event: Event): void {
+    const input = event.target as HTMLInputElement;
+    this.termoPesquisa = input.value;
+    this.triggerSearch++;
   }
 }
