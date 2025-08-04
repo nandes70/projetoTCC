@@ -6,10 +6,30 @@ form{
     flex-direction: column;
 }
 
-button{
-    margin: 20px 15px 0px 0px;
-    color: rgb(255, 255, 255);
+.btn-cancelar1, .btn-Atualizar {
+    margin: 20px 15px 0 0;
+    color: white;
     font-family: 'Rockwell', Arial, sans-serif;
     font-size: 26px;
-    background: linear-gradient(to bottom, rgb(0, 0, 0), #9e9e9e);
-}
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-cancelar1 {
+    background-color: #d45555;
+  }
+  
+  .btn-cancelar1:hover {
+    background-color: #a33b3b;
+  }
+  
+  .btn-Atualizar {
+    background-color: #00cc66; /* um azul legal para "Atualizar" */
+  }
+  
+  .btn-Atualizar:hover {
+    background-color: #06914b;
+  }

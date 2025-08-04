@@ -48,12 +48,15 @@
 <ng-container matColumnDef="acoes">
   <th mat-header-cell *matHeaderCellDef>Ações</th>
   <td mat-cell *matCellDef="let fpg">
-    <button mat-icon-button color="primary" class="edit" [routerLink]="['/formaPagamento/update', fpg.fpgId]">
+    <a [routerLink]="['/formaPagamento/update', fpg.fpgId]" class="edit">
       <i class="material-icons">edit</i>
-    </button>
-    <button mat-icon-button color="warn" class="delete" [routerLink]="['/formaPagamento/delete', fpg.fpgId]">
+    </a>
+    <a [routerLink]="['/formaPagamento/delete', fpg.fpgId]" class="delete">
       <i class="material-icons">delete</i>
-    </button>
+    </a>
+    <a [routerLink]="['/formaPagamento/visu', fpg.fpgId]" class="vision">
+      <i class="material-icons">assignment</i>
+    </a>
   </td>
 </ng-container>
 

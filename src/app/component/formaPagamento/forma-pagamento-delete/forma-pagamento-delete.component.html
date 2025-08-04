@@ -1,20 +1,52 @@
 <mat-card class="fundo1">
-    <mat-card-title>Excluir Forma de Pagamento</mat-card-title>
+    <div style="display: flex; justify-content: center; margin-bottom: 16px;">
+      <mat-card-title style="font-size: 24px; color: white;">Excluir Forma de Pagamento</mat-card-title>
+    </div>
+  
     <form>
+      <mat-form-field appearance="fill">
+        <mat-label>Forma de Pagamento</mat-label>
+        <mat-select [value]="formaPagamento.fpgDescricao" disabled>
+          <mat-option value="DÉBITO">Débito</mat-option>
+          <mat-option value="CRÉDITO">Crédito</mat-option>
+          <mat-option value="DINHEIRO">Dinheiro</mat-option>
+          <mat-option value="PIX">Pix</mat-option>
+        </mat-select>
+      </mat-form-field>
+  
+      <mat-form-field>
+        <mat-label>Permite Parcelamento?</mat-label>
+        <mat-select [value]="formaPagamento.fpgPermiteParcelamento" disabled>
+          <mat-option value="Sim">Sim</mat-option>
+          <mat-option value="Não">Não</mat-option>
+        </mat-select>
+      </mat-form-field>
+  
+      <ng-container *ngIf="formaPagamento.fpgPermiteParcelamento === 'Sim'">
         <mat-form-field>
-            <input matInput placeholder="Descrição" [value]="formaPagamento.fpgDescricao" name="fpgDescricao" disabled>
+          <mat-label>Número Máximo de Parcelas</mat-label>
+          <input matInput type="number" [value]="formaPagamento.fpgNumeroMaxParcela" disabled>
         </mat-form-field>
+  
         <mat-form-field>
-            <input matInput placeholder="Status" [value]="formaPagamento.fpgStatus" name="fpgStatus" disabled>
+          <mat-label>Taxa Adicional (%)</mat-label>
+          <input matInput type="number" step="0.01" [value]="formaPagamento.fpgTaxaAdicional" disabled>
         </mat-form-field>
+      </ng-container>
+  
+      <mat-form-field>
+        <mat-label>Status</mat-label>
+        <mat-select [value]="formaPagamento.fpgStatus" disabled>
+          <mat-option [value]="true">Ativo</mat-option>
+          <mat-option [value]="false">Inativo</mat-option>
+        </mat-select>
+      </mat-form-field>
+      
+      <div style="display: flex; justify-content: flex-end; gap: 10px;">
+        <button mat-raised-button type="button" class="btn-cancelar" (click)="cancel()">Cancelar</button>
+        <button mat-raised-button type="button" class="btn-salvar" (click)="deleteFormaPagamento()">Excluir</button>
+      </div>
+      
     </form>
-
-    <button mat-raised-button (click)="deleteFormaPagamento()" color="warn">
-        Excluir
-    </button>
-   
-    <button mat-raised-button (click)="cancel()">
-        Cancelar
-    </button>
-
-</mat-card>
+  </mat-card>
+  
