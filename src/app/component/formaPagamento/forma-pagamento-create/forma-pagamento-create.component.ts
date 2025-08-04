@@ -15,7 +15,7 @@ export class FormaPagamentoCreateComponent {
     fpgPermiteParcelamento: '',
     fpgNumeroMaxParcela: 0,
     fpgTaxaAdicional: 0,
-    fpgStatus: true
+    fpgStatus: null
   };
 
   constructor(private formaPagamentoService: FormaPagamentoService, private router: Router) { }

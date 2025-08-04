@@ -11,7 +11,8 @@ export class FormaPagamentoReadComponent implements OnInit {
 
   formaPagamentos: FormaPagamento[] = []; // Lista de formas de pagamento
 
-  displayedColumns: string[] = ['id', 'parcelamento', 'parcelas', 'taxa', 'status', 'acoes']; // Colunas da tabela
+ displayedColumns: string[] = ['id', 'descricao', 'parcelamento', 'parcelas', 'taxa', 'status', 'acoes'];
+ // Colunas da tabela
 
   constructor(private formaPagamentoService: FormaPagamentoService) { }
 

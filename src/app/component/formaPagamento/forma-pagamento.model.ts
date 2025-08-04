@@ -4,6 +4,6 @@ export interface FormaPagamento {
     fpgPermiteParcelamento: string;      // "Sim" ou "Não"
     fpgNumeroMaxParcela: number | null;  // Pode ser null se não permitir
     fpgTaxaAdicional: number | null;     // Pode ser null se não permitir
-    fpgStatus: boolean;                  // true ou false
+    fpgStatus: boolean | null;                  // true ou false
   }
   

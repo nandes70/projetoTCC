@@ -1,10 +1,5 @@
-table {
-    width: 100%;
- /*   background: linear-gradient(to bottom, rgb(117, 4, 4), #eb0a0a);*/
-}
-
 .edit > i {
-    color: #d9cd26;
+    color: #000000;
 }
 
 .delete > i {
@@ -14,4 +9,8 @@ table {
 th {
     font-family: 'Rockwell', Arial, sans-serif;
     font-size: 25px;
+}
+
+table {
+    width: 100%;
 }

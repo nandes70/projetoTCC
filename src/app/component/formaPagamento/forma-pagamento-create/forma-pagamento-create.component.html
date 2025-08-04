@@ -4,10 +4,15 @@
   </div>
 
   <form>
-    <mat-form-field>
-      <mat-label>Descrição</mat-label>
-      <input matInput placeholder="Descrição" [(ngModel)]="formaPagamento.fpgDescricao" name="fpgDescricao" required>
-    </mat-form-field>
+    <mat-form-field appearance="fill">
+  <mat-label>Forma de Pagamento</mat-label>
+  <mat-select [(ngModel)]="formaPagamento.fpgDescricao" name="fpgDescricao">
+    <mat-option value="DÉBITO">Débito</mat-option>
+    <mat-option value="CRÉDITO">Crédito</mat-option>
+    <mat-option value="DINHEIRO">Dinheiro</mat-option>
+    <mat-option value="PIX">Pix</mat-option>
+  </mat-select>
+</mat-form-field>
 
     <mat-form-field>
       <mat-label>Permite Parcelamento?</mat-label>
