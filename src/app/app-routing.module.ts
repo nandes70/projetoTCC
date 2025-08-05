@@ -17,6 +17,7 @@ import { FormaPagamentoUpdateComponent } from './component/formaPagamento/forma-
 import { ClienteUpdateComponent } from './component/cliente/cliente-update/cliente-update.component';
 import { ClienteDeleteComponent } from './component/cliente/cliente-delete/cliente-delete.component';
 import { ProductVisuComponent } from './component/product/product-visu/product-visu.component';
+import { FornecedorDeleteComponent } from './component/fornecedor/fornecedor-delete/fornecedor-delete.component';
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
@@ -37,6 +38,7 @@ const routes: Routes = [
   // Fornecedores
   { path: "fornecedor", component: FornecedorCrudComponent },
   { path: "fornecedor/create", component: FornecedorCreateComponent },
+  { path: "fornecedor/delete/:id", component: FornecedorDeleteComponent},
 
   // Clientes
   { path: "cliente", component: ClienteCrudComponent },

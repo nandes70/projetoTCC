@@ -25,13 +25,13 @@ export class FormaPagamentoCreateComponent {
     this.formaPagamentoService.create(this.formaPagamento).subscribe({
       next: () => {
         // Mensagem de sucesso
-        this.formaPagamentoService.showMessage('Forma de pagamento criada com sucesso!');
+        this.formaPagamentoService.showMessage('✅Forma de pagamento criada com sucesso!');
         // Redireciona para a lista de formas de pagamento
         this.router.navigate(['/formaPagamento']);
       },
       error: (err) => {
         // Mensagem de erro
-        this.formaPagamentoService.showMessage('Erro ao criar forma de pagamento!');
+        this.formaPagamentoService.showMessage('❌Erro ao criar forma de pagamento!');
         console.error(err);
       }
     });

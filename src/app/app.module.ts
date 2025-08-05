@@ -55,6 +55,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { ClienteUpdateComponent } from './component/cliente/cliente-update/cliente-update.component';
 import { ClienteDeleteComponent } from './component/cliente/cliente-delete/cliente-delete.component';
 import { ProductVisuComponent } from './component/product/product-visu/product-visu.component';
+import { FornecedorDeleteComponent } from './component/fornecedor/fornecedor-delete/fornecedor-delete.component';
 
 @NgModule({
   declarations: [
@@ -85,7 +86,8 @@ import { ProductVisuComponent } from './component/product/product-visu/product-v
     FormaPagamentoDeleteComponent,
     ClienteUpdateComponent,
     ClienteDeleteComponent,
-    ProductVisuComponent
+    ProductVisuComponent,
+    FornecedorDeleteComponent
   ],
   imports: [
     MatIconModule,

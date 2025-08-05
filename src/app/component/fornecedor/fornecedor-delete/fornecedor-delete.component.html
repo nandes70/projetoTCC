@@ -1,31 +1,29 @@
 <mat-card class="fundo1">
   <!-- Título -->
   <div style="display: flex; justify-content: center; margin-bottom: 16px;">
-    <mat-card-title style="font-size: 24px; color: white;">Confirmar Exclusão do Cliente</mat-card-title>
+    <mat-card-title style="font-size: 24px; color: white;">❗ Confirmar Exclusão do Fornecedor</mat-card-title>
   </div>
 
   <!-- Dados principais (somente leitura) -->
   <form>
     <mat-form-field appearance="fill" style="width: 100%;">
-      <mat-label>Nome</mat-label>
-      <input matInput [value]="cliente.cliNome" disabled>
+      <mat-label>Nome Fantasia</mat-label>
+      <input matInput [value]="fornecedor.forNomeFantasia" disabled>
     </mat-form-field>
 
     <mat-form-field appearance="fill" style="width: 100%;">
-      <mat-label>CPF / CNPJ</mat-label>
-      <input matInput [value]="cliente.cliCpf" disabled>
+      <mat-label>Razão Social</mat-label>
+      <input matInput [value]="fornecedor.forRazaoSocial" disabled>
     </mat-form-field>
 
     <mat-form-field appearance="fill" style="width: 100%;">
-      <mat-label>Data de Nascimento</mat-label>
-      <input matInput [matDatepicker]="pickerNascimento" [value]="cliente.dataNascimento" disabled>
-      <mat-datepicker-toggle matSuffix [for]="pickerNascimento"></mat-datepicker-toggle>
-      <mat-datepicker #pickerNascimento disabled></mat-datepicker>
+      <mat-label>CNPJ</mat-label>
+      <input matInput [value]="fornecedor.forCnpj" disabled>
     </mat-form-field>
 
     <mat-form-field appearance="fill" style="width: 100%;">
       <mat-label>Status</mat-label>
-      <mat-select [value]="cliente.cliStatus" disabled>
+      <mat-select [value]="fornecedor.forStatus" disabled>
         <mat-option value="ATIVO">Ativo</mat-option>
         <mat-option value="INATIVO">Inativo</mat-option>
       </mat-select>
@@ -34,7 +32,7 @@
     <!-- Botões -->
     <div class="botoes-acoes">
       <button class="btn-cancelar" (click)="cancel()">Cancelar</button>
-      <button class="btn-salvar" color="warn" (click)="deleteCliente()">Excluir Cliente</button>
+      <button class="btn-salvar" color="warn" (click)="deleteFornecedor()">Excluir Fornecedor</button>
     </div>
   </form>
 </mat-card>

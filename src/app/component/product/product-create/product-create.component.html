@@ -56,13 +56,15 @@
         <input matInput type="number" placeholder="Estoque" [(ngModel)]="product.proEstoque" name="proEstoque" min="0" required>
       </mat-form-field>
   
-      <mat-form-field>
-        <mat-label>Produto Ativo?</mat-label>
-        <mat-select [(ngModel)]="product.proStatus" name="proStatus" required>
-            <mat-option [value]="true">Ativo</mat-option>
-            <mat-option [value]="false">Inativo</mat-option>
-        </mat-select>
-      </mat-form-field>
+      
+    <mat-form-field appearance="fill" style="width: 100%;">
+      <mat-label>Status</mat-label>
+      <mat-select [(ngModel)]="product.proStatus" name="proStatus" required>
+
+        <mat-option value="ATIVO">Ativo</mat-option>
+        <mat-option value="INATIVO">Inativo</mat-option>
+      </mat-select>
+    </mat-form-field>
 
       <mat-form-field appearance="fill">
         <input matInput placeholder="Observação" [(ngModel)]="product.proObservacao" name="proObservacao" required>
@@ -90,7 +92,7 @@
         Cancelar
       </button>
       <button mat-raised-button class="btn-salvar" (click)="createProduct()">
-        Salvar
+       Salvar
       </button>
     </div>
   </mat-card>

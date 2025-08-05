@@ -50,14 +50,14 @@ createProduct(): void {
     // Caso a criação seja bem-sucedida
     next: () => {
       // Exibe uma mensagem de sucesso para o usuário
-      this.productService.showMessage('Produto criado com sucesso!');                //COLOCAR ICON PARA ASSOCIAR
+      this.productService.showMessage('✅Produto criado com sucesso!');                //COLOCAR ICON PARA ASSOCIAR
       // Redireciona para a rota de listagem de produtos
       this.router.navigate(['/products']);
     },
     // Caso ocorra um erro durante a criação
     error: (err) => {
       // Exibe uma mensagem de erro para o usuário
-      this.productService.showMessage('Erro ao criar produto.');
+      this.productService.showMessage('❌Erro ao criar produto.');
       // Imprime o erro no console para depuração
       console.error(err);
     }

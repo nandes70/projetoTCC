@@ -126,11 +126,11 @@ step2IsValid(): boolean {
 
     this.clienteService.create(clienteDTO).subscribe({
       next: () => {
-        this.clienteService.showMessage('Cliente criado com sucesso!');
+        this.clienteService.showMessage('✅Cliente criado com sucesso!');
         this.router.navigate(['/cliente']);
       },
       error: (err) => {
-        this.clienteService.showMessage('Erro ao criar cliente.');
+        this.clienteService.showMessage('❌Erro ao criar cliente.');
         console.error('Erro ao criar cliente:', err);
       }
     });

@@ -25,7 +25,7 @@ export class ProductDeleteComponent {
 
   deleteProduct(): void {
     this.productService.delete(this.product.proId!).subscribe(() =>{
-    this.productService.showMessage('Produto excluido com sucesso!')  
+    this.productService.showMessage('✅Produto excluido com sucesso!')  
     this.router.navigate(['/products'])
     })
   }
