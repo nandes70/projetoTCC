@@ -8,12 +8,22 @@ import { Router } from '@angular/router';
 })
 export class ClienteCrudComponent implements OnInit {
 
-  constructor(private router: Router) { }
-  ngOnInit(): void {
+  // Variáveis para controle da pesquisa
+  termoPesquisa: string = '';
+  triggerSearch: boolean = false;
 
-  }
+  constructor(private router: Router) { }
+
+  ngOnInit(): void {}
 
   navigateToClineteCreate(): void {
-    this.router.navigate(['/cliente/create'])
+    this.router.navigate(['/cliente/create']);
+  }
+
+  // Função chamada ao digitar na barra de pesquisa
+  onSearchChange(event: Event): void {
+    const input = event.target as HTMLInputElement;
+    this.termoPesquisa = input.value;
+    this.triggerSearch = !this.triggerSearch; // força a atualização
   }
 }

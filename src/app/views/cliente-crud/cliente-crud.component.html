@@ -1,7 +1,18 @@
 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
-<button mat-raised-button (click)="navigateToClineteCreate()" color="primary">
+  <!-- Barra de pesquisa -->
+  <mat-form-field appearance="fill" style="width: 250px;">
+    <input
+      matInput
+      placeholder="Pesquisar por nome ou ID"
+      (input)="onSearchChange($event)"
+    />
+  </mat-form-field>
+
+  <!-- Botão de novo cliente -->
+  <button mat-raised-button (click)="navigateToClineteCreate()" color="primary">
     Novo Cliente +
-</button>
+  </button>
 </div>
 
-<app-cliente-read></app-cliente-read>
+<!-- Componente de listagem, recebendo os dados -->
+<app-cliente-read [searchTerm]="termoPesquisa" [triggerSearch]="triggerSearch"></app-cliente-read>

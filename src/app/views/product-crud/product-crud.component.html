@@ -1,14 +1,23 @@
+<main>
+  <mat-card>
 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
-  <button mat-raised-button color="primary" (click)="navigateToProductCreate()">Novo Produto</button>
-
+  <!-- Barra de pesquisa alinhada à esquerda -->
   <mat-form-field appearance="fill" style="width: 250px;">
     <input
-    matInput
-    placeholder="Pesquisar por nome ou ID"
-    (input)="onSearchChange($event)"
-  />
+      matInput
+      placeholder="Pesquisar por nome ou ID"
+      (input)="onSearchChange($event)"
+    />
   </mat-form-field>
+
+  <!-- Botão alinhado à direita -->
+  <button mat-raised-button
+   (click)="navigateToProductCreate()"color="primary">
+    Novo Produto +
+  </button>
 </div>
 
-<!-- Aqui chama o componente filho, passando os inputs -->
+<!-- Componente filho -->
 <app-product-read [searchTerm]="termoPesquisa" [triggerSearch]="triggerSearch"></app-product-read>
+</mat-card>
+</main>

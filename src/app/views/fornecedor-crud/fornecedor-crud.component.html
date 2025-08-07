@@ -1,7 +1,16 @@
 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
     <!-- Botão "Novo Produto" -->
+     <mat-form-field appearance="fill" style="width: 250px;">
+    <input
+    matInput
+    placeholder="Pesquisar por nome ou ID"
+    (input)="onSearchChange($event)"
+    />
+      </mat-form-field>
+
+
     <button mat-raised-button (click)="navigateToFornecedorCreate()" color="primary">
       Novo Fornecedor +
     </button>
   </div>
-<app-fornecedor-read></app-fornecedor-read>
+<app-fornecedor-read  [searchTerm]="termoPesquisa" [triggerSearch]= "triggerSearch"></app-fornecedor-read>

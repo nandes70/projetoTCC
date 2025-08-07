@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { ClienteService } from '../cliente.service';
 import { Cliente } from '../cliente.model';
 
@@ -7,9 +7,14 @@ import { Cliente } from '../cliente.model';
   templateUrl: './cliente-read.component.html',
   styleUrls: ['./cliente-read.component.css']
 })
-export class ClienteReadComponent implements OnInit {
+export class ClienteReadComponent implements OnInit, OnChanges {
+
+  @Input() searchTerm: string = '';
+  @Input() triggerSearch: boolean = false;
 
   clientes: Cliente[] = [];
+  clientesFiltrados: Cliente[] = [];
+
   displayedColumns: string[] = ['cliId', 'cliNome', 'cliCpf', 'conCelular', 'conEmail', 'cliStatus', 'action'];
 
   constructor(private clienteService: ClienteService) {}
@@ -17,18 +22,39 @@ export class ClienteReadComponent implements OnInit {
   ngOnInit(): void {
     this.clienteService.read().subscribe((clientes: Cliente[]) => {
       this.clientes = clientes;
+      this.clientesFiltrados = clientes;
     });
   }
 
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['triggerSearch'] || changes['searchTerm']) {
+      this.aplicarFiltro();
+    }
+  }
+
+  aplicarFiltro(): void {
+    const termo = this.searchTerm.toLowerCase().trim();
+
+    if (!termo) {
+      this.clientesFiltrados = this.clientes;
+      return;
+    }
+
+    this.clientesFiltrados = this.clientes.filter(cliente =>
+      cliente.cliNome?.toLowerCase().includes(termo) ||
+      cliente.cliId?.toString().includes(termo)
+    );
+  }
+
   editarCliente(cliId: number): void {
-    // navegação por lógica (opcional — você pode estar usando routerLink no HTML)
+    // ...
   }
 
   excluirCliente(cliente: Cliente): void {
-    // lógica de exclusão, como confirmar exclusão e chamar clienteService.delete(...)
+    // ...
   }
 
   visualizarCliente(cliId: number): void {
-    // navegação por lógica (opcional)
+    // ...
   }
 }

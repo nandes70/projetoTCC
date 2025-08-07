@@ -2,7 +2,7 @@ button
 {
     margin-bottom: 30px;
     font-family: 'Rockwell', Arial, sans-serif;
-    font-size: 20px;
+    font-size: 27px;
     font-weight: 400;
     padding: 10px;
     color: rgb(255, 255, 255);
@@ -18,5 +18,12 @@ button
     justify-content: flex-end;
   }
   
+  mat-card {
+    border-radius: 10px;
+    background: linear-gradient(135deg, #830000 0%, #141414 100%); /* Gradiente de fundo */
+    box-shadow: 0 4px 15px rgba(255, 66, 66, 0.2); /* Sombra combinando com o botão roxo */
+    padding: 20px;
+    margin-bottom: 20px;
+}
 
   

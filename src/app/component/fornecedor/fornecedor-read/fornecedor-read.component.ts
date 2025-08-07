@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { FornecedorService } from '../fornecedor.service';
 import { Fornecedor } from '../fornecedor.model';
 
@@ -7,9 +7,14 @@ import { Fornecedor } from '../fornecedor.model';
   templateUrl: './fornecedor-read.component.html',
   styleUrls: ['./fornecedor-read.component.css']
 })
-export class FornecedorReadComponent implements OnInit {
+export class FornecedorReadComponent implements OnInit, OnChanges {
+
+  @Input() searchTerm: string = '';
+  @Input() triggerSearch: boolean = false;
 
   fornecedores: Fornecedor[] = [];
+  fornecedoresFiltrados: Fornecedor[] = [];
+
   displayedColumns: string[] = ['forId', 'forNome', 'forCnpj', 'forContato', 'forEmail', 'forStatus', 'action'];
 
   constructor(private fornecedorService: FornecedorService) {}
@@ -17,7 +22,28 @@ export class FornecedorReadComponent implements OnInit {
   ngOnInit(): void {
     this.fornecedorService.read().subscribe((fornecedores: Fornecedor[]) => {
       this.fornecedores = fornecedores;
+      this.fornecedoresFiltrados = fornecedores; // inicializa com todos
     });
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['triggerSearch'] || changes['searchTerm']) {
+      this.aplicarFiltro();
+    }
+  }
+
+  aplicarFiltro(): void {
+    const termo = this.searchTerm.toLowerCase().trim();
+
+    if (!termo) {
+      this.fornecedoresFiltrados = this.fornecedores;
+      return;
+    }
+
+    this.fornecedoresFiltrados = this.fornecedores.filter(fornecedor =>
+      fornecedor.forNomeFantasia?.toLowerCase().includes(termo) ||
+      fornecedor.forId?.toString().includes(termo)
+    );
   }
 
   editarFornecedor(forId: number): void {
